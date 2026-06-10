@@ -1,0 +1,131 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].otherPartiesinexportsandbylcother }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- RESPONSE TO SENDER -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].responseToSenderinexportsandbylcother }}
+          </label>
+
+          <textarea rows="3" formControlName="responseToSender"></textarea>
+
+        </div>
+
+        <!-- INSTRUCTIONS RECEIVED -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionsReceivedinexportsandbylcother }}
+          </label>
+
+          <textarea rows="3" formControlName="instructionsReceived"></textarea>
+
+        </div>
+
+        <!-- ACKNOWLEDGEMENT NARRATIVE -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].acknowledgementNarrativeinexportsandbylcother }}
+          </label>
+
+          <textarea rows="3" formControlName="acknowledgementNarrative"></textarea>
+
+        </div>
+
+        <!-- REIMBURSING BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].reimbursingBankinexportsandbylcother }}
+          </label>
+
+          <input type="text" formControlName="reimbursingBank">
+
+          <textarea rows="3" formControlName="reimbursingBankDetails"></textarea>
+
+        </div>
+
+        <!-- APPLICANT BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].applicantBank }}
+          </label>
+
+          <input type="text" formControlName="applicantBank">
+
+          <textarea rows="3" formControlName="applicantBankDetails"></textarea>
+
+        </div>
+
+        <!-- ISSUING BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].issuingBankinexportsandbylcother }}
+          </label>
+
+          <input type="text" formControlName="issuingBank">
+
+          <textarea rows="3" formControlName="issuingBankDetails"></textarea>
+
+        </div>
+
+        <!-- REFERENCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].referenceinexportsandbylcother }}
+          </label>
+
+          <input type="text" formControlName="reference">
+
+        </div>
+
+        <!-- ISSUER -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].issuerinexportsandbylcother }}
+          </label>
+
+          <select formControlName="issuer">
+
+            <option value="">
+              {{ labels[lang].selectinexportsandbylcother }}
+            </option>
+
+            <option *ngFor="let item of issuerOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

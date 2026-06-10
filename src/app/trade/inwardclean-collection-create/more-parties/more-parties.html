@@ -1,0 +1,83 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].moreParties }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CONSIGNEE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].consigneeIfNotDrawee }}
+        </label>
+
+        <input type="text" formControlName="consignee">
+
+        <textarea rows="3" formControlName="consigneeDetails"></textarea>
+
+      </div>
+
+      <!-- PAYEE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].payeeIfNotDrawer }}
+        </label>
+
+        <input type="text" formControlName="payee">
+
+        <textarea rows="3" formControlName="payeeDetails"></textarea>
+
+      </div>
+
+      <!-- IN CASE OF NEED -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].inCaseOfNeed }}
+        </label>
+
+        <input type="text" formControlName="inCaseOfNeed">
+
+        <textarea rows="3" formControlName="inCaseOfNeedDetails"></textarea>
+
+      </div>
+
+      <!-- POWER -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].inCaseOfNeedPower }}
+        </label>
+
+        <select formControlName="inCaseOfNeedPower">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleanmoreparties }}
+          </option>
+
+          <option *ngFor="let item of powerOptions" [value]="item">
+            {{ item }}
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

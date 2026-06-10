@@ -1,0 +1,149 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].chargeDetailsinexportlcpreadvisecharge }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- OURS -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].chargesOurs }}</label>
+
+        <select formControlName="chargesOurs">
+          <option value="">Select</option>
+          <option *ngFor="let o of chargeOptions" [value]="o">
+            {{ o }}
+          </option>
+        </select>
+
+      </div>
+
+      <!-- OVERSEAS -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].chargesOverseas }}</label>
+
+        <select formControlName="chargesOverseas">
+          <option value="">Select</option>
+          <option *ngFor="let o of chargeOptions" [value]="o">
+            {{ o }}
+          </option>
+        </select>
+
+      </div>
+
+      <!-- TAX PAYED BY -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].taxPayedBy }}</label>
+
+        <select formControlName="taxPayedBy">
+          <option value="">Select</option>
+          <option *ngFor="let t of taxPayedByOptions" [value]="t">
+            {{ t }}
+          </option>
+        </select>
+
+      </div>
+
+      <!-- CUSTOMER ADDRESS (DEBIT) + VIEW BUTTON -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].customerAddressDebitinexportlcpreadvisecharge }}</label>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+
+          <select formControlName="customerAddressDebit">
+            <option value="">Select</option>
+            <option *ngFor="let c of customerAddressOptions" [value]="c">
+              {{ c }}
+            </option>
+          </select>
+
+          <button type="button">
+            {{ labels[lang].viewinexportlcpreadvisecharge }}
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CHARGE ACCOUNT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].chargeAccountinexportlcpreadvisecharge }}</label>
+
+        <input type="text" formControlName="chargeAccount">
+
+      </div>
+
+      <!-- PREFERRED CURRENCY -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].preferredCurrencyinexportlcpreadvisecharge }}</label>
+
+        <input type="text" formControlName="preferredCurrency">
+
+      </div>
+
+      <!-- BILL LEVEL -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].billLevelinexportlcpreadvisecharge }}</label>
+
+        <select formControlName="billLevel">
+          <option value="">Select</option>
+          <option *ngFor="let b of billLevelOptions" [value]="b">
+            {{ b }}
+          </option>
+        </select>
+
+      </div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="deferApplicantCharges">
+          {{ labels[lang].deferApplicantChargesinexportlcpreadvisecharge }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="deferBeneficiaryCharges">
+          {{ labels[lang].deferBeneficiaryChargesinexportlcpreadvisecharge }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="billingInvoicesAutomated">
+          {{ labels[lang].billingInvoicesAutomatedinexportlcpreadvisecharge }}
+        </label>
+
+      </div>
+
+      <!-- USER CHARGES TEXT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].userChargesTextinexportlcpreadvisecharge }}</label>
+
+        <textarea
+          rows="4"
+          formControlName="userChargesText">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

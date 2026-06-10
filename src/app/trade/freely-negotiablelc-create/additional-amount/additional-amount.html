@@ -1,0 +1,47 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].additionalAmountsinfreelynegotiableadditional }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- ADDITIONAL AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].additionalAmountinfreelynegotiableadditional }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="additionalAmount">
+
+      </div>
+
+      <!-- VALUE DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].valueDateinfreelynegotiableadditional }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="valueDate">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

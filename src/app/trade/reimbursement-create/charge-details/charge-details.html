@@ -1,0 +1,100 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].chargeDetailsinreimbursementcharge }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- OUR CHARGES -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].ourChargesinreimbursementcharge }}
+          </label>
+
+          <select formControlName="ourCharges">
+            <option value="">{{ labels[lang].selectinreimbursementcharge }}</option>
+
+            <option *ngFor="let item of ourChargesOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+
+        </div>
+
+        <!-- TAX PAYABLE BY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].taxPayableByinreimbursementcharge }}
+          </label>
+
+          <select formControlName="taxPayableBy">
+            <option value="">{{ labels[lang].selectinreimbursementcharge }}</option>
+
+            <option *ngFor="let item of taxPayableByOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+
+        </div>
+
+        <!-- BILL LEVEL -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].billLevelinreimbursementcharge }}
+          </label>
+
+          <select formControlName="billLevel">
+            <option value="">{{ labels[lang].selectinreimbursementcharge }}</option>
+
+            <option *ngFor="let item of billLevelOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+
+        </div>
+
+        <!-- PREFERRED CURRENCY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].preferredCurrencyinreimbursementcharge }}
+          </label>
+
+          <input type="text" formControlName="preferredCurrency">
+
+        </div>
+
+        <!-- DEFER -->
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="defer">
+
+            {{ labels[lang].deferinreimbursementcharge }}
+          </label>
+
+        </div>
+
+      </div>
+
+   
+
+  </div>
+
+</form>

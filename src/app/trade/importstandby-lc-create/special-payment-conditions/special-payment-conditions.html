@@ -1,0 +1,63 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].specialPaymentConditionsinimportstandbylcSpecial }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- BENEFICIARY -->
+        <div class="form-group full-width">
+
+          <label>{{ labels[lang].specialPaymentBeneficiaryinimportstandbylcSpecial }}</label>
+
+          <textarea
+            rows="5"
+            formControlName="specialPaymentBeneficiary">
+          </textarea>
+
+        </div>
+
+        <!-- BANK ONLY -->
+        <div class="form-group full-width">
+
+          <label>{{ labels[lang].specialPaymentBankOnlyinimportstandbylcSpecial }}</label>
+
+          <textarea
+            rows="5"
+            formControlName="specialPaymentBankOnly">
+          </textarea>
+
+        </div>
+</div>
+
+        <div class="form-grid">
+        <!-- NEXT BANK -->
+        <div class="form-group full-width">
+
+          <label>{{ labels[lang].specialPaymentBankNextinimportstandbylcSpecial }}</label>
+
+          <textarea
+            rows="5"
+            formControlName="specialPaymentBankNext">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

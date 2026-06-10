@@ -1,0 +1,105 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].partyDetailsinexportlcpreadviseparty }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- APPLICANT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].applicantinexportlcpreadviseparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="applicant"
+          [placeholder]="labels[lang].applicant">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].applicantDetails }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="applicantDetails"
+          [placeholder]="labels[lang].applicantDetails">
+        </textarea>
+
+      </div>
+
+      <!-- BENEFICIARY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].beneficiaryinexportlcpreadviseparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="beneficiary"
+          [placeholder]="labels[lang].beneficiary">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].beneficiaryDetails }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="beneficiaryDetails"
+          [placeholder]="labels[lang].beneficiaryDetails">
+        </textarea>
+
+      </div>
+
+      <!-- COUNTRY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].countryinexportlcpreadviseparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="country"
+          [placeholder]="labels[lang].country">
+
+      </div>
+
+      <!-- BENEFICIARY ACCOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].beneficiaryAccountinexportlcpreadviseparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="beneficiaryAccount"
+          [placeholder]="labels[lang].beneficiaryAccount">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

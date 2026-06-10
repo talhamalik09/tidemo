@@ -1,0 +1,68 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].marginDepositShipment }}</h3>
+  </div>
+
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].marginDefinedAsinshipmentguaranteemargindeposit }}</label>
+      <select formControlName="marginDefinedAs">
+        <option value="">Select</option>
+        <option *ngFor="let m of marginOptions">{{ m }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].percentinshipmentguaranteemargindeposit }}</label>
+      <input type="text" formControlName="percent">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].ofAmount }}</label>
+      <select formControlName="ofAmount">
+        <option value="">Select</option>
+        <option *ngFor="let a of amountOptions">{{ a }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].marginDepositCollateralTypeinshipmentguaranteemargindeposit }}</label>
+      <input type="text" formControlName="marginDepositCollateralType">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].accountinshipmentguaranteemargindeposit }}</label>
+      <input type="text" formControlName="account">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].inCurrencyinshipmentguaranteemargindeposit }}</label>
+      <input type="text" formControlName="inCurrency">
+    </div>
+
+    <div class="form-group full-width">
+      <label>{{ labels[lang].descriptioninshipmentguaranteemargindeposit }}</label>
+      <input type="text" formControlName="description">
+    </div>
+
+    <div class="form-group full-width">
+      <label>{{ labels[lang].coverNotes }}</label>
+      <textarea formControlName="coverNotes"></textarea>
+    </div>
+
+    <div class="button-row">
+      <button type="button" (click)="refresh()">
+        {{ labels[lang].refresh }}
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

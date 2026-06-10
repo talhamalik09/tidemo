@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.repaymentSchedules }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- REPAYMENT SCHEDULE -->
+    <div class="form-group">
+      <label>{{ labels.en.repaymentSchedulesType }}</label>
+      <select formControlName="repaymentSchedule">
+        <option value="">Select</option>
+        <option *ngFor="let s of scheduleOptions">{{ s }}</option>
+      </select>
+    </div>
+
+    <!-- NOTICE DAYS -->
+    <div class="form-group">
+      <label>{{ labels.en.noticeDaysinfinancestandalonerepayment }}</label>
+      <input type="text" formControlName="noticeDays">
+    </div>
+
+    <!-- NOTICE REQUIRED -->
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="noticeRequired">
+        {{ labels.en.noticeRequired }}
+      </label>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

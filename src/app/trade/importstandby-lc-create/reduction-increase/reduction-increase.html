@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].reductionIncreaseinimportstandbylcreduction }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- SELECT OPTION -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].selectOptioninimportstandbylcreduction }}
+          </label>
+
+          <select formControlName="selectOption">
+
+            <option value="">
+              {{ labels[lang].selectinimportstandbylcreduction }}
+            </option>
+
+            <option
+              *ngFor="let item of selectOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

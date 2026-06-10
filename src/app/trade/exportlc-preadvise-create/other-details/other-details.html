@@ -1,0 +1,124 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].otherDetailsinexportlcpreadviseother}}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>{{ labels[lang].inputBranchinexportlcpreadviseother}}</label>
+          <input type="text" formControlName="inputBranch">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].behalfOfBranchinexportlcpreadviseother}}</label>
+          <input type="text" formControlName="behalfOfBranch">
+        </div>
+
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>{{ labels[lang].sundryReferenceCodeinexportlcpreadviseother}}</label>
+          <input type="text" formControlName="sundryReferenceCode">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].userCode1inexportlcpreadviseother}}</label>
+          <input type="text" formControlName="userCode1">
+        </div>
+
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>{{ labels[lang].userCode2inexportlcpreadviseother}}</label>
+          <input type="text" formControlName="userCode2">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].mailToBranchinexportlcpreadviseother}}</label>
+          <input type="text" formControlName="mailToBranch">
+        </div>
+
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>{{ labels[lang].responsibleUserinexportlcpreadviseother}}</label>
+          <input type="text" formControlName="responsibleUser">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].relatedReferenceinexportlcpreadviseother}}</label>
+          <input type="text" formControlName="relatedReference">
+        </div>
+
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>{{ labels[lang].hubinexportlcpreadviseother}}</label>
+          <input type="text" formControlName="hub">
+        </div>
+
+        <div class="form-group full-width">
+          <label>{{ labels[lang].periodicChargeCycleinexportlcpreadviseother }}</label>
+          <select formControlName="periodicChargeCycle">
+            <option value="">Select</option>
+            <option>Both dates on actual day</option>
+            <option>Both dates on next working day</option>
+            <option>Both dates on next working day (same month)</option>
+            <option>Both dates on previous working day</option>
+            <option>Both dates on previous working day (same month)</option>
+            <option>Due date only on next working day</option>
+            <option>Due date only on next working day (same month)</option>
+            <option>Due date only on previous working day</option>
+            <option>Due date only on previous working day (same month)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>{{ labels[lang].lcCategoryinexportlcpreadviseother}}</label>
+          <select formControlName="lcCategory">
+            <option value="">Select</option>
+            <option>LC Category 1</option>
+            <option>LC Category 2</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].analysisCodeinexportlcpreadviseother}}</label>
+          <select formControlName="analysisCode">
+            <option value="">Select</option>
+            <option>Analysis Code 1</option>
+            <option>Analysis Code 2</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

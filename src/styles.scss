@@ -1,0 +1,174 @@
+/* PAGE BACKGROUND (OPTIONAL BUT BEAUTIFUL) */
+body {
+  background: linear-gradient(135deg, #eef5ff, #f9fbff);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* SECTION CARD */
+.section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+}
+
+/* HEADER */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #e0edff, #f4f8ff);
+  transition: all 0.3s ease;
+}
+
+.section-header:hover {
+  background: linear-gradient(90deg, #d6e6ff, #edf4ff);
+}
+
+.section-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* BODY */
+.section-body {
+  overflow: hidden;
+  max-height: 700px;
+  transition: all 0.4s ease;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.section-body.closed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* LAYOUT */
+.app-advise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* FORM GROUP */
+.applicant-group,
+.advise-bank,
+.beneficiary,
+.country,
+.instruction {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 190px;
+}
+
+/* LABELS */
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+  letter-spacing: 0.2px;
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+  width: 210px;
+  padding: 8px 10px;
+  font-size: 12px;
+  border: 1px solid #dbe3ec;
+  border-radius: 8px;
+  outline: none;
+  background: #f9fbff;
+  transition: all 0.25s ease;
+}
+
+/* FOCUS EFFECT */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* TEXTAREA */
+textarea {
+  width: 100%;
+  min-height: 75px;
+  resize: vertical;
+}
+
+/* FULL WIDTH BLOCK */
+.instruction {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* ERROR TEXT */
+div[ng-reflect-ng-if],
+.error-text {
+  font-size: 11px;
+  color: #ef4444;
+  margin-top: 2px;
+}
+
+/* SAVE BUTTON */
+.save-section {
+  margin-top: 22px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-section button {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.save-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+}
+
+/* DISABLED */
+.save-section button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .app-advise {
+    flex-direction: column;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+}

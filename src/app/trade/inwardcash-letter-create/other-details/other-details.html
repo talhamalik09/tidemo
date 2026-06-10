@@ -1,0 +1,82 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].otherDetailsininwardcashletterother}}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" [class.closed]="!isOpen">
+
+      <div class="form-group">
+        <label>{{ labels[lang].inputBranchininwardcashletterother}}</label>
+        <input type="text" placeholder="CITY" formControlName="inputBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].behalfOfBranchininwardcashletterother}}</label>
+        <input type="text" placeholder="LOND" formControlName="behalfOfBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].responsibleteamininwardcashletterother}}</label>
+        <input type="text" placeholder="Hub" formControlName="responsibleTeam">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].sundryReferenceCodeininwardcashletterother}}</label>
+        <input type="text" formControlName="sundryReferenceCode">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].userCode1ininwardcashletterother}}</label>
+        <input type="text" formControlName="userCode1">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].userCode2ininwardcashletterother}}</label>
+        <input type="text" formControlName="userCode2">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].mailToBranchininwardcashletterother}}</label>
+        <input type="text" formControlName="mailToBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].responsibleUserininwardcashletterother}}</label>
+        <input type="text" formControlName="responsibleUser">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].relatedReferenceininwardcashletterother}}</label>
+        <input type="text" formControlName="relatedReference">
+      </div>
+
+      
+
+      <!-- FULL WIDTH SELECT -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].periodicChargeCycleininwardcashletterother}}</label>
+        <select formControlName="periodicChargeCycle">
+          <option value="">Select</option>
+          <option>Both dates on actual day</option>
+          <option>Both dates on next working day</option>
+          <option>Both dates on next working day (same month)</option>
+          <option>Both dates on previous working day</option>
+          <option>Both dates on previous working day (same month)</option>
+          <option>Due date only on next working day</option>
+          <option>Due date only on next working day (same month)</option>
+          <option>Due date only on previous working day</option>
+          <option>Due date only on previous working day (same month)</option>
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

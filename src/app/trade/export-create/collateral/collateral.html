@@ -1,0 +1,57 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].collateralinexportcollateral }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- CODE -->
+    <div class="form-group">
+      <label>{{ labels[lang].codeinexportcollateral }}</label>
+      <input type="text" formControlName="code">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+      <label>{{ labels[lang].descriptioninexportcollateral }}</label>
+      <input type="text" formControlName="description">
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels[lang].amountinexportcollateral }}</label>
+      <input type="number" formControlName="amount">
+    </div>
+
+    <!-- CCY -->
+    <div class="form-group">
+      <label>{{ labels[lang].ccyinexportcollateral }}</label>
+      <input type="text" formControlName="ccy">
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-group">
+      <button type="button" (click)="add()" [disabled]="form.invalid">
+        {{ labels[lang].addinexportcollateral }}
+      </button>
+
+      <button type="button" (click)="update()" [disabled]="form.invalid">
+        {{ labels[lang].updateinexportcollateral }}
+      </button>
+
+      <button type="button" (click)="delete()">
+        {{ labels[lang].deleteinexportcollateral }}
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,84 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].partyDetailsinimportstandbylcparty }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- APPLICANT -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].applicantinimportstandbylcparty }}</label>
+
+          <input type="text" formControlName="applicant">
+
+          <textarea rows="3" formControlName="applicantDetails"></textarea>
+
+        </div>
+
+        <!-- BENEFICIARY -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].beneficiaryinimportstandbylcparty }}</label>
+
+          <input type="text" formControlName="beneficiary">
+
+          <textarea rows="3" formControlName="beneficiaryDetails"></textarea>
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- ADVISING BANK -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].advisingBankinimportstandbylcparty }}</label>
+
+          <input type="text" formControlName="advisingBank">
+
+          <textarea rows="3" formControlName="advisingBankDetails"></textarea>
+
+        </div>
+
+        <!-- COUNTRIES -->
+        <div class="form-group">
+          <label>{{ labels[lang].applicantCountryinimportstandbylcparty }}</label>
+          <input type="text" formControlName="applicantCountry">
+        </div>
+
+        </div>
+        <div class="form-grid">
+
+        <div class="form-group">
+          <label>{{ labels[lang].beneficiaryCountryinimportstandbylcparty }}</label>
+          <input type="text" formControlName="beneficiaryCountry">
+        </div>
+
+        <!-- INSTRUCTION -->
+        <div class="form-group full-width">
+
+          <label>{{ labels[lang].instructionToAdvisingBankinimportstandbylcparty }}</label>
+
+          <textarea rows="4" formControlName="instructionToAdvisingBank"></textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

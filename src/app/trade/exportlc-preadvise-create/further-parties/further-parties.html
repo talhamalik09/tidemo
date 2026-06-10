@@ -1,0 +1,83 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].furtherParties }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- NEXT ADVISING BANK -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].nextAdvisingBankinexportlcpreadvisefurther }}</label>
+        <input type="text" formControlName="nextAdvisingBank">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>{{ labels[lang].nextAdvisingBankDetails }}</label>
+        <textarea rows="3" formControlName="nextAdvisingBankDetails"></textarea>
+
+      </div>
+
+      <!-- ADVISE THROUGH BANK -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].adviseThroughBankinexportlcpreadvisefurther }}</label>
+        <input type="text" formControlName="adviseThroughBank">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>{{ labels[lang].adviseThroughBankDetails }}</label>
+        <textarea rows="3" formControlName="adviseThroughBankDetails"></textarea>
+
+      </div>
+
+      <!-- ISSUING BANK -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].issuingBankinexportlcpreadvisefurther }}</label>
+        <input type="text" formControlName="issuingBank">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>{{ labels[lang].issuingBankDetails }}</label>
+        <textarea rows="3" formControlName="issuingBankDetails"></textarea>
+
+      </div>
+
+      <!-- SINGLE INPUT FIELDS -->
+
+      <div class="form-group">
+        <label>{{ labels[lang].instructionsToNextAdvisingBank }}</label>
+        <input type="text" formControlName="instructionsToNextAdvisingBank">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].lcReferenceinexportlcpreadvisefurther }}</label>
+        <input type="text" formControlName="lcReference">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].accountinexportlcpreadvisefurther }}</label>
+        <input type="text" formControlName="account">
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

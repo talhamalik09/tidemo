@@ -1,0 +1,95 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].chequeDetails }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CURRENCY -->
+      <div class="form-group">
+        <label>{{ labels[lang].currency }}</label>
+        <input type="text" formControlName="currency">
+      </div>
+
+      <!-- NUMBER OF CHEQUES -->
+      <div class="form-group">
+        <label>{{ labels[lang].numberOfCheques }}</label>
+        <input type="text" formControlName="numberOfCheques">
+      </div>
+
+      <!-- SEQ NUMBER -->
+      <div class="form-group">
+        <label>{{ labels[lang].seqNum }}</label>
+        <input type="text" formControlName="seqNum">
+      </div>
+
+      <!-- AMOUNT -->
+      <div class="form-group">
+        <label>{{ labels[lang].amountinoutwardcashletterchecque }}</label>
+        <input type="text" formControlName="amount">
+      </div>
+
+      <!-- PAYER -->
+      <div class="form-group">
+        <label>{{ labels[lang].payer }}</label>
+        <input type="text" formControlName="payer">
+      </div>
+
+      <!-- STATUS -->
+      <div class="form-group">
+        <label>{{ labels[lang].status }}</label>
+        <input type="text" formControlName="status">
+      </div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="represent">
+          {{ labels[lang].represent }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="tracePayment">
+          {{ labels[lang].tracePayment }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="withRecourse">
+          {{ labels[lang].withRecourseinoutwardcashletterchecque }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="singleConsolidatedCheque">
+          {{ labels[lang].singleConsolidatedCheque }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="autoPay">
+          {{ labels[lang].autoPay }}
+        </label>
+
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="button-row">
+
+        <button type="button" (click)="save('add')">Add</button>
+        <button type="button" (click)="save('update')">Update</button>
+        <button type="button" (click)="save('delete')">Delete</button>
+        <button type="button" (click)="save('view')">View</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

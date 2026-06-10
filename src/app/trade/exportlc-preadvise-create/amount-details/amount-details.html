@@ -1,0 +1,89 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].amountDetailsinexportlcpreadviseamount }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- ADDITIONAL AMOUNTS -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].additionalAmountsinexportlcpreadviseamount }}</label>
+
+        <input type="text" formControlName="additionalAmounts">
+
+      </div>
+
+      <!-- ADDITIONAL AMOUNT INFO -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].additionalAmountInformationinexportlcpreadviseamount }}</label>
+
+        <input type="text" formControlName="additionalAmountInformation">
+
+      </div>
+
+      <!-- +% -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].plusPercentinexportlcpreadviseamount }}</label>
+
+        <input type="text" formControlName="plusPercent">
+
+      </div>
+
+      <!-- -% -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].minusPercentinexportlcpreadviseamount }}</label>
+
+        <input type="text" formControlName="minusPercent">
+
+      </div>
+
+      <!-- AMOUNT (2 inputs) -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].amountinexportlcpreadviseamount }}</label>
+
+        <input type="text" formControlName="amount">
+
+        <textarea
+          rows="3"
+          formControlName="amountDetails"
+          [placeholder]="labels[lang].amountDetails">
+        </textarea>
+
+      </div>
+
+      <!-- TOLERANCE -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].toleranceinexportlcpreadviseamount }}</label>
+
+        <select formControlName="tolerance">
+
+          <option value="">Select</option>
+
+          <option *ngFor="let t of toleranceOptions" [value]="t">
+            {{ t }}
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

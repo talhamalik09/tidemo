@@ -1,0 +1,99 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels.en.documents }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- Date Documents Sent -->
+      <div class="form-group">
+        <label>{{ labels.en.dateDocumentsSent }}</label>
+        <input type="date" formControlName="dateDocumentsSent">
+      </div>
+
+      <!-- Number of Documents -->
+      <div class="form-group">
+        <label>{{ labels.en.numberOfDocuments }}</label>
+        <input type="number" formControlName="numberOfDocuments">
+      </div>
+
+      <!-- Code -->
+      <div class="form-group">
+        <label>{{ labels.en.codeinfreelynegotiabledocuments }}</label>
+        <input type="text" formControlName="code">
+      </div>
+
+      <!-- Type -->
+      <div class="form-group">
+        <label>{{ labels.en.typeinfreelynegotiabledocuments }}</label>
+        <input type="text" formControlName="type">
+      </div>
+
+      <!-- Mail 1 -->
+      <div class="form-group">
+        <label>{{ labels.en.mail1 }}</label>
+        <input type="text" formControlName="mail1">
+      </div>
+
+      <!-- Mail 2 -->
+      <div class="form-group">
+        <label>{{ labels.en.mail2 }}</label>
+        <input type="text" formControlName="mail2">
+      </div>
+
+      <!-- Total Attached -->
+      <div class="form-group">
+        <label>{{ labels.en.totalAttached }}</label>
+        <input type="text" formControlName="totalAttached">
+      </div>
+
+      <!-- Document Disposal -->
+      <div class="form-group">
+        <label>{{ labels.en.documentDisposal }}</label>
+        <select formControlName="documentDisposal">
+          <option value="">{{ labels.en.select }}</option>
+          <option *ngFor="let d of documentDisposalOptions" [value]="d">
+            {{ d }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="advisePresenterDocsInOrder">
+          {{ labels.en.advisePresenterDocsInOrder }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="showAllDocuments">
+          {{ labels.en.showAllDocumentsinfreelynegotiabledocuments }}
+        </label>
+
+      </div>
+
+      <!-- Disposal Details -->
+      <div class="form-group">
+        <label>{{ labels.en.documentDisposalDetails }}</label>
+        <textarea rows="4" formControlName="documentDisposalDetails"></textarea>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="button-row">
+        <button type="button">{{ labels.en.addinfreelynegotiabledocuments }}</button>
+        <button type="button">{{ labels.en.updateinfreelynegotiabledocuments }}</button>
+        <button type="button">{{ labels.en.deleteinfreelynegotiabledocuments }}</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

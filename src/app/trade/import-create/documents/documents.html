@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.documents }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- DOCUMENT TEXT AREA -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.document }}</label>
+
+      <textarea formControlName="documentText"></textarea>
+
+      <div *ngIf="form.get('documentText')?.touched && form.get('documentText')?.invalid">
+        Document is required (max 300 chars)
+      </div>
+    </div>
+
+    <!-- FILE UPLOAD -->
+    <div class="form-group">
+      <label>Attach Document</label>
+
+      <input type="file" (change)="onFileChange($event)">
+
+      <div *ngIf="form.get('documentFile')?.touched && form.get('documentFile')?.invalid">
+        File is required
+      </div>
+
+      <small *ngIf="selectedFile">
+        Selected: {{ selectedFile.name }}
+      </small>
+    </div>
+
+    <!-- SAVE -->
+    <div class="save-section">
+     
+    </div>
+
+  </div>
+
+</div>
+
+</form>

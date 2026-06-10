@@ -1,0 +1,218 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].exportLcDetailsinexportlcpreadviseexportlc }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- SENDER'S REFERENCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].sendersReferenceinexportlcpreadviseexportlc }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="sendersReference">
+
+      </div>
+
+      <!-- EXPIRY DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].expiryDateinexportlcpreadviseexportlc }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="expiryDate">
+
+      </div>
+
+      <!-- EXPIRY PLACE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].expiryPlaceinexportlcpreadviseexportlc }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="expiryPlace">
+
+      </div>
+
+      <!-- PREADVICE DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].preadviceDateinexportlcpreadviseexportlc }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="preadviceDate">
+
+      </div>
+
+      <!-- CONFIRMATION -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].confirmation }}
+        </label>
+
+        <select formControlName="confirmation">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let c of confirmationOptions"
+            [value]="c">
+
+            {{ c }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- APPLICABLE RULES -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].applicableRulesinexportlcpreadviseexportlc }}
+        </label>
+
+        <select formControlName="applicableRules">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let a of applicableRulesOptions"
+            [value]="a">
+
+            {{ a }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].productTypeinexportlcpreadviseexportlc }}
+        </label>
+
+        <select formControlName="productType">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let p of productTypeOptions"
+            [value]="p">
+
+            {{ p }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- ADVISE BY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].adviseByinexportlcpreadviseexportlc }}
+        </label>
+
+        <select formControlName="adviseBy">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let a of adviseByOptions"
+            [value]="a">
+
+            {{ a }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="transferable">
+
+          {{ labels[lang].transferableinexportlcpreadviseexportlc }}
+
+        </label>
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="irrevocable">
+
+          {{ labels[lang].irrevocableinexportlcpreadviseexportlc }}
+
+        </label>
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="revolving">
+
+          {{ labels[lang].revolvinginexportlcpreadviseexportlc }}
+
+        </label>
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="operative">
+
+          {{ labels[lang].operativeinexportlcpreadviseexportlc }}
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

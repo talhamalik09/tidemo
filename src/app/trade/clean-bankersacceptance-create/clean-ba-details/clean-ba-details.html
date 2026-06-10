@@ -1,0 +1,63 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <h3>{{ labels.en.cleanBADetails }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- Reference -->
+      <div class="form-group">
+        <label>{{ labels.en.reference }}</label>
+        <input type="text" formControlName="reference">
+      </div>
+
+      <!-- Acceptance Amount -->
+      <div class="form-group">
+        <label>{{ labels.en.acceptanceAmount }}</label>
+        <input type="number" formControlName="acceptanceAmount">
+      </div>
+
+      <!-- Product Type -->
+      <div class="form-group">
+        <label>{{ labels.en.productType }}</label>
+        <select formControlName="productType">
+          <option value="" disabled selected>
+            {{ labels.en.select }}
+          </option>
+
+          <option *ngFor="let p of productTypeOptions" [value]="p">
+            {{ p }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Advised By -->
+      <div class="form-group">
+        <label>{{ labels.en.advisedBy }}</label>
+        <select formControlName="advisedBy">
+          <option value="" disabled selected>
+            {{ labels.en.select }}
+          </option>
+
+          <option *ngFor="let a of advisedByOptions" [value]="a">
+            {{ a }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Date Received -->
+      <div class="form-group">
+        <label>{{ labels.en.dateReceived }}</label>
+        <input type="date" formControlName="dateReceived">
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

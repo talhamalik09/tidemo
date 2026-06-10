@@ -1,0 +1,125 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].partyDetailsinfreelynegotiablelcparty }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- APPLICANT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].applicantinfreelynegotiablelcparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="applicant">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].applicantDetailsinfreelynegotiablelcparty }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="applicantDetails">
+        </textarea>
+
+      </div>
+
+      <!-- ISSUER -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].issuerinfreelynegotiablelcparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="issuer">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].issuerDetails }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="issuerDetails">
+        </textarea>
+
+      </div>
+
+      <!-- BENEFICIARY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].beneficiaryinfreelynegotiablelcparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="beneficiary">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].beneficiaryDetailsinfreelynegotiablelcparty }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="beneficiaryDetails">
+        </textarea>
+
+      </div>
+
+      <!-- ISSUER INSTRUCTIONS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].issuerInstructions }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="issuerInstructions">
+
+      </div>
+
+      <!-- REFERENCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].referenceinfreelynegotiablelcparty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="reference">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

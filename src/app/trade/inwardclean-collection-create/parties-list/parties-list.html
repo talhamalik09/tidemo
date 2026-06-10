@@ -1,0 +1,78 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].partiesList }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group full-width">
+
+          <label>
+            <input type="checkbox" formControlName="showExtraParties">
+            {{ labels[lang].showExtraPartiesininwardcleanpartieslist }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="showLiabilitySharedParties">
+            {{ labels[lang].showLiabilitySharedPartiesininwardcleanpartieslist }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="showAllParties">
+            {{ labels[lang].showAllPartiesininwardcleanpartieslist }}
+          </label>
+
+        </div>
+
+        <!-- ROLE -->
+        <div class="form-group">
+          <label>{{ labels[lang].roleininwardcleanpartieslist }}</label>
+          <input type="text" formControlName="role">
+        </div>
+
+        <!-- PARTY -->
+        <div class="form-group">
+          <label>{{ labels[lang].partyininwardcleanpartieslist }}</label>
+          <input type="text" formControlName="party">
+        </div>
+
+        <!-- REFERENCE -->
+        <div class="form-group">
+          <label>{{ labels[lang].referenceininwardcleanpartieslist }}</label>
+          <input type="text" formControlName="reference">
+        </div>
+
+        <!-- LIABILITY -->
+        <div class="form-group">
+          <label>{{ labels[lang].liabilityininwardcleanpartieslist }}</label>
+          <input type="text" formControlName="liability">
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="button-row full-width">
+
+          <button type="button">{{ labels[lang].addininwardcleanpartieslist }}</button>
+          <button type="button">{{ labels[lang].deleteininwardcleanpartieslist }}</button>
+          <button type="button">{{ labels[lang].updateininwardcleanpartieslist }}</button>
+          <button type="button">{{ labels[lang].viewininwardcleanpartieslist }}</button>
+          <button type="button">{{ labels[lang].rolesininwardcleanpartieslist }}</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  
+
+</form>

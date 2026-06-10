@@ -1,0 +1,57 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].otherBeneficiaryBank }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- ACCOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].accountinfreelynegotiableotherbeneficiary }}
+        </label>
+
+        <input type="text" formControlName="account">
+
+      </div>
+
+      <!-- OTHER BENEFICIARY BANK NAME -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].otherBeneficiaryBankName }}
+        </label>
+
+        <input type="text" formControlName="otherBeneficiaryBankName">
+
+      </div>
+
+      <!-- OTHER BENEFICIARY BANK ADDRESS (RESIZABLE) -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].otherBeneficiaryBankAddress }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="otherBeneficiaryBankAddress">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

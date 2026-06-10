@@ -1,0 +1,189 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels.en.facilityDetails }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- TOTAL FACILITY AMOUNT -->
+      <div class="form-group">
+        <label>{{ labels.en.totalFacilityAmount }}</label>
+
+        <input
+          type="text"
+          formControlName="totalFacilityAmount"
+          [placeholder]="labels.en.totalFacilityAmount">
+      </div>
+
+      <!-- UNDERLYING FACILITY REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels.en.underlyingFacilityReference }}</label>
+
+        <input
+          type="text"
+          formControlName="underlyingFacilityReference"
+          [placeholder]="labels.en.underlyingFacilityReference">
+      </div>
+
+      <!-- TOTAL DRAWDOWN AMOUNT -->
+      <div class="form-group">
+        <label>{{ labels.en.totalDrawdownAmount }}</label>
+
+        <input
+          type="text"
+          formControlName="totalDrawdownAmount"
+          [placeholder]="labels.en.totalDrawdownAmount">
+      </div>
+
+      <!-- FACILITY CURRENCY -->
+      <div class="form-group">
+        <label>{{ labels.en.facilityCurrency }}</label>
+
+        <input
+          type="text"
+          formControlName="facilityCurrency"
+          [placeholder]="labels.en.facilityCurrency">
+      </div>
+
+      <!-- CALCULATE BUTTON -->
+      <div class="button-row">
+        <button type="button" (click)="calculate()">
+          {{ labels.en.calculateinexportcreditagencyfacilityfacility }}
+        </button>
+      </div>
+
+      <!-- AGREEMENT DATE -->
+      <div class="form-group">
+        <label>{{ labels.en.agreementDate }}</label>
+
+        <input
+          type="date"
+          formControlName="agreementDate">
+      </div>
+
+      <!-- EFFECTIVE DATE -->
+      <div class="form-group">
+        <label>{{ labels.en.effectiveDateinexportcreditagencyfacilityfacility }}</label>
+
+        <input
+          type="date"
+          formControlName="effectiveDate">
+      </div>
+
+      <!-- EXPIRY DATE -->
+      <div class="form-group">
+        <label>{{ labels.en.expiryDateinexportcreditagencyfacilityfacility }}</label>
+
+        <input
+          type="date"
+          formControlName="expiryDate">
+      </div>
+
+      <!-- AMOUNT / PERCENT -->
+      <div class="form-group">
+        <label>{{ labels.en.amountPercentinexportcreditagencyfacilityfacility }}</label>
+
+        <select formControlName="amountPercent">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let option of amountPercentOptions"
+            [value]="option">
+
+            {{ option }}
+
+          </option>
+
+        </select>
+      </div>
+
+      <!-- PERCENT -->
+      <div class="form-group">
+        <label>{{ labels.en.percentinexportcreditagencyfacilityfacility }}</label>
+
+        <input
+          type="number"
+          formControlName="percent"
+          [placeholder]="labels.en.percent">
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+        <label>{{ labels.en.productTypeinexportcreditagencyfacilityfacility }}</label>
+
+        <input
+          type="text"
+          formControlName="productType"
+          [placeholder]="labels.en.productType">
+      </div>
+
+      <!-- FACILITY DETAILS -->
+     <!-- FACILITY DETAILS -->
+<div
+  class="form-group"
+  style="grid-column: span 2; width: 100%;">
+
+  <label>
+    {{ labels.en.facilityDetailsField }}
+  </label>
+
+  <textarea
+    rows="5"
+    formControlName="facilityDetails"
+    [placeholder]="labels.en.facilityDetailsField"
+    style="
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      resize: vertical;
+    ">
+  </textarea>
+
+</div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input
+            type="checkbox"
+            formControlName="restrictToNamedCustomer">
+
+          {{ labels.en.restrictToNamedCustomer }}
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            formControlName="amountAvailableIsRevolving">
+
+          {{ labels.en.amountAvailableIsRevolving }}
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            formControlName="manualRollover">
+
+          {{ labels.en.manualRollover }}
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

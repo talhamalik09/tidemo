@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.foreignExchangeDeals }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- REFERENCE -->
+    <div class="form-group">
+      <label>{{ labels.en.referenceinfinancestandaloneforeignexchange }}</label>
+      <input type="text" formControlName="reference">
+    </div>
+
+    <!-- SELL AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels.en.sellAmount }}</label>
+      <input type="text" formControlName="sellAmount">
+    </div>
+
+    <!-- RATE -->
+    <div class="form-group">
+      <label>{{ labels.en.rateinfinancestandaloneforeignexchange }}</label>
+      <input type="text" formControlName="rate">
+    </div>
+
+    <!-- BUY AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels.en.buyAmount }}</label>
+      <input type="text" formControlName="buyAmount">
+    </div>
+
+    <!-- DEAL TYPE -->
+    <div class="form-group">
+      <label>{{ labels.en.dealType }}</label>
+      <select formControlName="dealType">
+        <option value="">Select</option>
+        <option *ngFor="let d of dealTypeOptions">{{ d }}</option>
+      </select>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-row">
+      <button type="button" (click)="add()">Add...</button>
+      <button type="button" (click)="update()">Update...</button>
+      <button type="button" (click)="delete()">Delete...</button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

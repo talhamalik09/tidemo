@@ -1,0 +1,30 @@
+<form>
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].fxContracts }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <div class="form-group full-width">
+
+         
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,118 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].partyListinguaranteereceivedparty }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="sharedLiability">
+            {{ labels[lang].sharedLiabilityinguaranteereceivedparty }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="showExtraParties">
+            {{ labels[lang].showExtraPartiesinguaranteereceivedparty }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="showLiabilitySharedParties">
+            {{ labels[lang].showLiabilitySharedPartiesinguaranteereceivedparty }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="linkToParticipationFacility">
+            {{ labels[lang].linkToParticipationFacilityinguaranteereceivedparty }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="showAllParties">
+            {{ labels[lang].showAllPartiesinguaranteereceivedparty }}
+          </label>
+
+        </div>
+
+        <!-- ROLE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].roleinguaranteereceivedparty }}</label>
+
+          <input type="text" formControlName="role">
+
+        </div>
+
+        <!-- PARTY -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].partyinguaranteereceivedparty }}</label>
+
+          <input type="text" formControlName="party">
+
+        </div>
+
+        <!-- REFERENCE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].referenceinguaranteereceivedpartylist }}</label>
+
+          <input type="text" formControlName="reference">
+
+        </div>
+
+        <!-- LIABILITY -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].liabilityinguaranteereceivedparty }}</label>
+
+          <input type="text" formControlName="liability">
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="button-row">
+
+          <button type="button">
+            {{ labels[lang].addinguaranteereceivedparty }}
+          </button>
+
+          <button type="button">
+            {{ labels[lang].updateinguaranteereceivedparty }}
+          </button>
+
+          <button type="button">
+            {{ labels[lang].deleteinguaranteereceivedparty }}
+          </button>
+
+          <button type="button">
+            {{ labels[lang].viewinguaranteereceivedparty }}
+          </button>
+
+          <button type="button">
+            {{ labels[lang].rolesinguaranteereceivedparty }}
+          </button>
+
+        </div>
+
+     
+
+    </div>
+
+  </div>
+
+</form>

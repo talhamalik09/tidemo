@@ -1,0 +1,131 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].adviseDetailsinexportStandbyLcadvise }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+    
+
+        <!-- NEXT ADVISING BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].nextAdvisingBankinexportStandbyLcadvise }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="nextAdvisingBank">
+
+          <textarea
+            rows="3"
+            formControlName="nextAdvisingBankDetails"
+            placeholder="{{ labels[lang].detailsinexportStandbyLcadvise }}">
+          </textarea>
+
+        </div>
+
+        <!-- ADVISE THROUGH BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].adviseThroughBankinexportStandbyLcadvise }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="adviseThroughBank">
+
+          <textarea
+            rows="3"
+            formControlName="adviseThroughBankDetails"
+            placeholder="{{ labels[lang].detailsinexportStandbyLcadvise }}">
+          </textarea>
+
+        </div>
+
+        <!-- INSTRUCTIONS TO PAYING/ACCEPTING/NEGOTIATING BANK -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionsToPayingAcceptingNegotiatingBankinexportStandbyLcadvise }}
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="instructionsToPayingAcceptingNegotiatingBank">
+          </textarea>
+
+        </div>
+
+        <!-- INSTRUCTION TO NEXT ADVISING BANK -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionToNextAdvisingBankinexportStandbyLcadvise }}
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="instructionToNextAdvisingBank">
+          </textarea>
+
+        </div>
+
+        <!-- ACCOUNT NUMBER -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].accountNumberinexportStandbyLcadvise }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="accountNumber">
+
+        </div>
+
+        <!-- OTHER BANK'S CONFIRMATION INSTRUCTIONS -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].otherBanksConfirmationInstructionsinexportStandbyLcadvise }}
+          </label>
+
+          <select formControlName="otherBanksConfirmationInstructions">
+
+            <option value="">
+              {{ labels[lang].selectinexportStandbyLcadvise }}
+            </option>
+
+            <option
+              *ngFor="let item of confirmationInstructionOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

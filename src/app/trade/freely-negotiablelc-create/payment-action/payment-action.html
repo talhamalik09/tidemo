@@ -1,0 +1,60 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].paymentAction }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- PAYMENT OPTIONS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].paymentOptions }}
+        </label>
+
+        <select formControlName="paymentOption">
+
+          <option value="">Select</option>
+
+          <option *ngFor="let p of paymentOptions" [value]="p">
+            {{ p }}
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="mixedPayment">
+          {{ labels[lang].mixedPayment }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="withRecourse">
+          {{ labels[lang].withRecourseinfreelynegotiablepayment }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="finalPayment">
+          {{ labels[lang].finalPayment }}
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

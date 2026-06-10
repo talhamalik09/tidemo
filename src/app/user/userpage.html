@@ -1,0 +1,54 @@
+<div class="page-container">
+
+  <!-- Header -->
+  <header class="header">
+ <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+    <h1>My Fund Management</h1>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.closed]="!isSidebarOpen">
+    <button (click)="goToForm()">Fund Form</button>
+    <button (click)="goToTable()">Table</button>
+    <button (click) = "goToHomePage()">HomePage</button>
+    <button (click) = "goToTradePage()">Trade</button>
+    
+  </aside>
+
+  <!-- Main content -->
+ 
+
+
+  <input 
+  type="date"
+  [(ngModel)]="selectedDate"
+  [min]="startDate"
+  [max]="endDate"
+/>
+<div class="main">
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of users$ | async">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 My Fund Management. All rights reserved.</p>
+  </footer>
+
+</div>
+<router-outlet></router-outlet>

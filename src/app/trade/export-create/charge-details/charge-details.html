@@ -1,0 +1,91 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].chargeDetails }}</h3>
+  </div>
+
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- OURS -->
+    <div class="form-group">
+      <label>{{ labels[lang].ours }}</label>
+      <select formControlName="ours">
+        <option value="">Select</option>
+        <option *ngFor="let o of oursOptions">{{ o }}</option>
+      </select>
+
+      <label>{{ labels[lang].overseas }}</label>
+      <select formControlName="overseas">
+        <option value="">Select</option>
+        <option *ngFor="let o of overseasOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- TAX -->
+    <div class="form-group">
+      <label>{{ labels[lang].taxPaidBy }}</label>
+      <select formControlName="taxPaidBy">
+        <option value="">Select</option>
+        <option *ngFor="let t of taxOptions">{{ t }}</option>
+      </select>
+
+      <label>{{ labels[lang].chargeAccount }}</label>
+      <input type="text" formControlName="chargeAccount">
+    </div>
+
+    <!-- FULL WIDTH -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].customerAddressDebit }}</label>
+      <input type="text" formControlName="customerAddressDebit">
+    </div>
+
+    <div class="form-group full-width">
+      <label>{{ labels[lang].userChargeText }}</label>
+      <input type="text" formControlName="userChargeText">
+    </div>
+
+    <!-- CHECKBOXES -->
+    <div class="checkbox-group">
+
+      <label>
+        <input type="checkbox" formControlName="deferApplicantCharges">
+        {{ labels[lang].deferApplicantCharges }}
+      </label>
+
+      <label>
+        <input type="checkbox" formControlName="billingInvoiceAutomatically">
+        {{ labels[lang].billingInvoiceAutomatically }}
+      </label>
+
+    </div>
+
+    <!-- CURRENCY -->
+    <div class="form-group">
+      <label>{{ labels[lang].preferredCurrency }}</label>
+      <input type="text" formControlName="preferredCurrency">
+    </div>
+
+    <!-- BILL LEVEL -->
+    <div class="form-group">
+      <label>{{ labels[lang].billLevel }}</label>
+      <select formControlName="billLevel">
+        <option value="">Select</option>
+        <option *ngFor="let b of billOptions">{{ b }}</option>
+      </select>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="button-row">
+      <button type="button" class="view-btn">
+        {{ labels[lang].view }}
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

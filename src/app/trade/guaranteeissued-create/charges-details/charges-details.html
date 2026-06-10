@@ -1,0 +1,98 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].chargesDetails }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- SINGLE INPUT FIELDS -->
+    <div class="form-group">
+      <label>{{ labels[lang].periodicChargeFirstDate }}</label>
+      <input type="text" formControlName="periodicChargeFirstDate">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].chargeAccountinguaranteeissuedcharges }}</label>
+      <input type="text" formControlName="chargeAccount">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].customerAddressinguaranteeissuedcharges }}</label>
+      <input type="text" formControlName="customerAddress">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userChargesTextinguaranteeissuedcharges }}</label>
+      <input type="text" formControlName="userChargesText">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].dayInMonth }}</label>
+      <input type="text" formControlName="dayInMonth">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].preferredCurrencyinguaranteeissuedcharges }}</label>
+      <input type="text" formControlName="preferredCurrency">
+    </div>
+
+    <!-- CHARGES -->
+    <div class="form-group">
+      <label>{{ labels[lang].ourCharges }}</label>
+      <select formControlName="ourCharges">
+        <option value="">Select</option>
+        <option *ngFor="let o of partyOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].overseasCharges }}</label>
+      <select formControlName="overseasCharges">
+        <option value="">Select</option>
+        <option *ngFor="let o of partyOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- TAX -->
+    <div class="form-group">
+      <label>{{ labels[lang].taxPaidByinguaranteeissuedcharges }}</label>
+      <select formControlName="taxPaidBy">
+        <option value="">Select</option>
+        <option *ngFor="let t of taxOptions">{{ t }}</option>
+      </select>
+    </div>
+
+    <!-- BILL LEVEL -->
+    <div class="form-group">
+      <label>{{ labels[lang].billLevelinguaranteeissuedcharges }}</label>
+      <select formControlName="billLevel">
+        <option value="">Select</option>
+        <option *ngFor="let b of billOptions">{{ b }}</option>
+      </select>
+    </div>
+
+    <!-- CHECKBOX -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="billingInvoicesAutomated">
+        {{ labels[lang].billingInvoicesAutomated }}
+      </label>
+    </div>
+
+    <!-- VIEW BUTTON -->
+    <div class="button-row">
+      <button type="button" (click)="view()">
+        {{ labels[lang].viewinguaranteeissuedcharges }}
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

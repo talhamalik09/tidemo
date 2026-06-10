@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].renewalDetailsinimportstandbylcrenewal }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+     
+
+        <!-- RENEWAL BASIS -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].renewalBasisinimportstandbylcrenewal }}
+          </label>
+
+          <select formControlName="renewalBasis">
+
+            <option value="">
+              {{ labels[lang].selectinimportstandbylcrenewal }}
+            </option>
+
+            <option
+              *ngFor="let item of renewalBasisOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+  </div>
+
+</form>

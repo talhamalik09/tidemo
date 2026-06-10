@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].availableByWith }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- AVAILABLE BY -->
+    <div class="form-group">
+      <label>{{ labels[lang].availableBy }}</label>
+      <select formControlName="availableBy">
+        <option value="">Select</option>
+        <option *ngFor="let a of availableByOptions">{{ a }}</option>
+      </select>
+    </div>
+
+    <!-- AVAILABLE WITH -->
+    <div class="form-group">
+      <label>{{ labels[lang].availableWith }}</label>
+      <select formControlName="availableWith">
+        <option value="">Select</option>
+        <option *ngFor="let a of availableWithOptions">{{ a }}</option>
+      </select>
+    </div>
+
+    <!-- DRAFT -->
+     <div class="checkbox-group">
+    <div class="form-group">
+      <label class="checkbox-label">
+        <input type="checkbox" formControlName="draft">
+        {{ labels[lang].draft }}
+      </label>
+    </div>
+     </div>
+
+    <!-- PAYMENT DATE -->
+    <div class="form-group">
+      <label>{{ labels[lang].expectedLatestPaymentDate }}</label>
+      <input type="date" formControlName="expectedLatestPaymentDate">
+    </div>
+
+    <!-- % INVOICE -->
+    <div class="form-group">
+      <label>{{ labels[lang].invoicePercentage }}</label>
+      <input type="number" formControlName="invoicePercentage">
+    </div>
+
+  </div>
+
+</div>
+
+</form>

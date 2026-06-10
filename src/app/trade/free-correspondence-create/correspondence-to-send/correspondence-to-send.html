@@ -1,0 +1,230 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].correspondenceToSendHeading }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CORRESPONDENCE TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].correspondenceType }}
+        </label>
+
+        <select formControlName="correspondenceType">
+
+          <option value="">Select</option>
+
+          <option
+            *ngFor="let option of correspondenceTypeOptions"
+            [value]="option">
+
+            {{ option }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- RELATED MESSAGE BUTTON -->
+      <div class="button-row">
+
+        <button type="button">
+          {{ labels[lang].relatedMessageButton }}
+        </button>
+
+      </div>
+
+      <!-- SEND VIA -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].sendVia }}
+        </label>
+
+        <select formControlName="sendVia">
+
+          <option value="">Select</option>
+
+          <option
+            *ngFor="let option of sendViaOptions"
+            [value]="option">
+
+            {{ option }}
+
+          </option>
+
+        </select>
+
+      
+
+      <!-- CLEAR BUTTON -->
+      <div class="button-row">
+
+        <button type="button">
+          {{ labels[lang].clearButton }}
+        </button>
+
+        </div>
+      </div>
+
+      <!-- VIEW BUTTON -->
+      <div class="button-row">
+
+        <button type="button">
+          {{ labels[lang].viewButton }}
+        </button>
+
+      </div>
+
+      <!-- SELECT ADDRESSEE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].selectAddressee }}
+        </label>
+
+        <select formControlName="selectAddressee">
+
+          <option value="">Select</option>
+
+          <option
+            *ngFor="let option of selectAddresseeOptions"
+            [value]="option">
+
+            {{ option }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- ADDRESSEE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].addressee }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="addresseeCode">
+
+        <textarea
+          rows="3"
+          formControlName="addresseeDescription">
+        </textarea>
+
+      </div>
+
+      <!-- REFERENCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].reference }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="reference">
+
+      </div>
+
+      <!-- RELATED REFERENCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].relatedReference }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="relatedReference">
+
+      </div>
+
+      <!-- ISN -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].isn }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="isn">
+
+      </div>
+
+      <!-- TIME STAMP -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].timeStamp }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="timeStamp">
+
+      </div>
+
+      <!-- ERROR CODE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].errorCode }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="errorCode">
+
+      </div>
+
+      <!-- DATE OF RELATED MESSAGE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].dateOfRelatedMessage }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="dateOfRelatedMessage">
+
+      </div>
+
+      <!-- INSTRUCTIONS TO SEND -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].instructionsToSend }}
+        </label>
+
+        <textarea
+          rows="5"
+          formControlName="instructionsToSend">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

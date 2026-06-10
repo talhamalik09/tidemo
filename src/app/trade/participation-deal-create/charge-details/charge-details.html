@@ -1,0 +1,47 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].chargeDetailsinparticipationdealcharge }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- PREFERRED CURRENCY -->
+      <div class="form-group">
+        <label>{{ labels[lang].preferredCurrencyinparticipationdealcharge }}</label>
+        <input type="text" formControlName="preferredCurrency">
+      </div>
+
+      <!-- FIRST DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].firstDateinparticipationdealcharge }}</label>
+        <input type="date" formControlName="firstDate">
+      </div>
+
+      <!-- DAY IN MONTH -->
+      <div class="form-group">
+        <label>{{ labels[lang].dayInMonthinparticipationdealcharge }}</label>
+        <input type="text" formControlName="dayInMonth">
+      </div>
+
+      <!-- DEFER CHARGES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="deferChargesForCustomer">
+          {{ labels[lang].deferChargesForCustomerinparticipationdealcharge }}
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

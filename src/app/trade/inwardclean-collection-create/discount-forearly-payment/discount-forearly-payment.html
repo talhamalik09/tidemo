@@ -1,0 +1,75 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].discountForEarlyPaymentininwardcleandiscountforearly }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- PERCENT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].percentininwardcleandiscountforearly }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="percent">
+
+      </div>
+
+      <!-- CUT OFF DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].cutOffDateininwardcleandiscountforearly }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="cutOffDate">
+
+      </div>
+
+      <!-- OR AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].orAmountininwardcleandiscountforearly }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="orAmount">
+
+      </div>
+
+      <!-- OR CUT OFF PERIOD -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].orCutOffPeriodininwardcleandiscountforearly }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="orCutOffPeriod">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

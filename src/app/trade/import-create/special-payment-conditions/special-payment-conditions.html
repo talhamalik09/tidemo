@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.specialPaymentConditions }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- BENEFICIARY CONDITION -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.beneficiaryCondition }}</label>
+
+      <textarea formControlName="beneficiaryCondition"></textarea>
+
+      <div *ngIf="form.get('beneficiaryCondition')?.touched && form.get('beneficiaryCondition')?.invalid">
+        Required (max 300 characters)
+      </div>
+    </div>
+
+    <!-- BANK CONDITION -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.bankCondition }}</label>
+
+      <textarea formControlName="bankCondition"></textarea>
+
+      <div *ngIf="form.get('bankCondition')?.touched && form.get('bankCondition')?.invalid">
+        Required (max 300 characters)
+      </div>
+    </div>
+
+    <!-- SAVE -->
+    <div class="save-section">
+      
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,97 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].otherDetailsincleanbankersacceptanceother }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].inputBranchincleanbankersacceptanceother }}</label>
+      <input placeholder="CITY"  type="text" formControlName="inputBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].behalfOfBranchincleanbankersacceptanceother }}</label>
+      <input placeholder="LOND" type="text" formControlName="behalfOfBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleteamincleanbankersacceptanceother }}</label>
+      <input placeholder="Hub" type="text" formControlName="behalfOfBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].sundryReferenceCodeincleanbankersacceptanceother }}</label>
+      <input type="text" formControlName="sundryReferenceCode">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode1incleanbankersacceptanceother}}</label>
+      <input type="text" formControlName="userCode1">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode2incleanbankersacceptanceother }}</label>
+      <input type="text" formControlName="userCode2">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].mailToBranchincleanbankersacceptanceother }}</label>
+      <input type="text" formControlName="mailToBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleUserincleanbankersacceptanceother }}</label>
+      <input type="text" formControlName="responsibleUser">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].relatedReferenceincleanbankersacceptanceother}}</label>
+      <input type="text" formControlName="relatedReference">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].hubincleanbankersacceptanceother }}</label>
+      <input type="text" formControlName="hub">
+    </div>
+
+    <!-- PERIODIC CHARGE -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].periodicChargeCycleincleanbankersacceptanceother }}</label>
+      <select formControlName="periodicChargeCycle">
+        <option value="">Select</option>
+        <option>Both dates on actual day</option>
+        <option>Both dates on next working day</option>
+        <option>Both dates on next working day (same month)</option>
+        <option>Both dates on previous working day</option>
+        <option>Both dates on previous working day (same month)</option>
+        <option>Due date only on next working day</option>
+        <option>Due date only on next working day (same month)</option>
+        <option>Due date only on previous working day</option>
+        <option>Due date only on previous working day (same month)</option>
+      </select>
+    </div>
+
+    
+
+    <!-- ANALYSIS CODE -->
+    <div class="form-group">
+      <label>{{ labels[lang].BAadditionalitem1incleanbankersacceptanceother}}</label>
+      <select formControlName="analysisCode">
+        <option value="">Select</option>
+        <option><---></option>
+        
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

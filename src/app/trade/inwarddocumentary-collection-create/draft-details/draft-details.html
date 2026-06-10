@@ -1,0 +1,261 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].draftDetailsininwarddocumentarydraft }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- COLLECTION AMOUNT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].collectionAmountininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="collectionAmount">
+
+        <textarea
+          rows="3"
+          formControlName="collectionAmountDetails">
+        </textarea>
+
+      </div>
+
+      <!-- DRAFT AGAINST -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].draftAgainstininwarddocumentarydraft }}</label>
+
+        <select formControlName="draftAgainst">
+
+          <option value="" disabled selected>
+            Payment
+          </option>
+
+          <option
+            *ngFor="let item of draftAgainstOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- IDENTIFIER -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].identifierininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="identifier">
+
+      </div>
+
+      <!-- RATE -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].rateininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="rate">
+
+      </div>
+
+      <!-- START DATE -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].startDateininwarddocumentarydraft }}</label>
+
+        <input
+          type="date"
+          formControlName="startDate">
+
+      </div>
+
+      <!-- END PERIOD -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].endPeriodininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="endPeriod">
+
+      </div>
+
+      <!-- PERCENT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].percentininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="percent">
+
+      </div>
+
+      <!-- CUT OFF DATE -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].cutOffDateininwarddocumentarydraft }}</label>
+
+        <input
+          type="date"
+          formControlName="cutOffDate">
+
+      </div>
+
+      <!-- DRAFT TEXT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].draftTextininwarddocumentarydraft}}</label>
+
+        <input
+          type="text"
+          formControlName="draftText">
+
+      </div>
+
+      <!-- DRAFT AMOUNT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].draftAmountininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="draftAmount">
+
+      </div>
+
+      <!-- OR END DATE -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].orEndDateininwarddocumentarydraft}}</label>
+
+        <input
+          type="date"
+          formControlName="orEndDate">
+
+      </div>
+
+      <!-- GRACE DAYS -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].graceDaysininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="graceDays">
+
+      </div>
+
+      <!-- OR AMOUNT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].orAmountininwarddocumentarydraft}}</label>
+
+        <input
+          type="text"
+          formControlName="orAmount">
+
+      </div>
+
+      <!-- OR CUT OFF PERIOD -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].orCutOffPeriodininwarddocumentarydraft }}</label>
+
+        <input
+          type="text"
+          formControlName="orCutOffPeriod">
+
+      </div>
+
+      <!-- START INTEREST -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].startInterestininwarddocumentarydraft}}</label>
+
+        <select formControlName="startInterest">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let item of startInterestOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- DAY BASIS -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].dayBasisininwarddocumentarydraft }}</label>
+
+        <select formControlName="dayBasis">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let item of dayBasisOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- START FROM -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].startFromininwarddocumentarydraft }}</label>
+
+        <select formControlName="startFrom">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let item of startFromOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

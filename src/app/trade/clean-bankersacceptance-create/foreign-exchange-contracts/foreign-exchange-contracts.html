@@ -1,0 +1,69 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].foreignExchangeContracts }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].referenceinexportforeignexchangecontracts }}</label>
+      <input type="text" formControlName="reference">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].branchinexportforeignexchangecontracts }}</label>
+      <input type="text" formControlName="branch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].typeinexportforeignexchangecontracts }}</label>
+      <input type="text" formControlName="type">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].purchaseCurrencyinexportforeignexchangecontracts }}</label>
+      <input type="text" formControlName="purchaseCurrency">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].saleCurrencyinexportforeignexchangecontracts }}</label>
+      <input type="text" formControlName="saleCurrency">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].rateinexportforeignexchangecontracts }}</label>
+      <input type="number" formControlName="rate">
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-row">
+
+      <button type="button" (click)="add()" [disabled]="form.invalid">
+        {{ labels[lang].addinexportforeignexchangecontracts }}
+      </button>
+
+      <button type="button" (click)="update()" [disabled]="form.invalid">
+        {{ labels[lang].updateinexportforeignexchangecontracts }}
+      </button>
+
+      <button type="button" (click)="delete()">
+        {{ labels[lang].deleteinexportforeignexchangecontracts }}
+      </button>
+
+      <button type="button" (click)="view()">
+        {{ labels[lang].viewinexportforeignexchangecontracts }}
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

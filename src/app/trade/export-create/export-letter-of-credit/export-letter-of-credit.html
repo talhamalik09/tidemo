@@ -1,0 +1,112 @@
+  <form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].exportLcDetails }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" [class.closed]="!isOpen">
+
+      <div class="form-group">
+        <label>{{ labels[lang].sendersReference }}</label>
+        <input type="text" formControlName="sendersReference">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].adviseBy }}</label>
+        <select formControlName="adviseBy">
+          <option value="">Select</option>
+          <option>{{ labels[lang].internal }}</option>
+          <option>{{ labels[lang].mail }}</option>
+          <option>{{ labels[lang].telex }}</option>
+          <option>{{ labels[lang].telexViaSwift }}</option>
+          <option>{{ labels[lang].swift }}</option>
+          <option>{{ labels[lang].fax }}</option>
+          <option>{{ labels[lang].gateway }}</option>
+          <option>{{ labels[lang].email }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].adviseDate }}</label>
+        <input type="date" formControlName="adviseDate">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].issueDate }}</label>
+        <input type="date" formControlName="issueDate">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].expiryDate }}</label>
+        <input type="date" formControlName="expiryDate">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].productType }}</label>
+        <select formControlName="productType">
+          <option value="">Select</option>
+          <option>{{ labels[lang].ucp }}</option>
+          <option>{{ labels[lang].ecup }}</option>
+          <option>{{ labels[lang].ucpurr }}</option>
+          <option>{{ labels[lang].eucpurr }}</option>
+          <option>{{ labels[lang].othr }}</option>
+        </select>
+      </div>
+<div class="checkbox-group">
+
+  <label>
+    <input type="checkbox" formControlName="transferable">
+    {{ labels[lang].transferable }}
+  </label>
+
+  <label>
+    <input type="checkbox" formControlName="throughCredit">
+    {{ labels[lang].throughCredit }}
+  </label>
+
+  <label>
+    <input type="checkbox" formControlName="domesticExpiry">
+    {{ labels[lang].domesticExpiry }}
+  </label>
+
+  <label>
+    <input type="checkbox" formControlName="operative">
+    {{ labels[lang].operative }}
+  </label>
+
+  <label>
+    <input type="checkbox" formControlName="revolving">
+    {{ labels[lang].revolving }}
+  </label>
+
+  <label>
+    <input type="checkbox" formControlName="irrevocable">
+    {{ labels[lang].irrevocable }}
+  </label>
+
+</div>
+      <div class="form-group">
+        <label>{{ labels[lang].preadviceDate }}</label>
+        <input type="date" formControlName="preadviceDate">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].expiryPlace }}</label>
+        <input type="text" formControlName="expiryPlace">
+      </div>
+
+      <!-- SAVE -->
+      <div class="save-section">
+        
+      </div>
+
+    </div>
+
+  </div>
+
+  </form>

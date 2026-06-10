@@ -1,0 +1,65 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.financeDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- REFERENCE -->
+    <div class="form-group">
+      <label>{{ labels.en.referenceinfinancestandalonefinance }}</label>
+      <input type="text" formControlName="reference">
+    </div>
+
+    <!-- FINANCING AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels.en.financingAmount }}</label>
+      <input type="text" formControlName="financingAmount">
+    </div>
+
+    <!-- DATE RECEIVED -->
+    <div class="form-group">
+      <label>{{ labels.en.dateReceived }}</label>
+      <input type="date" formControlName="dateReceived">
+    </div>
+
+    <!-- PRODUCT TYPE -->
+    <div class="form-group">
+      <label>{{ labels.en.productTypeinfinancestandalonefinance }}</label>
+      <select formControlName="productType">
+        <option value="">Select</option>
+        <option *ngFor="let p of productOptions">{{ p }}</option>
+      </select>
+    </div>
+
+    <!-- CHECKBOXES -->
+    <div class="checkbox-group">
+
+      <label>
+        <input type="checkbox" formControlName="withRecourse">
+        {{ labels.en.withRecourse }}
+      </label>
+
+      <label>
+        <input type="checkbox" formControlName="autoRepay">
+        {{ labels.en.autoRepay }}
+      </label>
+
+      <label>
+        <input type="checkbox" formControlName="trustReceiptLoan">
+        {{ labels.en.trustReceiptLoan }}
+      </label>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

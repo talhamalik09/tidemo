@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].undertakingReductionIncrease }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-group full-width">
+      <label>{{ labels[lang].selectOption }}</label>
+
+      <select formControlName="selectOption">
+        <option value="">Select</option>
+        <option *ngFor="let o of options">{{ o }}</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

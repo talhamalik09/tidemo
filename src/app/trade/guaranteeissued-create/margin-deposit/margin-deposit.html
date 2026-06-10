@@ -1,0 +1,67 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].marginDepositinguaranteeissuedmargin }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- MARGIN DEFINED AS -->
+    <div class="form-group">
+      <label>{{ labels[lang].marginDefinedAsinguaranteeissuedmargin }}</label>
+      <select formControlName="marginDefinedAs">
+        <option value="">Select</option>
+        <option *ngFor="let o of definedAsOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- PERCENTAGE -->
+    <div class="form-group">
+      <label>{{ labels[lang].percentageinguaranteeissuedmargin }}</label>
+      <input type="text" formControlName="percentage">
+    </div>
+
+    <!-- AMOUNT (UPDATED DROPDOWN OPTIONS) -->
+    <div class="form-group">
+      <label>{{ labels[lang].amountinguaranteeissuedmargin }}</label>
+      <select formControlName="amount">
+        <option value="">Select</option>
+        <option *ngFor="let o of amountOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- COLLATERAL TYPE -->
+    <div class="form-group">
+      <label>{{ labels[lang].marginDepositCollateralTypeinguaranteeissuedmargin }}</label>
+      <select formControlName="marginDepositCollateralType">
+        <option value="">Select</option>
+        <option *ngFor="let o of collateralTypeOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- ACCOUNT -->
+    <div class="form-group">
+      <label>{{ labels[lang].accountinguaranteeissuedmargin }}</label>
+      <input type="text" formControlName="account">
+    </div>
+
+    <!-- CURRENCY -->
+    <div class="form-group">
+      <label>{{ labels[lang].inCurrencyinguaranteeissuedmargin }}</label>
+      <input type="text" formControlName="inCurrency">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].descriptioninguaranteeissuedmargin }}</label>
+      <input type="text" formControlName="description">
+    </div>
+
+  </div>
+
+</div>
+
+</form>

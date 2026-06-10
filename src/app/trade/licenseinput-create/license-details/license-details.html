@@ -1,0 +1,125 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+    <h3>
+      {{ labels.en.licenseDetails }}
+    </h3>
+
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- LICENSE NUMBER -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.licenseNumber }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="licenseNumber">
+
+    </div>
+
+    <!-- AUTHORITY REFERENCE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.authorityReference }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="authorityReference">
+
+    </div>
+
+    <!-- ISSUE DATE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.issueDateinlicenseinputlicense }}
+      </label>
+
+      <input
+        type="date"
+        formControlName="issueDate">
+
+    </div>
+
+    <!-- REGISTRATION DATE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.registrationDate }}
+      </label>
+
+      <input
+        type="date"
+        formControlName="registrationDate">
+
+    </div>
+
+    <!-- PRODUCT TYPE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.productTypeinlicenseinputlicense }}
+      </label>
+
+      <select formControlName="productType">
+
+        <option value="">
+          Select
+        </option>
+
+        <option
+          *ngFor="let p of productTypeOptions"
+          [value]="p">
+
+          {{ p }}
+
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- CHECKBOXES -->
+    <div class="checkbox-group">
+
+      <label>
+
+        <input
+          type="checkbox"
+          formControlName="multiCurrency">
+
+        {{ labels.en.multiCurrency }}
+
+      </label>
+
+      <label>
+
+        <input
+          type="checkbox"
+          formControlName="realEstate">
+
+        {{ labels.en.realEstate }}
+
+      </label>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

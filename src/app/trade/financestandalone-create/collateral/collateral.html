@@ -1,0 +1,60 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.collateralSectioninfinancestandalonecollateral }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- CODE -->
+    <div class="form-group">
+      <label>{{ labels.en.codeinfinancestandalonecollateral }}</label>
+      <input type="text" formControlName="code">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+      <label>{{ labels.en.descriptioninfinancestandalonecollateral }}</label>
+      <input type="text" formControlName="description">
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels.en.amountinfinancestandalonecollateral }}</label>
+      <input type="text" formControlName="amount">
+    </div>
+
+    <!-- CCY -->
+    <div class="form-group">
+      <label>{{ labels.en.ccyinfinancestandalonecollateral }}</label>
+      <input type="text" formControlName="ccy">
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-row">
+
+      <button type="button" (click)="add()">
+        {{ labels.en.addinfinancestandalonecollateral }}
+      </button>
+
+      
+      <button type="button" (click)="update()">
+        {{ labels.en.updateinfinancestandalonecollateral }}
+      </button>
+
+      <button type="button" (click)="delete()">
+        {{ labels.en.deleteinfinancestandalonecollateral }}
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

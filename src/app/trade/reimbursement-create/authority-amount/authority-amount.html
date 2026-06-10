@@ -1,0 +1,125 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].amountDetailsinexportstandbylcamount }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- AMOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].amountinexportstandbylcamount }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="amount">
+
+          <textarea
+            rows="3"
+            formControlName="amountDetails"
+            placeholder="{{ labels[lang].detailsinexportstandbylcamount }}">
+          </textarea>
+
+        </div>
+
+        <!-- TOLERANCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].toleranceinexportstandbylcamount }}
+          </label>
+
+          <select formControlName="tolerance">
+
+            <option value="">
+              {{ labels[lang].selectinexportstandbylcamount }}
+            </option>
+
+            <option
+              *ngFor="let item of toleranceOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- ADDITIONAL/SUPPLEMENTARY AMOUNT INFORMATION -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].additionalSupplementaryAmountInformationinexportstandbylcamount }}
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="additionalSupplementaryAmountInformation">
+          </textarea>
+
+        </div>
+
+        <!-- ADDITIONAL AMOUNTS -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].additionalAmountsinexportstandbylcamount }}
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="additionalAmounts">
+          </textarea>
+
+        </div>
+
+        <!-- + % -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].plusPercentinexportstandbylcamount }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="plusPercent">
+
+        </div>
+
+        <!-- - % -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].minusPercentinexportstandbylcamount }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="minusPercent">
+
+        </div>
+
+     
+
+    </div>
+
+  </div>
+
+</form>

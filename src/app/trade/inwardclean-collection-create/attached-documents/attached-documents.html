@@ -1,0 +1,137 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels.en.attachedDetails }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <!-- CODE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.codeininwardcleanattacheddocuments }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="code">
+
+      </div>
+
+      <!-- TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.typeininwardcleanattacheddocuments }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="type">
+
+      </div>
+
+      <!-- 1ST MAIL -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.firstMailininwardcleanattacheddocuments }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="firstMail">
+
+      </div>
+
+      <!-- 2ND MAIL -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.secondMailininwardcleanattacheddocuments }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="secondMail">
+
+      </div>
+
+      <!-- TOTAL -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.totalininwardcleanattacheddocuments }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="total">
+
+      </div>
+
+      <!-- ATTACHED -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.attachedininwardcleanattacheddocuments }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="attached">
+
+      </div>
+
+      <!-- SHOW ALL DOCUMENTS -->
+      <div class="checkbox-group">
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="showAllDocuments">
+
+          {{ labels.en.showAllDocumentsininwardcleanattacheddocuments }}
+
+        </label>
+
+      </div>
+
+      <!-- BUTTON ROW -->
+      <div class="button-row">
+
+        <button type="button">
+          {{ labels.en.addininwardcleanattacheddocuments }}
+        </button>
+
+        <button type="button">
+          {{ labels.en.updateininwardcleanattacheddocuments }}
+        </button>
+
+        <button type="button">
+          {{ labels.en.deleteininwardcleanattacheddocuments }}
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

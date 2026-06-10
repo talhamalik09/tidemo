@@ -1,0 +1,85 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].generalDetails }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].receivedFromReference }}</label>
+      <input type="text" formControlName="receivedFromReference">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].collectionAmount }}</label>
+      <input type="text" formControlName="collectionAmount">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].country }}</label>
+      <input type="text" formControlName="country1">
+    </div>
+
+    <!-- RECEIVED FROM -->
+    <div class="form-group">
+      <label>{{ labels[lang].receivedFrom }}</label>
+      <input type="text" formControlName="receivedFromLine1">
+      <textarea formControlName="receivedFromLine2"></textarea>
+    </div>
+
+    <!-- SEND TO -->
+    <div class="form-group">
+      <label>{{ labels[lang].sendTo }}</label>
+      <input type="text" formControlName="sendToLine1">
+      <textarea formControlName="sendToLine2"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].country }}</label>
+      <input type="text" formControlName="country2">
+    </div>
+
+    <!-- SEND TO DROPDOWN -->
+    <div class="form-group">
+      <label>{{ labels[lang].sendTo }}</label>
+      <select formControlName="sendTo">
+        <option *ngFor="let option of partyOptions">{{ option }}</option>
+      </select>
+    </div>
+
+    <!-- RECEIVED FROM DROPDOWN -->
+    <div class="form-group">
+      <label>{{ labels[lang].receivedFrom }}</label>
+      <select formControlName="receivedFrom">
+        <option *ngFor="let option of partyOptions">{{ option }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].receivedOn }}</label>
+      <input type="date" formControlName="receivedOn">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].productType }}</label>
+      <select formControlName="productType">
+        <option *ngFor="let option of productTypeOptions">{{ option }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].documentRelease }}</label>
+      <select formControlName="documentRelease">
+        <option *ngFor="let option of documentReleaseOptions">{{ option }}</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

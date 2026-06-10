@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels.en.instructions }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-group">
+        <label>{{ labels.en.notesForDraftOwnerBeneficiary }}</label>
+        <textarea rows="3" formControlName="notesForDraftOwnerBeneficiary"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.notesForObligor }}</label>
+        <textarea rows="3" formControlName="notesForObligor"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.acceptanceNarrative }}</label>
+        <textarea rows="3" formControlName="acceptanceNarrative"></textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,118 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].amountDetailsinguaranteereceivedamount}}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- AMOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].amountinguaranteereceivedamount}}
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="amount">
+          </textarea>
+
+        </div>
+
+        <!-- ADDITIONAL AMOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].additionalAmountinguaranteereceivedamount }}
+          </label>
+
+          <input type="text" formControlName="additionalAmount">
+
+        </div>
+</div>
+        <div class="form-grid">
+
+        <!-- +% -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].percentPlusinguaranteereceivedamount}}
+          </label>
+
+          <input type="text" formControlName="percentPlus">
+
+        </div>
+
+        <!-- -% -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].percentMinusinguaranteereceivedamount}}
+          </label>
+
+          <input type="text" formControlName="percentMinus">
+
+        </div>
+
+</div>
+        <div class="form-grid">
+        <!-- TOLERANCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].toleranceinguaranteereceivedamount }}
+          </label>
+
+          <select formControlName="tolerance">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedamount}}
+            </option>
+
+            <option *ngFor="let item of toleranceOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+        </div>
+        
+        <div class="form-grid">
+
+        <!-- ADDITIONAL INFO -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].additionalSupplementaryInfoinguaranteereceivedamount}}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="additionalSupplementaryInfo">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

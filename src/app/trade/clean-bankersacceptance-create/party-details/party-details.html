@@ -1,0 +1,62 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <h3>{{ labels.en.partyDetailsincleanbankersacceptanceparty }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- BENEFICIARY -->
+      <div class="form-group">
+        <label>{{ labels.en.beneficiaryincleanbankersacceptanceparty }}</label>
+
+        <input type="text" formControlName="beneficiaryName">
+
+        <textarea formControlName="beneficiaryAddress"></textarea>
+      </div>
+
+      <!-- OBLIGOR -->
+      <div class="form-group">
+        <label>{{ labels.en.obligorincleanbankersacceptanceparty }}</label>
+
+        <input type="text" formControlName="obligorName">
+
+        <textarea formControlName="obligorAddress"></textarea>
+      </div>
+
+      <!-- BENEFICIARY REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels.en.beneficiaryReference }}</label>
+        <input type="text" formControlName="beneficiaryReference">
+      </div>
+
+      <!-- OBLIGOR REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels.en.obligorReference }}</label>
+        <input type="text" formControlName="obligorReference">
+      </div>
+
+      <!-- DRAFT DRAWN ON -->
+      <div class="form-group">
+        <label>{{ labels.en.draftDrawnOn }}</label>
+
+        <select formControlName="draftDrawnOn">
+          <option value="" disabled>
+            {{ labels.en.selectincleanbankersacceptanceparty }}
+          </option>
+
+          <option *ngFor="let d of draftDrawnOnOptions" [value]="d">
+            {{ d }}
+          </option>
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

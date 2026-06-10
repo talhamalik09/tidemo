@@ -1,0 +1,63 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].goodDetails }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- GOODS DESCRIPTION -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].goodsDescriptioninexpotlcpreadvisegoods }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="goodsDescription">
+        </textarea>
+
+      </div>
+
+      <!-- NARRATIVE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].narrativeinexpotlcpreadvisegoods }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="narrative">
+        </textarea>
+
+      </div>
+
+      <!-- ACKNOWLEDGEMENT NARRATIVE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].acknowledgementNarrativeinexpotlcpreadvisegoods }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="acknowledgementNarrative">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

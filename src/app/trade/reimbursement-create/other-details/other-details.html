@@ -1,0 +1,91 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].otherDetailsinimportstandbylcother}}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" [class.closed]="!isOpen">
+
+      <div class="form-group">
+        <label>{{ labels[lang].inputBranchinimportstandbylcother}}</label>
+        <input type="text" placeholder="CITY" formControlName="inputBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].behalfOfBranchinimportstandbylcother}}</label>
+        <input type="text" placeholder="LOND" formControlName="behalfOfBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].responsibleteaminimportstandbylcother}}</label>
+        <input type="text" placeholder="Hub" formControlName="responsibleTeam">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].sundryReferenceCodeinimportstandbylcother}}</label>
+        <input type="text" formControlName="sundryReferenceCode">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].userCode1inimportstandbylcother}}</label>
+        <input type="text" formControlName="userCode1">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].userCode2inimportstandbylcother}}</label>
+        <input type="text" formControlName="userCode2">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].mailToBranchinimportstandbylcother}}</label>
+        <input type="text" formControlName="mailToBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].responsibleUserinimportstandbylcother}}</label>
+        <input type="text" formControlName="responsibleUser">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].relatedReferenceinimportstandbylcother}}</label>
+        <input type="text" formControlName="relatedReference">
+      </div>
+
+      
+
+      <!-- FULL WIDTH SELECT -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].periodicChargeCycleinimportstandbylcother}}</label>
+        <select formControlName="periodicChargeCycle">
+          <option value="">Select</option>
+          <option>Both dates on actual day</option>
+          <option>Both dates on next working day</option>
+          <option>Both dates on next working day (same month)</option>
+          <option>Both dates on previous working day</option>
+          <option>Both dates on previous working day (same month)</option>
+          <option>Due date only on next working day</option>
+          <option>Due date only on next working day (same month)</option>
+          <option>Due date only on previous working day</option>
+          <option>Due date only on previous working day (same month)</option>
+        </select>
+      </div>
+      <div class="form-group full-width">
+        <label>Analysis code</label>
+        <select formControlName="periodicChargeCycle">
+          <option value="">Select</option>
+          <option>Analysis code 1</option>
+          <option>Analysis code 2</option>
+          
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

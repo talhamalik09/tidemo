@@ -1,0 +1,85 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].otherDetailsinexportcreditagencyfacilityother}}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" [class.closed]="!isOpen">
+
+      <div class="form-group">
+        <label>{{ labels[lang].inputBranchinexportcreditagencyfacilityother}}</label>
+        <input type="text" placeholder="CITY" formControlName="inputBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].behalfOfBranchinexportcreditagencyfacilityother }}</label>
+        <input type="text" placeholder="LOND" formControlName="behalfOfBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].responsibleteaminexportcreditagencyfacilityother}}</label>
+        <input type="text" placeholder="Hub" formControlName="responsibleTeam">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].sundryReferenceCodeinexportcreditagencyfacilityother }}</label>
+        <input type="text" formControlName="sundryReferenceCode">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].userCode1inexportcreditagencyfacilityother}}</label>
+        <input type="text" formControlName="userCode1">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].userCode2inexportcreditagencyfacilityother}}</label>
+        <input type="text" formControlName="userCode2">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].mailToBranchinexportcreditagencyfacilityother}}</label>
+        <input type="text" formControlName="mailToBranch">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].responsibleUserinexportcreditagencyfacilityother }}</label>
+        <input type="text" formControlName="responsibleUser">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].relatedReferenceinexportcreditagencyfacilityother}}</label>
+        <input type="text" formControlName="relatedReference">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].hubinexportcreditagencyfacilityother }}</label>
+        <input type="text" formControlName="hub">
+      </div>
+
+      <!-- FULL WIDTH SELECT -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].periodicChargeCycleinexportcreditagencyfacilityother }}</label>
+        <select formControlName="periodicChargeCycle">
+          <option value="">Select</option>
+          <option>Both dates on actual day</option>
+          <option>Both dates on next working day</option>
+          <option>Both dates on next working day (same month)</option>
+          <option>Both dates on previous working day</option>
+          <option>Both dates on previous working day (same month)</option>
+          <option>Due date only on next working day</option>
+          <option>Due date only on next working day (same month)</option>
+          <option>Due date only on previous working day</option>
+          <option>Due date only on previous working day (same month)</option>
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

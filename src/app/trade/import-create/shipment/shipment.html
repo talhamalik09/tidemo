@@ -1,0 +1,128 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.heading }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="app-advise">
+
+      <div class="form-group">
+        <label>{{ labels.en.from }}</label>
+        <input formControlName="from" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.placeOfLoading }}</label>
+        <input formControlName="placeOfLoading" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.partialShipments }}</label>
+        <select formControlName="partialShipments">
+          <option value="">Select</option>
+          <option *ngFor="let o of partialOptions">{{ o }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.shipmentDate }}</label>
+        <input type="date" formControlName="shipmentDate" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.shipmentPeriod }}</label>
+        <input formControlName="shipmentPeriod" type="text" style="width:300px;" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.to }}</label>
+        <input formControlName="to" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.placeOfDischarge }}</label>
+        <input formControlName="placeOfDischarge" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.transhipment }}</label>
+        <select formControlName="transhipment">
+          <option value="">Select</option>
+          <option *ngFor="let o of transhipmentOptions">{{ o }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.incoterms }}</label>
+        <input formControlName="incoterms" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.freight }}</label>
+        <select formControlName="freight">
+          <option value="">Select</option>
+          <option *ngFor="let o of freightOptions">{{ o }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.transportMode }}</label>
+        <select formControlName="transportMode">
+          <option value="">Select</option>
+          <option *ngFor="let o of transportOptions">{{ o }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.presentationDays }}</label>
+        <input formControlName="presentationDays" type="number" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.documentsBy }}</label>
+        <select formControlName="documentsBy">
+          <option value="">Select</option>
+          <option *ngFor="let o of documentOptions">{{ o }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.place }}</label>
+        <input formControlName="place" type="text" />
+      </div>
+
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" formControlName="insurance" />
+          {{ labels.en.insurance }}
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.narrative }}</label>
+        <textarea formControlName="narrative"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels.en.packages }}</label>
+        <input formControlName="packages" type="number" />
+      </div>
+
+      <div class="save-section">
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

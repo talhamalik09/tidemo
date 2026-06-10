@@ -1,0 +1,109 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].reimbursementAuthorityinexportsandbylcreimbursement }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+
+        <!-- ISSUER REFERENCE -->
+        <div class="form-group">
+          <label>{{ labels[lang].issuerReferenceinexportsandbylcreimbursement }}</label>
+          <input type="text" formControlName="issuerReference">
+        </div>
+
+        <!-- LC ISSUE DATE -->
+        <div class="form-group">
+          <label>{{ labels[lang].lcIssueDateinexportsandbylcreimbursement }}</label>
+          <input type="date" formControlName="lcIssueDate">
+        </div>
+
+        <!-- LC EXPIRY DATE -->
+        <div class="form-group">
+          <label>{{ labels[lang].lcExpiryDateinexportsandbylcreimbursement }}</label>
+          <input type="date" formControlName="lcExpiryDate"
+  [min]="today"
+  [max]="today">>
+        </div>
+
+        <!-- LATEST PRESENTATION DATE -->
+        <div class="form-group">
+          <label>{{ labels[lang].latestPresentationDateinexportsandbylcreimbursement }}</label>
+          <input type="date" formControlName="latestPresentationDate">
+        </div>
+
+        <!-- LC EXPIRY PLACE -->
+        <div class="form-group">
+          <label>{{ labels[lang].lcExpiryPlaceinexportsandbylcreimbursement }}</label>
+          <input type="text" formControlName="lcExpiryPlace"  >
+        </div>
+
+        <!-- RECEIVED ON -->
+        <div class="form-group">
+          <label>{{ labels[lang].receivedOninexportsandbylcreimbursement }}</label>
+          <input type="date" formControlName="receivedOn">
+        </div>
+
+        <!-- CONFIRMATION -->
+        <div class="form-group">
+          <label>{{ labels[lang].confirmationinexportsandbylcreimbursement }}</label>
+
+          <select formControlName="confirmation">
+            <option value="Confirmed">Confirmed</option>
+          </select>
+        </div>
+
+        <!-- APPLICABLE RULES -->
+        <div class="form-group">
+          <label>{{ labels[lang].applicableRulesinexportsandbylcreimbursement }}</label>
+
+          <select formControlName="applicableRules">
+            <option value="">Select</option>
+            <option *ngFor="let item of applicableRulesOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+        <!-- AUTHORITY TYPE -->
+        <div class="form-group">
+          <label>{{ labels[lang].authorityTypeinexportsandbylcreimbursement }}</label>
+
+          <select formControlName="authorityType">
+            <option value="">Select</option>
+            <option *ngFor="let item of authorityTypeOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+        <!-- PRODUCT TYPE -->
+        <div class="form-group">
+          <label>{{ labels[lang].productTypeinexportsandbylcreimbursement }}</label>
+
+          <select formControlName="productType">
+            <option value="">Select</option>
+            <option *ngFor="let item of productTypeOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

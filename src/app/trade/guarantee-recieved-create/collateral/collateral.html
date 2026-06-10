@@ -1,0 +1,92 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].collateralinguaranteereceivedcollateral }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- CODE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].codeinguaranteereceivedcollateral}}
+          </label>
+
+          <input type="text" formControlName="code">
+
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].descriptioninguaranteereceivedcollateral }}
+          </label>
+
+          <input type="text" formControlName="description">
+
+        </div>
+
+</div>
+        <div class="form-grid">
+        <!-- AMOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].amountinguaranteereceivedcollateral }}
+          </label>
+
+          <input type="text" formControlName="amount">
+
+        </div>
+
+        <!-- CCY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].ccyinguaranteereceivedcollateral }}
+          </label>
+
+          <input type="text" formControlName="ccy">
+
+        </div>
+
+</div>
+        <div class="form-grid">
+        <!-- BUTTONS -->
+        <div class="button-row">
+
+          <button type="button" (click)="add()">
+            Add...
+          </button>
+
+          <button type="button" (click)="update()">
+            Update....
+          </button>
+
+          <button type="button" (click)="delete()">
+            Delete....
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

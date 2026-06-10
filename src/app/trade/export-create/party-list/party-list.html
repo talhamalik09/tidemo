@@ -1,0 +1,75 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].partyList }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-grid">
+      <div class="checkbox-group">
+
+      <!-- CHECKBOXES -->
+      <div class="form-group checkbox">
+        <label><input type="checkbox" formControlName="sharedLiability"> {{ labels[lang].sharedLiability }}</label>
+      </div>
+
+      <div class="form-group checkbox">
+        <label><input type="checkbox" formControlName="showExtraParties"> {{ labels[lang].showExtraParties }}</label>
+      </div>
+
+      <div class="form-group checkbox">
+        <label><input type="checkbox" formControlName="showLiabilitySharedParties"> {{ labels[lang].showLiabilitySharedParties }}</label>
+      </div>
+
+      <div class="form-group checkbox">
+        <label><input type="checkbox" formControlName="linkToParticipation"> {{ labels[lang].linkToParticipation }}</label>
+      </div>
+
+      <div class="form-group checkbox">
+        <label><input type="checkbox" formControlName="showAllParties"> {{ labels[lang].showAllParties }}</label>
+      </div>
+      </div>
+
+      <!-- INPUTS -->
+      <div class="form-group">
+        <label>{{ labels[lang].role }}</label>
+        <input type="text" formControlName="role">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].party }}</label>
+        <input type="text" formControlName="party">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].reference }}</label>
+        <input type="text" formControlName="reference">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].liability }}</label>
+        <input type="text" formControlName="liability">
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="button-row">
+        <button type="button" (click)="add()">{{ labels[lang].add }}</button>
+        <button type="button" (click)="update()">{{ labels[lang].update }}</button>
+        <button type="button" (click)="delete()">{{ labels[lang].delete }}</button>
+        <button type="button" (click)="view()">{{ labels[lang].view }}</button>
+        <button type="button" (click)="roles()">{{ labels[lang].roles }}</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

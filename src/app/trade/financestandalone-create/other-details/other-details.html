@@ -1,0 +1,72 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.otherDetailsinfinancestandaoneother}}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-group">
+      <label>{{ labels.en.sundryReferenceCodeinfinancestandaoneother }}</label>
+      <input formControlName="sundryReferenceCode">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.userCode1infinancestandaoneother }}</label>
+      <input formControlName="userCode1">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.userCode2infinancestandaoneother }}</label>
+      <input formControlName="userCode2">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.mailToBranchinfinancestandaoneother }}</label>
+      <input formControlName="mailToBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.responsibleUserinfinancestandaoneother }}</label>
+      <input formControlName="responsibleUser">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.relatedReferenceinfinancestandaoneother }}</label>
+      <input formControlName="relatedReference">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.inputBranchinfinancestandaoneother }}</label>
+      <input formControlName="inputBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.behalfOfBranchinfinancestandaoneother }}</label>
+      <input formControlName="behalfOfBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels.en.responsibleTeaminfinancestandaoneother }}</label>
+      <input formControlName="responsibleTeam">
+    </div>
+
+    <!-- DROPDOWN -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.periodicChargeCycleinfinancestandaoneother }}</label>
+      <select formControlName="periodicChargeCycle">
+        <option value="">Select</option>
+        <option *ngFor="let c of cycleOptions">{{ c }}</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

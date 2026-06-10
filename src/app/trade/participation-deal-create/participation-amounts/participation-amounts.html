@@ -1,0 +1,54 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].participationAmounts }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- TOTAL COMMITMENT AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].totalCommitmentAmount }}
+        </label>
+
+        <input type="text" formControlName="totalCommitmentAmount">
+
+      </div>
+
+      <!-- BANK SHARE AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].bankShareAmount }}
+        </label>
+
+        <input type="text" formControlName="bankShareAmount">
+
+      </div>
+
+      <!-- BANK SHARE PERCENT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].bankSharePercent }}
+        </label>
+
+        <input type="text" formControlName="bankSharePercent">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

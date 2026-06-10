@@ -1,0 +1,105 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].cashLetterDetailsinoutwardcashlettercash }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels[lang].referenceinoutwardcashlettercash }}</label>
+
+        <input type="text" formControlName="reference">
+      </div>
+
+      <!-- CASH LETTER AMOUNT -->
+      <div class="form-group">
+        <label>{{ labels[lang].cashLetterAmountinoutwardcashlettercash }}</label>
+
+        <input type="text" formControlName="cashLetterAmount">
+      </div>
+
+      <!-- ADVISE BY -->
+      <div class="form-group">
+        <label>{{ labels[lang].adviseByinoutwardcashlettercash }}</label>
+
+        <select formControlName="adviseBy">
+
+          <option value="">
+            {{ labels[lang].selectinoutwardcashlettercash }}
+          </option>
+
+          <option value="internal">{{ labels[lang].internalinoutwardcashlettercash }}</option>
+          <option value="mail">{{ labels[lang].mailinoutwardcashlettercash }}</option>
+          <option value="telex">{{ labels[lang].telexinoutwardcashlettercash }}</option>
+          <option value="swift">{{ labels[lang].swiftinoutwardcashlettercash }}</option>
+          <option value="telexViaSwift">{{ labels[lang].telexViaSwiftinoutwardcashlettercash }}</option>
+          <option value="email">{{ labels[lang].emailinoutwardcashlettercash }}</option>
+          <option value="fax">{{ labels[lang].faxinoutwardcashlettercash }}</option>
+          <option value="gateway">{{ labels[lang].gatewayinoutwardcashlettercash }}</option>
+
+        </select>
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+        <label>{{ labels[lang].productTypeinoutwardcashlettercash }}</label>
+
+        <select formControlName="productType">
+
+          <option value="">
+            {{ labels[lang].select }}
+          </option>
+
+          <option value="demandDraft">
+            {{ labels[lang].demandDraftinoutwardcashlettercash }}
+          </option>
+
+          <option value="other">
+            &lt;---&gt;
+          </option>
+
+        </select>
+      </div>
+
+      <!-- CASH LETTER DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].cashLetterDateinoutwardcashlettercash }}</label>
+
+        <input type="date" formControlName="cashLetterDate">
+      </div>
+
+      <!-- EXPIRY DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].expiryDateinoutwardcashlettercash }}</label>
+
+        <input type="date" formControlName="expiryDate">
+      </div>
+
+      <!-- DATE RECEIVED -->
+      <div class="form-group">
+        <label>{{ labels[lang].dateReceivedinoutwardcashlettercash }}</label>
+
+        <input type="date" formControlName="dateReceived">
+      </div>
+
+      <!-- DOMESTIC EXPIRY -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" formControlName="domesticExpiry">
+          {{ labels[lang].domesticExpiryinoutwardcashlettercash }}
+        </label>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

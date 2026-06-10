@@ -1,0 +1,65 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels.en.chargesincleanbankersacceptancecharges }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- OUR CHARGES -->
+      <div class="form-group">
+        <label>{{ labels.en.ourChargesincleanbankersacceptancecharges }}</label>
+        <select formControlName="ourCharges">
+          <option value="">{{ labels.en.select }}</option>
+          <option *ngFor="let o of ourChargesOptions" [value]="o">
+            {{ o }}
+          </option>
+        </select>
+      </div>
+
+      <!-- TAX PAYABLE BY -->
+      <div class="form-group">
+        <label>{{ labels.en.taxPayableBy }}</label>
+        <select formControlName="taxPayableBy">
+          <option value="">{{ labels.en.select }}</option>
+          <option *ngFor="let t of taxPayableByOptions" [value]="t">
+            {{ t }}
+          </option>
+        </select>
+      </div>
+
+      <!-- BILLING LEVEL -->
+      <div class="form-group">
+        <label>{{ labels.en.billingLevelincleanbankersacceptancecharges }}</label>
+        <select formControlName="billingLevel">
+          <option value="">{{ labels.en.selectincleanbankersacceptancecharges }}</option>
+          <option *ngFor="let b of billingLevelOptions" [value]="b">
+            {{ b }}
+          </option>
+        </select>
+      </div>
+
+      <!-- PREFERRED CURRENCY -->
+      <div class="form-group">
+        <label>{{ labels.en.preferredCurrencyincleanbankersacceptancecharges }}</label>
+        <input type="text" formControlName="preferredCurrency">
+      </div>
+
+      <!-- DEFER -->
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" formControlName="defer">
+          {{ labels.en.defer}}
+        </label>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,78 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].margindepositinexportlcpreadvisemargin }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- MARGIN DEFINED AS -->
+        <div class="form-group">
+          <label>{{ labels[lang].marginDefinedAsinexportlcpreadvisemargin }}</label>
+          <select formControlName="marginDefinedAs">
+            <option value="">Select</option>
+            <option *ngFor="let m of marginTypeOptions">{{ m }}</option>
+          </select>
+        </div>
+
+        <!-- PERCENTAGE -->
+        <div class="form-group">
+          <label>{{ labels[lang].percentageinexportlcpreadvisemargin }}</label>
+          <input type="text" formControlName="percentage">
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <!-- MARGIN DEPOSIT COLLATERAL TYPE (UPDATED TO SINGLE INPUT) -->
+        <div class="form-group full-width">
+          <label>{{ labels[lang].marginDepositCollateralTypeinexportlcpreadvisemargin }}</label>
+          <input type="text" formControlName="marginDepositCollateralType">
+        </div>
+
+        <!-- ACCOUNT -->
+        <div class="form-group">
+          <label>{{ labels[lang].accountinexportlcpreadvisemargin }}</label>
+          <input type="text" formControlName="account">
+        </div>
+        </div>
+
+
+        <div class="form-grid">
+        <!-- CURRENCY -->
+        <div class="form-group">
+          <label>{{ labels[lang].inCurrencyinexportlcpreadvisemargin }}</label>
+          <input type="text" formControlName="currency">
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="form-group full-width">
+          <label>{{ labels[lang].descriptioninexportlcpreadvisemargin }}</label>
+          <input type="text" formControlName="description">
+        </div>
+
+        </div>
+
+          <div class="form-grid">
+
+         <div class="form-group full-width">
+        <label>{{ labels[lang].ofamount}}</label>
+        <select formControlName="collateralType">
+          <option value="">Select</option>
+          <option *ngFor="let c of collateralOptions">{{ c }}</option>
+        </select>
+      </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

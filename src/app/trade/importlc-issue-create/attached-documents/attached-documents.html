@@ -1,0 +1,106 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].attachedDocumentsinimportlcissueattached }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+
+        <!-- CODE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].codeinimportlcissueattached }}</label>
+
+          <input type="text" formControlName="code">
+
+        </div>
+
+        <!-- TYPE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].typeinimportlcissueattached }}</label>
+
+          <input type="text" formControlName="type">
+
+        </div>
+
+        <!-- FIRST MAIL -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].firstMailinimportlcissueattached }}</label>
+
+          <input type="text" formControlName="firstMail">
+
+        </div>
+
+        <!-- SECOND MAIL -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].secondMailinimportlcissueattached }}</label>
+
+          <input type="text" formControlName="secondMail">
+
+        </div>
+
+        <!-- TOTAL -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].totalinimportlcissueattached }}</label>
+
+          <input type="text" formControlName="total">
+
+        </div>
+
+        <!-- ATTACHED -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].attachedinimportlcissueattached }}</label>
+
+          <input type="text" formControlName="attached">
+
+        </div>
+
+        <!-- SHOW ALL DOCUMENTS (CHECKBOXES) -->
+        <div class="checkbox-group full-width">
+
+          <label >
+
+            <input type="checkbox">
+
+            show all documents
+
+          </label>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="button-row">
+
+          <button type="button" (click)="add()">Add....</button>
+
+          <button type="button" (click)="update()">Update....</button>
+
+          <button type="button" (click)="delete()">Delete....</button>
+
+          <button type="button" (click)="replace()">Replace.....</button>
+
+       
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

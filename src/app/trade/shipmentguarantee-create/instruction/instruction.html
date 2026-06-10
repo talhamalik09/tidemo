@@ -1,0 +1,40 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].instructionsSection }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-grid">
+
+      <!-- ADDITIONAL CONDITIONS -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].additionalConditionsinshipmentguaranteeinstruction }}</label>
+        <textarea formControlName="additionalConditions"></textarea>
+      </div>
+
+      <!-- NOTES TO IMPORTER -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].notesToImporter }}</label>
+        <textarea formControlName="notesToImporter"></textarea>
+      </div>
+
+      <!-- NOTES TO SHIPPING COMPANY -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].notesToShippingCompany }}</label>
+        <textarea formControlName="notesToShippingCompany"></textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

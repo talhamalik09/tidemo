@@ -1,0 +1,52 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].partyDetailsinoutwardcashletterparty }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- PAYEE -->
+      <div class="form-group">
+        <label>{{ labels[lang].payeeinoutwardcashletterparty }}</label>
+
+        <input type="text" formControlName="payee">
+
+        <textarea
+          rows="3"
+          formControlName="payeeDetails"
+          placeholder="{{ labels[lang].details }}">
+        </textarea>
+      </div>
+
+      <!-- CORRESPONDENT -->
+      <div class="form-group">
+        <label>{{ labels[lang].correspondentinoutwardcashletterparty }}</label>
+
+        <input type="text" formControlName="correspondent">
+
+        <textarea
+          rows="3"
+          formControlName="correspondentDetails"
+          placeholder="{{ labels[lang].details }}">
+        </textarea>
+      </div>
+
+      <!-- COUNTRY -->
+      <div class="form-group">
+        <label>{{ labels[lang].countryinoutwardcashletterparty }}</label>
+
+        <input type="text" formControlName="country">
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

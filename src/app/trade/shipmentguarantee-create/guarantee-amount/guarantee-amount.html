@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].guaranteeAmountSection }}</h3>
+  </div>
+
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-group full-width">
+      <label>{{ labels[lang].guaranteeAmount }}</label>
+      <input type="text" formControlName="guaranteeAmount">
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].thirdPartyPayment }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- THIRD PARTY PAYMENT (RESIZABLE) -->
+        <div class="form-group full-width">
+          <label>{{ labels[lang].thirdPartyPaymentDetails }}</label>
+
+          <textarea
+            rows="4"
+            formControlName="thirdPartyPaymentDetails">
+          </textarea>
+        </div>
+
+        <!-- PERCENTAGE -->
+        <div class="form-group">
+          <label>{{ labels[lang].percentage }}</label>
+
+          <input
+            type="number"
+            formControlName="percentage">
+        </div>
+
+        <!-- TOTAL AMOUNT DUE -->
+        <div class="form-group">
+          <label>{{ labels[lang].totalAmountDue }}</label>
+
+          <input
+            type="text"
+            formControlName="totalAmountDue">
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+</form>

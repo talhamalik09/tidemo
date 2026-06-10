@@ -1,0 +1,138 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].reimbursementDetailsinimportstandbylcreimbursment }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- ACCOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].accountinimportstandbylcreimbursment }}
+          </label>
+
+          <input type="text" formControlName="account">
+
+        </div>
+
+        <!-- ACCOUNT NUMBER -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].accountNumberAtReimbursingBankinimportstandbylcreimbursment }}
+          </label>
+
+          <input type="text" formControlName="accountNumberAtReimbursingBank">
+
+        </div>
+
+        <!-- TRANSFER METHOD -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].transferMethodinimportstandbylcreimbursment }}
+          </label>
+
+          <input type="text" formControlName="transferMethod">
+
+        </div>
+
+        <!-- REIMBURSING BANK (RESIZABLE INPUT) -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].reimbursingBankinimportstandbylcreimbursment }}
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="reimbursingBank">
+          </textarea>
+
+        </div>
+
+        <!-- INSTRUCTION TO REIMBURSING BANK -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionToReimbursingBankinimportstandbylcreimbursment }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="instructionToReimbursingBank">
+          </textarea>
+
+        </div>
+
+        <!-- CHARGES FOR -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].chargesForinimportstandbylcreimbursment }}
+          </label>
+
+          <select formControlName="chargesFor">
+
+            <option value="">
+              {{ labels[lang].selectinimportstandbylcreimbursment }}
+            </option>
+
+            <option
+              *ngFor="let item of chargesForOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- APPLICABLE RULES -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].applicableRulesinimportstandbylcreimbursment }}
+          </label>
+
+          <select formControlName="applicableRules">
+
+            <option value="">
+              {{ labels[lang].selectinimportstandbylcreimbursment }}
+            </option>
+
+            <option
+              *ngFor="let item of applicableRulesOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  
+
+</form>

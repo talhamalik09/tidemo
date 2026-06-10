@@ -1,0 +1,46 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].otherPartiesinguaranteereceivedother }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- REIMBURSING BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].reimbursingBankinguaranteereceivedother}}
+          </label>
+
+          <input
+            type="text"
+            formControlName="reimbursingBank">
+
+          <textarea
+            rows="3"
+            formControlName="reimbursingBankDetails"
+            placeholder="{{ labels[lang].details }}">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,213 @@
+/* ===== ULTRA GLASS FUTURISTIC UI (MAPPED VERSION) ===== */
+
+/* ===== GLOBAL BACKGROUND ENERGY (optional but recommended) ===== */
+body {
+  background: #f4f6fb;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(59,130,246,0.08), transparent 40%),
+    radial-gradient(circle at 80% 40%, rgba(99,102,241,0.06), transparent 45%);
+
+  background-size: 60px 60px, 60px 60px, auto, auto;
+  animation: floatBg 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-20px); }
+}
+
+/* ===== SECTION (GLASS CORE) ===== */
+.section {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 14px;
+
+  padding: 18px 20px;
+  margin-bottom: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 50px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  transition: all 0.3s ease;
+}
+
+/* glow breathe */
+.section {
+  animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    box-shadow:
+      0 18px 50px rgba(59, 130, 246, 0.10),
+      inset 0 1px 0 rgba(255,255,255,0.7);
+  }
+  50% {
+    box-shadow:
+      0 25px 70px rgba(59, 130, 246, 0.18),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+}
+
+/* light sweep */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.08) 30%,
+    transparent 60%
+  );
+
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.section:hover::before {
+  transform: translateX(100%);
+}
+
+/* hover lift */
+.section:hover {
+  transform: translateY(-3px) scale(1.002);
+}
+
+/* ===== HEADER (MAPPED) ===== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  background: rgba(248, 250, 252, 0.6);
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.section-header h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  color: #0f172a;
+}
+
+/* ===== BODY GRID ===== */
+.section-body {
+  margin-top: 14px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* label futuristic */
+label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(71, 85, 105, 0.85);
+  transition: all 0.2s ease;
+}
+
+.form-group:focus-within label {
+  color: #3b82f6;
+  transform: translateX(2px);
+}
+
+/* ===== INPUTS (GLASS STYLE) ===== */
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 8px 10px;
+  font-size: 12px;
+
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+
+  color: #0f172a;
+  outline: none;
+
+  transition: all 0.25s ease;
+}
+
+/* focus glow */
+input:focus,
+select:focus,
+textarea:focus {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(59, 130, 246, 0.6);
+
+  box-shadow:
+    0 0 0 3px rgba(59,130,246,0.12),
+    0 8px 20px rgba(59,130,246,0.10);
+
+  transform: scale(1.01);
+}
+
+/* sizing */
+input,
+select {
+  height: 34px;
+}
+
+/* textarea */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ===== FULL WIDTH SUPPORT ===== */
+.full-width {
+  grid-column: span 2;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .section-body {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+}

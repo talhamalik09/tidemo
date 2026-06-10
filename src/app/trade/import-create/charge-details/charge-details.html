@@ -1,0 +1,99 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.chargeDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- OURS -->
+    <div class="form-group">
+      <label>{{ labels.en.ours }}</label>
+      <select formControlName="ours">
+        <option value="">Select</option>
+        <option *ngFor="let o of partyOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- OVERSEAS -->
+    <div class="form-group">
+      <label>{{ labels.en.overseas }}</label>
+      <select formControlName="overseas">
+        <option value="">Select</option>
+        <option *ngFor="let o of partyOptions">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- TAX PAID BY -->
+    <div class="form-group">
+      <label>{{ labels.en.taxPaidBy }}</label>
+      <select formControlName="taxPaidBy">
+        <option value="">Select</option>
+        <option *ngFor="let t of taxOptions">{{ t }}</option>
+      </select>
+    </div>
+
+    <!-- CHARGE ACCOUNT -->
+    <div class="form-group">
+      <label>{{ labels.en.chargeAccount }}</label>
+      <input type="text" formControlName="chargeAccount">
+    </div>
+
+    <!-- CUSTOMER ADDRESS -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.customerAddress }}</label>
+      <input type="text" formControlName="customerAddress">
+    </div>
+
+    <!-- USER CHARGES -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.userChargesText }}</label>
+      <input type="text" formControlName="userChargesText">
+    </div>
+
+     <div class="checkbox-group">
+      <label>
+        <input type="checkbox" formControlName="deferApplicantCharges">
+        {{ labels.en.deferApplicantCharges }}
+      </label>
+    </div>
+
+
+    <!-- DEFER BENEFICIARY -->
+    <div class="checkbox-group">
+      <label>
+        <input type="checkbox" formControlName="deferBeneficiaryCharges">
+        {{ labels.en.deferBeneficiaryCharges }}
+      </label>
+    </div>
+
+    <!-- CURRENCY -->
+    <div class="form-group">
+      <label>{{ labels.en.preferredCurrency }}</label>
+      <input type="text" formControlName="preferredCurrency">
+    </div>
+
+    <!-- BILL LEVEL -->
+    <div class="form-group">
+      <label>{{ labels.en.billLevel }}</label>
+      <select formControlName="billLevel">
+        <option value="">Select</option>
+        <option *ngFor="let b of billOptions">{{ b }}</option>
+      </select>
+    </div>
+
+    <!-- SAVE -->
+    <div class="save-section">
+    
+    </div>
+
+  </div>
+
+</div>
+
+</form>

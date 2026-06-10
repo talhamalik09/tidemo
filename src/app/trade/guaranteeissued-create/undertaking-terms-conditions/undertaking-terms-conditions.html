@@ -1,0 +1,39 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].undertakingTermsAndConditions }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- LANGUAGE -->
+    <div class="form-group">
+      <label>{{ labels[lang].language }}</label>
+      <input type="text" formControlName="language">
+    </div>
+
+    <!-- TERMS -->
+    <div class="form-group">
+      <label>{{ labels[lang].termsAndConditions }}</label>
+      <input type="text" formControlName="termsAndConditions">
+    </div>
+
+    <!-- WORDING TYPE -->
+    <div class="form-group">
+      <label>{{ labels[lang].useWordingType }}</label>
+      <select formControlName="useWordingType">
+        <option value="">Select</option>
+        <option *ngFor="let option of wordingTypeOptions">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

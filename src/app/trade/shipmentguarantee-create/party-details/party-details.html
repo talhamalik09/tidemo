@@ -1,0 +1,38 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].partyDetailsShipment }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- IMPORTER -->
+    <div class="form-group">
+      <label>{{ labels[lang].importer }}</label>
+      <input type="text" formControlName="importerShort">
+      <textarea formControlName="importerFull"></textarea>
+    </div>
+
+    <!-- SHIPPING COMPANY -->
+    <div class="form-group">
+      <label>{{ labels[lang].shippingCompany }}</label>
+      <input type="text" formControlName="shippingCompanyShort">
+      <textarea formControlName="shippingCompanyFull"></textarea>
+    </div>
+
+    <!-- ORIGINATING TRANSACTION -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].originatingTransaction }}</label>
+      <input type="text" formControlName="originatingTransaction">
+    </div>
+
+  </div>
+
+</div>
+
+</form>

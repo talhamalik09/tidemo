@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].undertakingTermsAndConditionsTitle }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- UNDERTAKING TERMS AND CONDITIONS -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].undertakingTermsAndConditions }}
+          </label>
+
+          <textarea
+            rows="6"
+            formControlName="undertakingTermsAndConditions">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

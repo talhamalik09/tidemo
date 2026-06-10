@@ -1,0 +1,67 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].specialPaymentConditionsinexportstandbylcSpecial }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+        <!-- BENEFICIARY -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].specialPaymentConditionsForBeneficiary }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="beneficiaryConditions">
+          </textarea>
+
+        </div>
+
+        <!-- BANK ONLY -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].specialPaymentConditionsForBankOnly }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="bankOnlyConditions">
+          </textarea>
+
+        </div>
+
+        <!-- BANK ONLY (SEND TO NEXT BANK) -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].specialPaymentConditionsForBankOnlySendToNextBank }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="bankOnlySendToNextBankConditions">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  
+
+</form>

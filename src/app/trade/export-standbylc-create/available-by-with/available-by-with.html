@@ -1,0 +1,84 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].availableByinexportstandbylcavailable }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- AVAILABLE BY -->
+        <div class="form-group">
+          <label>{{ labels[lang].availableByLabelinexportstandbylcavailable }}</label>
+
+          <select formControlName="availableBy">
+
+            <option value="">{{ labels[lang].selectinexportstandbylcavailable }}</option>
+
+            <option value="onDemand">{{ labels[lang].onDemandinexportstandbylcavailable }}</option>
+            <option value="acceptance">{{ labels[lang].acceptanceinexportstandbylcavailable }}</option>
+            <option value="deferredPayment">{{ labels[lang].deferredPaymentinexportstandbylcavailable }}</option>
+            <option value="mixedPayment">{{ labels[lang].mixedPaymentinexportstandbylcavailable }}</option>
+            <option value="negotiation">{{ labels[lang].negotiationinexportstandbylcavailable }}</option>
+            <option value="sightPayment">{{ labels[lang].sightPaymentinexportstandbylcavailable }}</option>
+
+          </select>
+        </div>
+
+        <!-- AVAILABLE WITH -->
+        <div class="form-group">
+          <label>{{ labels[lang].availableWithinexportstandbylcavailable }}</label>
+
+          <select formControlName="availableWith">
+
+            <option value="">{{ labels[lang].selectinexportstandbylcavailable }}</option>
+
+            <option value="advisingBank">{{ labels[lang].advisingBankinexportstandbylcavailable }}</option>
+            <option value="advisingThroughBank">{{ labels[lang].advisingThroughBankinexportstandbylcavailable }}</option>
+            <option value="anyBank">{{ labels[lang].anyBankinexportstandbylcavailable }}</option>
+            <option value="anyBankCity">{{ labels[lang].anyBankCityinexportstandbylcavailable }}</option>
+            <option value="anyBankCountry">{{ labels[lang].anyBankCountryinexportstandbylcavailable }}</option>
+            <option value="ourselves">{{ labels[lang].ourselvesinexportstandbylcavailable }}</option>
+            <option value="issuingBank">{{ labels[lang].issuingBankinexportstandbylcavailable }}</option>
+
+          </select>
+        </div>
+
+        </div>
+
+              <div class="form-grid">
+        <!-- DRAFT -->
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="draft">
+            {{ labels[lang].draftinexportstandbylcavailable }}
+          </label>
+
+        </div>
+
+        <!-- % OF INVOICE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].percentageOfInvoiceinexportstandbylcavailable }}</label>
+
+          <input type="number" formControlName="percentageOfInvoice">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

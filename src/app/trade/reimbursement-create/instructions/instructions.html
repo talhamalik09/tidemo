@@ -1,0 +1,107 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].instructions }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- INSTRUCTIONS RECEIVED -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].instructionsReceivedinreimbursementinstructions }}
+          </label>
+
+          <input type="text" formControlName="instructionsReceived">
+
+        </div>
+
+        <!-- ACKNOWLEDGEMENT DETAILS -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].acknowledgementDetailsinreimbursementinstructions }}
+          </label>
+
+          <input type="text" formControlName="acknowledgementDetails">
+
+        </div>
+
+        <!-- ACKNOWLEDGEMENT NARRATIVE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].acknowledgementNarrativeinreimbursementinstructions }}
+          </label>
+
+          <input type="text" formControlName="acknowledgementNarrative">
+
+        </div>
+
+        <!-- ADVICE DETAILS -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].adviceDetailsinreimbursementinstructions }}
+          </label>
+
+          <input type="text" formControlName="adviceDetails">
+
+        </div>
+
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="sendAcknowledgement">
+            {{ labels[lang].sendAcknowledgementinreimbursementinstructions }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="sendAdvise">
+            {{ labels[lang].sendAdviseinreimbursementinstructions }}
+          </label>
+
+        </div>
+
+        <!-- ADVISE METHOD -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].adviseMethodinreimbursementinstructions }}
+          </label>
+
+          <select formControlName="adviseMethod">
+
+            <option value="">
+              {{ labels[lang].selectinreimbursementinstructions }}
+            </option>
+
+            <option *ngFor="let item of adviseMethodOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  
+
+</form>

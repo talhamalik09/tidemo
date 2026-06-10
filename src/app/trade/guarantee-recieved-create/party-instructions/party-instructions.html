@@ -1,0 +1,83 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].partyInstructionsinguaranteereceivedparty }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+     
+
+        <!-- Instructions from instructing party -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionsFromInstructingPartyinguaranteereceivedparty }}
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="instructionsFromInstructingParty">
+          </textarea>
+
+        </div>
+
+        <!-- Instruction to next party -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionToNextPartyinguaranteereceivedparty }}
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="instructionToNextParty">
+          </textarea>
+
+        </div>
+
+        <!-- Additional information for next party -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].additionalInformationForNextPartyinguaranteereceivedparty }}
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="additionalInformationForNextParty">
+          </textarea>
+
+        </div>
+
+        <!-- Response to received from party -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].responseToReceivedFromPartyinguaranteereceivedparty }}
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="responseToReceivedFromParty">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

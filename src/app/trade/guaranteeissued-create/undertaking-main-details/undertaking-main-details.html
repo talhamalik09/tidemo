@@ -1,0 +1,115 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].undertakingMainDetails }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].expiryDateinguaranteeissuedmain }}</label>
+      <input type="text" formControlName="expiryDate">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].nonPayableBefore }}</label>
+      <input type="text" formControlName="nonPayableBefore">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].governingLawCountry }}</label>
+      <input type="text" formControlName="governingLawCountry">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].governingLawCountrySubdivision }}</label>
+      <input type="text" formControlName="governingLawCountrySubdivision">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].placeOfJurisdiction }}</label>
+      <input type="text" formControlName="placeOfJurisdiction">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].formOfUndertaking }}</label>
+      <select formControlName="formOfUndertaking">
+        <option>Demand Guarantee</option>
+        <option>Standby Letter of Credit</option>
+        <option>Dependent Undertaking</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].applicableRulesinguaranteeissuedmain }}</label>
+      <select formControlName="applicableRules">
+        <option>URDG Latest Version</option>
+        <option>ISPR Latest Version</option>
+        <option>UCPR Latest Version</option>
+        <option>Other</option>
+        <option>NONE</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].issueDate }}</label>
+      <input type="date" formControlName="issueDate">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].financialTrade }}</label>
+      <select formControlName="financialTrade">
+        <option>Trade</option>
+        <option>Financial</option>
+      </select>
+    </div>
+
+    <div class="form-group full-width">
+      <label>{{ labels[lang].productTypeinguaranteeissuedmain }}</label>
+      <select formControlName="productType">
+        <option>Advance Payment Guarantee</option>
+        <option>Bid Bond Guarantee</option>
+        <option>Bill of Lading Guarantee</option>
+        <option>Credit Guarantee</option>
+        <option>Custom Guarantee</option>
+        <option>Facility Guarantee</option>
+        <option>Lease Guarantee</option>
+        <option>Maintenance Guarantee</option>
+        <option>Other</option>
+        <option>Payment Guarantee</option>
+        <option>Performance Bond Guarantee</option>
+        <option>Performance Delivery Guarantee</option>
+        <option>Retention Guarantee</option>
+        <option>Tender Bond Guarantee</option>
+      </select>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="domesticExpiryAutomaticRelease">
+        {{ labels[lang].domesticExpiryAutomaticRelease }}
+      </label>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="partialDrawing">
+        {{ labels[lang].partialDrawing }}
+      </label>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="multipleDrawing">
+        {{ labels[lang].multipleDrawing }}
+      </label>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

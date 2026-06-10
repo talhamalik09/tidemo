@@ -1,0 +1,67 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].confirmationDetailsinexportstandbylcconfirmation }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+     
+
+        <!-- CONFIRMATION REQUESTED -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].confirmationRequestedinexportstandbylcconfirmation }}
+          </label>
+
+          <select formControlName="confirmationRequested">
+
+            <option value="">
+              {{ labels[lang].selectinexportstandbylcconfirmation }}
+            </option>
+
+            <option
+              *ngFor="let item of confirmationRequestedOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- SILENT CONFIRMATION -->
+        <div class="checkbox-group">
+
+          <label>
+
+            <input
+              type="checkbox"
+              formControlName="silentConfirmation">
+
+            {{ labels[lang].silentConfirmationinexportstandbylcconfirmation }}
+
+          </label>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

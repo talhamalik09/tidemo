@@ -1,0 +1,149 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].freelyNegotiableLC }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- ISSUE DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].issueDateinfreelynegotiablelcfreely }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="issueDate">
+
+      </div>
+
+      <!-- EXPIRY DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].expiryDateinfreelynegotiablelcfreely }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="expiryDate">
+
+      </div>
+
+      <!-- EXPIRY PLACE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].expiryPlaceinfreelynegotiablelcfreely }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="expiryPlace">
+
+      </div>
+
+      <!-- AVAILABLE AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].availableAmount }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="availableAmount">
+
+      </div>
+
+      <!-- AVAILABLE BY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].availableByinfreelynegotiablelcfreely }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="availableBy"
+          placeholder="Sight Payment">
+
+      </div>
+
+      <!-- CONFIRMATION -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].confirmationinfreelynegotiablelcfreely }}
+        </label>
+
+        <select
+          formControlName="confirmation">
+
+          <option
+            *ngFor="let c of confirmationOptions"
+            [value]="c">
+
+            {{ c }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].productTypeinfreelynegotiablelcfreely }}
+        </label>
+
+        <select formControlName="productType">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let p of productTypeOptions"
+            [value]="p">
+
+            {{ p }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- OPTION CONTRACT HELD -->
+      <div class="checkbox-group">
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="optionContractHeld">
+
+          {{ labels[lang].optionContractHeld }}
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

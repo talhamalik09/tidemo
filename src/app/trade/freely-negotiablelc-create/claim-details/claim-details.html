@@ -1,0 +1,192 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].claimDetails }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- PRESENTER'S REFERENCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentersReference }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="presentersReference">
+
+      </div>
+
+      <!-- PRESENTATION AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentationAmount }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="presentationAmount">
+
+      </div>
+
+      <!-- ADDITIONAL AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].additionalAmountinfreelynegotiableclaim }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="additionalAmount">
+
+      </div>
+
+      <!-- PRESENTATION CURRENCY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentationCurrency }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="presentationCurrency">
+
+      </div>
+
+      <!-- PAYMENT DUE DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].paymentDueDate }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="paymentDueDate">
+
+      </div>
+
+      <!-- CHARGE DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].chargeDate }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="chargeDate">
+
+      </div>
+
+      <!-- NOTES FROM PRESENTER -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].notesFromPresenter }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="notesFromPresenter">
+        </textarea>
+
+      </div>
+
+      <!-- PRESENTER'S DISCREPANCIES -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentersDiscrepancies }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="presentersDiscrepancies">
+        </textarea>
+
+      </div>
+
+      <!-- PRESENTING PARTY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentingParty }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="presentingParty">
+
+      </div>
+
+      <!-- PRESENTING PARTY DETAILS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentingPartyDetails }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="presentingPartyDetails">
+        </textarea>
+
+      </div>
+
+      <!-- PRESENTER'S ACTION -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentersAction }}
+        </label>
+
+        <select formControlName="presentersAction">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let action of presenterActionOptions"
+            [value]="action">
+
+            {{ action }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- PRESENTATION DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].presentationDate }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="presentationDate">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

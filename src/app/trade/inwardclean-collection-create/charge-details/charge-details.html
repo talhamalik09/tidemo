@@ -1,0 +1,101 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].chargeDetailsininwardcleanchargedetails }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="waiveIfRefused">
+          {{ labels[lang].waiveIfRefusedininwardcleanchargedetails }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="collectAll">
+          {{ labels[lang].collectAllininwardcleanchargedetails }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="collectOverseas">
+          {{ labels[lang].collectOverseasininwardcleanchargedetails }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="deferDrawee">
+          {{ labels[lang].deferDraweeininwardcleanchargedetails }}
+        </label>
+
+      </div>
+
+      
+
+        <!-- OUR CHARGES -->
+        <div class="form-group">
+          <label>{{ labels[lang].ourChargesininwardcleanchargedetails }}</label>
+
+          <select formControlName="ourCharges">
+            <option value="">{{ labels[lang].select }}</option>
+            <option value="drawer">{{ labels[lang].drawerininwardcleanchargedetails }}</option>
+            <option value="drawee">{{ labels[lang].draweeininwardcleanchargedetails }}</option>
+          </select>
+        </div>
+
+        <!-- OVERSEAS -->
+        <div class="form-group">
+          <label>{{ labels[lang].overseasininwardcleanchargedetails }}</label>
+
+          <select formControlName="overseas">
+            <option value="">{{ labels[lang].select }}</option>
+            <option value="drawer">{{ labels[lang].drawerininwardcleanchargedetails }}</option>
+            <option value="drawee">{{ labels[lang].draweeininwardcleanchargedetails }}</option>
+          </select>
+        </div>
+
+        <!-- TAX PAYABLE BY -->
+        <div class="form-group">
+          <label>{{ labels[lang].taxPayableByininwardcleanchargedetails }}</label>
+
+          <select formControlName="taxPayableBy">
+            <option value="">{{ labels[lang].select }}</option>
+            <option value="customer">{{ labels[lang].customerininwardcleanchargedetails }}</option>
+            <option value="chargePayer">{{ labels[lang].chargePayerininwardcleanchargedetails }}</option>
+          </select>
+        </div>
+
+        <!-- PREFERRED CURRENCY -->
+        <div class="form-group">
+          <label>{{ labels[lang].preferredCurrencyininwardcleanchargedetails }}</label>
+
+          <input type="text" formControlName="preferredCurrency">
+        </div>
+
+        <!-- BILLING LEVEL -->
+        <div class="form-group">
+          <label>{{ labels[lang].billingLevelininwardcleanchargedetails }}</label>
+
+          <select formControlName="billingLevel">
+            <option value="">{{ labels[lang].select }}</option>
+            <option value="customer">{{ labels[lang].customerininwardcleanchargedetails }}</option>
+            <option value="product">{{ labels[lang].productininwardcleanchargedetails }}</option>
+            <option value="transaction">{{ labels[lang].transactionininwardcleanchargedetails }}</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+
+  
+
+</form>

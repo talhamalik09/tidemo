@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].negotiationDetails }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- PERCENT -->
+      <div class="form-group">
+        <label>{{ labels[lang].percentinoutwardcashletternegotiation }}</label>
+        <input type="text" formControlName="percent">
+      </div>
+
+      <!-- START DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].startDateinoutwardcashletternegotiation }}</label>
+        <input type="date" formControlName="startDate">
+      </div>
+
+      <!-- END DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].endDate }}</label>
+        <input type="date" formControlName="endDate">
+      </div>
+
+      <!-- CHECKBOX -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" formControlName="negotiationRequired">
+          {{ labels[lang].negotiationRequired }}
+        </label>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

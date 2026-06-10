@@ -1,0 +1,74 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].instructionsinimportstandbylcisntructions }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- SWIFT INSTRUCTIONS -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].swiftInstructionsinimportstandbylcisntructions }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="swiftInstructions">
+          </textarea>
+
+        </div>
+
+        <!-- DOCUMENTS REQUIRED -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].documentsRequiredinimportstandbylcisntructions }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="documentsRequired">
+          </textarea>
+
+        </div>
+        </div>
+
+         <div class="form-grid">
+
+        <!-- ADDITIONAL CONDITIONS -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].additionalConditionsinimportstandbylcisntructions }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="additionalConditions">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

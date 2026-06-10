@@ -1,0 +1,36 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].specialPaymentConditionsinexportspecialpaymentconditions }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- BENEFICIARY -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].spcBeneficiary }}</label>
+      <textarea formControlName="beneficiary"></textarea>
+    </div>
+
+    <!-- BANK ONLY -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].spcBankOnly }}</label>
+      <textarea formControlName="bankOnly"></textarea>
+    </div>
+
+    <!-- NEXT BANK -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].spcNextBank }}</label>
+      <textarea formControlName="nextBank"></textarea>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

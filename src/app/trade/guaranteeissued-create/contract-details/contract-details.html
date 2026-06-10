@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].contractDetails }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- REFERENCE DATE -->
+    <div class="form-group">
+      <label>{{ labels[lang].referenceDate }}</label>
+      <input type="date" formControlName="referenceDate">
+    </div>
+
+    <!-- TOTAL ORDER AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels[lang].totalOrderAmount }}</label>
+      <input type="text" formControlName="totalOrderAmount">
+    </div>
+
+    <!-- NARRATIVE -->
+    <div class="form-group">
+      <label>{{ labels[lang].narrativeinguaranteeissuedcontract }}</label>
+      <input type="text" formControlName="narrative">
+    </div>
+
+    <!-- GUARANTEE VALUE % -->
+    <div class="form-group">
+      <label>{{ labels[lang].guaranteeValuePercent }}</label>
+      <input type="text" formControlName="guaranteeValuePercent">
+    </div>
+
+    <!-- REFERENCE DROPDOWN -->
+    <div class="form-group">
+      <label>{{ labels[lang].referenceinguaranteeissuedcontract }}</label>
+      <select formControlName="reference">
+        <option value="">Select</option>
+        <option *ngFor="let option of referenceOptions">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

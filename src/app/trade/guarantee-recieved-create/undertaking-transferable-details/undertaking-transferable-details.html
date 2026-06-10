@@ -1,0 +1,39 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].undertakingTransferableDetailsinguaranteereceivedundertaking }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- TRANSFERABLE -->
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="transferable">
+
+            {{ labels[lang].transferableinguaranteereceivedundertaking }}
+
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

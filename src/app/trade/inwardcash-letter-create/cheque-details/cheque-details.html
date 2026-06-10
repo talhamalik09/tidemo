@@ -1,0 +1,229 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].chequeDetailsininwardcashlettercheque }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- CURRENCY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].currencyininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="currency">
+
+        </div>
+
+        <!-- NUMBER OF CHEQUES -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].numberOfChequesininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="numberOfCheques">
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group">
+
+          <label>
+            <input
+              type="checkbox"
+              formControlName="represent">
+
+            {{ labels[lang].representininwardcashlettercheque }}
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              formControlName="withRecourse">
+
+            {{ labels[lang].withRecourseininwardcashlettercheque }}
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              formControlName="autoPay">
+
+            {{ labels[lang].autoPayininwardcashlettercheque }}
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              formControlName="tracePayments">
+
+            {{ labels[lang].tracePaymentsininwardcashlettercheque }}
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              formControlName="singleConsolidatedCheque">
+
+            {{ labels[lang].singleConsolidatedChequeininwardcashlettercheque }}
+          </label>
+
+        </div>
+
+        <!-- SEQUENCE NUMBER -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].sequenceNumberininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="sequenceNumber">
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- AMOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].amountininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="amount">
+
+        </div>
+
+        <!-- CHEQUE CURRENCY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].chequeCurrencyininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="chequeCurrency">
+
+        </div>
+        </div>
+
+
+        <div class="form-grid">
+        <!-- NUMBER -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].numberininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="number">
+
+        </div>
+
+        <!-- PAYER -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].payerininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="payer">
+
+        </div>
+        </div>
+
+
+        <div class="form-grid">
+        <!-- STATUS -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].statusininwardcashlettercheque }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="status">
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <!-- BUTTONS -->
+        <div class="button-row">
+
+          <button
+            type="button"
+            (click)="add()">
+
+            {{ labels[lang].addininwardcashlettercheque }}
+          </button>
+
+          <button
+            type="button"
+            (click)="update()">
+
+            {{ labels[lang].updateininwardcashlettercheque }}
+          </button>
+
+          <button
+            type="button"
+            (click)="delete()">
+
+            {{ labels[lang].deleteininwardcashlettercheque }}
+          </button>
+
+          <button
+            type="button"
+            (click)="view()">
+
+            {{ labels[lang].viewininwardcashlettercheque }}
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

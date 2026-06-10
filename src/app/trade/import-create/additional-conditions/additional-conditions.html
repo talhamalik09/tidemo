@@ -1,0 +1,34 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.additionalConditions }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- FIELD -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.additionalConditions }}</label>
+
+      <textarea formControlName="additionalConditions"></textarea>
+
+      <div *ngIf="form.get('additionalConditions')?.touched && form.get('additionalConditions')?.invalid">
+        Additional conditions are required (max 300 characters)
+      </div>
+    </div>
+
+    <!-- SAVE -->
+    <div class="save-section">
+      
+    </div>
+
+  </div>
+
+</div>
+
+</form>

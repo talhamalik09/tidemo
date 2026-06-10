@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].ourUndertakingRequestinourUndertakingRequest }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- REQUEST TYPE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].requestTypeinourUndertakingRequest }}
+          </label>
+
+          <select formControlName="requestType">
+
+            <option
+              *ngFor="let item of requestTypeOptions"
+              [value]="item.value"
+              [disabled]="item.disabled">
+
+              {{ item.label}}
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

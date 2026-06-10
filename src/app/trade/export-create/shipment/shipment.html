@@ -1,0 +1,124 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].shipment }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- FORM -->
+    <div class="form-group">
+      <label>{{ labels[lang].formField }}</label>
+      <input type="text" formControlName="formField">
+    </div>
+
+    <!-- PLACE OF LOADING -->
+    <div class="form-group">
+      <label>{{ labels[lang].placeOfLoadingDeparture }}</label>
+      <input type="text" formControlName="placeOfLoadingDeparture">
+    </div>
+
+    <!-- PARTIAL SHIPMENT -->
+    <div class="form-group">
+      <label>{{ labels[lang].partialShipment }}</label>
+      <select formControlName="partialShipment">
+        <option value="">Select</option>
+        <option *ngFor="let p of partialOptions">{{ p }}</option>
+      </select>
+    </div>
+
+    <!-- SHIPMENT DATE -->
+    <div class="form-group">
+      <label>{{ labels[lang].shipmentDateinexportshipment }}</label>
+      <input type="date" formControlName="shipmentDate">
+    </div>
+
+    <!-- SHIPMENT PERIOD (RESIZABLE) -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].shipmentPeriodinexportshipment }}</label>
+      <textarea formControlName="shipmentPeriod"></textarea>
+    </div>
+
+    <!-- FREIGHT -->
+    <div class="form-group">
+      <label>{{ labels[lang].freight }}</label>
+      <select formControlName="freight">
+        <option value="">Select</option>
+        <option *ngFor="let f of freightOptions">{{ f }}</option>
+      </select>
+    </div>
+
+    <!-- PRESENTATION DAYS -->
+    <div class="form-group">
+      <label>{{ labels[lang].presentationPeriodDays }}</label>
+      <input type="number" formControlName="presentationPeriodDays">
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="form-group">
+      <label>{{ labels[lang].documentsToBeSentBy }}</label>
+      <select formControlName="documentsToBeSentBy">
+        <option value="">Select</option>
+        <option *ngFor="let d of documentOptions">{{ d }}</option>
+      </select>
+    </div>
+
+    <!-- TO -->
+    <div class="form-group">
+      <label>{{ labels[lang].to }}</label>
+      <input type="text" formControlName="to">
+    </div>
+
+    <!-- PLACE OF DISCHARGE -->
+    <div class="form-group">
+      <label>{{ labels[lang].placeOfDischargeDestination }}</label>
+      <input type="text" formControlName="placeOfDischargeDestination">
+    </div>
+
+    <!-- TRANSHIPMENT -->
+    <div class="form-group">
+      <label>{{ labels[lang].transhipment }}</label>
+      <select formControlName="transhipment">
+        <option value="">Select</option>
+        <option *ngFor="let t of transhipmentOptions">{{ t }}</option>
+      </select>
+    </div>
+
+    <!-- PLACE NAME -->
+    <div class="form-group">
+      <label>{{ labels[lang].placeName }}</label>
+      <input type="text" formControlName="placeName">
+    </div>
+
+    <!-- INSURANCE -->
+     <div class="checkbox-group">
+    <div class="form-group">
+      <label class="checkbox-label">
+        <input type="checkbox" formControlName="insuranceForBuyer">
+        {{ labels[lang].insuranceForBuyer}}
+      </label>
+    </div>
+    </div>
+
+    <!-- NARRATIVE -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].presentationPeriodNarrative }}</label>
+      <textarea formControlName="presentationPeriodNarrative"></textarea>
+    </div>
+
+    <!-- PACKAGES -->
+    <div class="form-group">
+      <label>{{ labels[lang].noOfPackages}}</label>
+      <input type="number" formControlName="noOfPackages">
+    </div>
+
+  </div>
+
+</div>
+
+</form>

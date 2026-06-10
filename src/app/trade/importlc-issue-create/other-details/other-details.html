@@ -1,0 +1,82 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].otherDetailsinimportlcissueother }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- INPUT BRANCH -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].inputBranchinimportlcissueother }}
+          </label>
+
+          <input
+            type="text"
+            placeholder="City"
+            formControlName="inputBranch">
+
+        </div>
+
+        <!-- BEHALF OF BRANCH -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].behalfOfBranchinimportlcissueother }}
+          </label>
+
+          <input
+            type="text"
+            placeholder="LOND"
+            formControlName="behalfOfBranch">
+
+        </div>
+
+        <!-- RESPONSIBLE TEAM -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].responsibleTeaminimportlcissueother }}
+          </label>
+
+          <input
+            type="text"
+            placeholder="hub"
+            formControlName="responsibleTeam">
+
+        </div>
+
+        <!-- RELATED REFERENCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].relatedReferenceinimportlcissueother }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="relatedReference">
+
+        </div>
+
+      </div>
+
+  
+
+  </div>
+
+</form>

@@ -1,0 +1,110 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].fxContractsinimportstandbylcfx }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- REFERENCE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].referenceinimportstandbylcfx }}</label>
+
+          <input type="text" formControlName="reference">
+
+        </div>
+
+        <!-- BRANCH -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].branchinimportstandbylcfx }}</label>
+
+          <input type="text" formControlName="branch">
+
+        </div>
+
+</div>
+        <div class="form-grid">
+        <!-- TYPE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].typeinimportstandbylcfx }}</label>
+
+          <input type="text" formControlName="type">
+
+        </div>
+
+        <!-- PURCHASE CURRENCY -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].purchaseCurrencyinimportstandbylcfx }}</label>
+
+          <input type="text" formControlName="purchaseCurrency">
+
+        </div>
+
+        </div>
+         <div class="form-grid">
+
+        <!-- SALE CURRENCY -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].saleCurrencyinimportstandbylcfx }}</label>
+
+          <input type="text" formControlName="saleCurrency">
+
+        </div>
+
+        <!-- RATE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].rateinimportstandbylcfx }}</label>
+
+          <input type="text" formControlName="rate">
+
+        </div>
+
+
+        </div>
+        <div class="form-grid">
+        <!-- BUTTONS -->
+        <div class="button-row">
+
+          <button type="button">
+            {{ labels[lang].addinimportstandbylcfx }}
+          </button>
+
+          <button type="button">
+            {{ labels[lang].updateinimportstandbylcfx }}
+          </button>
+
+          <button type="button">
+            {{ labels[lang].deleteinimportstandbylcfx }}
+          </button>
+
+          <button type="button">
+            {{ labels[lang].viewinimportstandbylcfx }}
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

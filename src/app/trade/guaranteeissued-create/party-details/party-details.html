@@ -1,0 +1,90 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].partyDetailsGuarantee }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- APPLICANT -->
+    <div class="form-group">
+      <label>{{ labels[lang].applicantinguaranteeissuedpartydetails }}</label>
+      <input type="text" formControlName="applicant1">
+      <textarea formControlName="applicant2"></textarea>
+    </div>
+
+    <!-- BENEFICIARY -->
+    <div class="form-group">
+      <label>{{ labels[lang].beneficiaryinguaranteeissuedpartydetails }}</label>
+      <input type="text" formControlName="beneficiary1">
+      <textarea formControlName="beneficiary2"></textarea>
+    </div>
+
+    <!-- PRINCIPLE -->
+    <div class="form-group">
+      <label>{{ labels[lang].principleIfNotApplicant }}</label>
+      <input type="text" formControlName="principle1">
+      <textarea formControlName="principle2"></textarea>
+    </div>
+
+    <!-- OBLIGOR -->
+    <div class="form-group">
+      <label>{{ labels[lang].obligor }}</label>
+      <input type="text" formControlName="obligor1">
+      <textarea formControlName="obligor2"></textarea>
+    </div>
+
+    <!-- ADVISING BANK -->
+    <div class="form-group">
+      <label>{{ labels[lang].advisingBankinguaranteeissuedpartydetails }}</label>
+      <input type="text" formControlName="advisingBank1">
+      <textarea formControlName="advisingBank2"></textarea>
+    </div>
+
+    <!-- ADVISE THROUGH -->
+    <div class="form-group">
+      <label>{{ labels[lang].adviseThroughBankinguaranteeissuedpartydetails }}</label>
+      <input type="text" formControlName="adviseThroughBank1">
+      <textarea formControlName="adviseThroughBank2"></textarea>
+    </div>
+
+    <!-- COUNTRY -->
+    <div class="form-group">
+      <label>{{ labels[lang].countryinguaranteeissuedpartydetails }}</label>
+      <input type="text">
+    </div>
+
+    <!-- REFERENCE -->
+    <div class="form-group">
+      <label>{{ labels[lang].referenceinguaranteeissuedpartydetails }}</label>
+      <input type="text">
+    </div>
+
+    <!-- ACCOUNT -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].accountIdentifier }}</label>
+      <input type="text" formControlName="accountIdentifier">
+    </div>
+
+    <!-- CHECKBOX -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="adviseDirect">
+        {{ labels[lang].adviseDirect }}
+      </label>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="button-row">
+      <label>{{ labels[lang].selectAdvisingBank }}</label>
+      <button type="button">{{ labels[lang].next }}</button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

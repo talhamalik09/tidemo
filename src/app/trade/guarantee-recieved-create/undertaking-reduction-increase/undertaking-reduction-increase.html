@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].reductionIncreaseinguaranteereceivedreduction }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- SELECT OPTION -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].selectOptioninguaranteereceivedreduction}}
+          </label>
+
+          <select formControlName="selectOption">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedreduction }}
+            </option>
+
+            <option
+              *ngFor="let item of selectOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

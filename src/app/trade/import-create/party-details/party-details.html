@@ -1,0 +1,85 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.partyDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="app-advise">
+
+      <!-- Applicant -->
+     <div class="form-group full-width">
+        <label>{{ labels.en.applicant }}</label>
+        <input formControlName="applicant" type="text" />
+      </div>
+      <div class="form-group full-width">
+
+        <label>{{ labels.en.applicantDesc }}</label>
+        <input formControlName="applicantDesc" type="text" />
+
+        <div *ngIf="form.get('applicant')?.errors?.['wordLimit']">
+          Max 17 words allowed
+        </div>
+      </div>
+
+      <!-- Advising Bank -->
+      <div class="form-group full-width">
+        <label>{{ labels.en.advisingBank }}</label>
+        <input formControlName="advisingBank" type="text" />
+      </div>
+      <div class="form-group full-width">
+        <label>{{ labels.en.bankDetails }}</label>
+        <input type="text" />
+
+        <div *ngIf="form.get('advisingBank')?.errors?.['notUppercase']">
+          Must be uppercase only
+        </div>
+      </div>
+
+      <!-- Beneficiary -->
+     <div class="form-group full-width">
+        <label>{{ labels.en.beneficiary }}</label>
+        <input formControlName="beneficiary" type="text" />
+      </div>
+      <div class="form-group full-width">
+        <label>{{ labels.en.beneficiaryAccount }}</label>
+        <input formControlName="beneficiaryAccount" type="text" />
+
+        <div *ngIf="form.get('beneficiaryAccount')?.errors?.['invalidLength']">
+          Must be exactly 24 characters
+        </div>
+      </div>
+
+      <!-- Country -->
+      <div class="form-group full-width">
+        <label>{{ labels.en.country }}</label>
+        <select formControlName="country">
+          <option value="">Select Country</option>
+          <option *ngFor="let c of countries">{{ c }}</option>
+        </select>
+      </div>
+
+
+      <!-- Instruction (full width) -->
+      <div class="form-group full-width">
+        <label>{{ labels.en.instruction }}</label>
+        <textarea formControlName="instruction"></textarea>
+      </div>
+
+    </div>
+
+    <!-- SAVE BUTTON -->
+    <div class="save-section">
+    </div>
+
+  </div>
+
+</div>
+
+</form>

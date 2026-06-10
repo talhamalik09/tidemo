@@ -1,0 +1,83 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].availableBy }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- AVAILABLE BY -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].availableByField }}</label>
+
+        <select formControlName="availableBy">
+
+          <option value="">Select</option>
+
+          <option *ngFor="let a of availableByOptions" [value]="a">
+            {{ a }}
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- AVAILABLE WITH -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].availableWith }}</label>
+
+        <select formControlName="availableWith">
+
+          <option value="">Select</option>
+
+          <option *ngFor="let w of availableWithOptions" [value]="w">
+            {{ w }}
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- EXPECTED LATEST PAYMENT DATE -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].expectedLatestPaymentDate }}</label>
+
+        <input type="date" formControlName="expectedLatestPaymentDate">
+
+      </div>
+
+      <!-- % OF INVOICE -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].invoicePercentage }}</label>
+
+        <input type="number" formControlName="invoicePercentage">
+
+      </div>
+
+      <!-- DRAFT SUPPRESS -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="draftSuppressMT704">
+          {{ labels[lang].draftSuppressMT704 }}
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,61 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].correspondenceFurtherIdHeading }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CORRESPONDENCE FURTHER ID -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].correspondenceFurtherId }}
+        </label>
+
+        <select formControlName="correspondenceFurtherId">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let option of correspondenceFurtherIdOptions"
+            [value]="option">
+
+            {{ option }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- EXTRA INFORMATION -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].extraInformation }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="extraInformation">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

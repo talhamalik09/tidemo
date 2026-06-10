@@ -1,0 +1,177 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].cashLetterDetails }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- REFERENCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].referenceininwardcashlettercash }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="reference">
+
+        </div>
+
+        <!-- CASH LETTER AMOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].cashLetterAmount }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="cashLetterAmount">
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- ADVISE BY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].adviseByininwardcashlettercash }}
+          </label>
+
+          <select formControlName="adviseBy">
+
+            <option value="">
+              {{ labels[lang].selectininwardcashlettercash }}
+            </option>
+
+            <option value="internal">
+              {{ labels[lang].internalininwardcashlettercash }}
+            </option>
+
+            <option value="mail">
+              {{ labels[lang].mailininwardcashlettercash }}
+            </option>
+
+            <option value="telex">
+              {{ labels[lang].telexininwardcashlettercash }}
+            </option>
+
+            <option value="swift">
+              {{ labels[lang].swiftininwardcashlettercash }}
+            </option>
+
+            <option value="telexViaSwift">
+              {{ labels[lang].telexViaSwiftininwardcashlettercash }}
+            </option>
+
+            <option value="fax">
+              {{ labels[lang].faxininwardcashlettercash }}
+            </option>
+
+            <option value="gateway">
+              {{ labels[lang].gatewayininwardcashlettercash }}
+            </option>
+
+            <option value="email">
+              {{ labels[lang].emailininwardcashlettercash }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- PRODUCT TYPE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].productTypeininwardcashlettercash }}
+          </label>
+
+          <select formControlName="productType">
+
+            <option value="">
+              {{ labels[lang].selectininwardcashlettercash }}
+            </option>
+
+            <option value="other">
+              &lt;---&gt;
+            </option>
+
+          </select>
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- CASH LETTER DATE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].cashLetterDate }}
+          </label>
+
+          <input
+            type="date"
+            formControlName="cashLetterDate">
+
+        </div>
+
+        <!-- EXPIRY DATE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].expiryDateininwardcashlettercash }}
+          </label>
+
+          <input
+            type="date"
+            formControlName="expiryDate">
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- DATE RECEIVED -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].dateReceivedininwardcashlettercash }}
+          </label>
+
+          <input
+            type="date"
+            formControlName="dateReceived">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

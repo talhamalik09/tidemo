@@ -1,0 +1,65 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].receivedFromSection }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- RECEIVED FROM -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].receivedFrominexportlcpreadvisereceived }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="receivedFrom"
+          [placeholder]="labels[lang].receivedFrom">
+
+      </div>
+
+      <!-- RECEIVED FROM DETAILS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].receivedFromDetails }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="receivedFromDetails"
+          [placeholder]="labels[lang].receivedFromDetails">
+        </textarea>
+
+      </div>
+
+      <!-- INSTRUCTIONS RECEIVED -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].instructionsReceivedinexportlcpreadvisereceived }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="instructionsReceived"
+          [placeholder]="labels[lang].instructionsReceived">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

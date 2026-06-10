@@ -1,0 +1,99 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+    <h3>{{ labels.en.otherDetails}}</h3>
+
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- SUNDRY REFERENCE CODE -->
+    <div class="form-group">
+      <label>{{ labels.en.sundryReferenceCodeinlisenceinputother }}</label>
+      <input type="text" formControlName="sundryReferenceCode">
+    </div>
+
+    <!-- USER CODE 1 -->
+    <div class="form-group">
+      <label>{{ labels.en.userCode1inlisenceinputother }}</label>
+      <input type="text" formControlName="userCode1">
+    </div>
+
+    <!-- USER CODE 2 -->
+    <div class="form-group">
+      <label>{{ labels.en.userCode2inlisenceinputother }}</label>
+      <input type="text" formControlName="userCode2">
+    </div>
+
+    <!-- MAIL TO BRANCH -->
+    <div class="form-group">
+      <label>{{ labels.en.mailToBranchinlisenceinputother }}</label>
+      <input type="text" formControlName="mailToBranch">
+    </div>
+
+    <!-- RESPONSIBLE USER -->
+    <div class="form-group">
+      <label>{{ labels.en.responsibleUserinlisenceinputother }}</label>
+      <input type="text" formControlName="responsibleUser">
+    </div>
+
+    <!-- RELATED REFERENCE -->
+    <div class="form-group">
+      <label>{{ labels.en.relatedReferenceinlisenceinputother }}</label>
+      <input type="text" formControlName="relatedReference">
+    </div>
+
+    <!-- PREFERRED CURRENCY -->
+    <div class="form-group">
+      <label>{{ labels.en.preferredCurrencyinlisenceinputother }}</label>
+      <input type="text" formControlName="preferredCurrency">
+    </div>
+
+    <!-- CITY (INPUT BRANCH) -->
+    <div class="form-group">
+      <label>CITY</label>
+      <input type="text" formControlName="city">
+    </div>
+
+    <!-- LOND -->
+    <div class="form-group">
+      <label>LOND</label>
+      <input type="text" formControlName="lond">
+    </div>
+
+    <!-- HUB -->
+    <div class="form-group">
+      <label>HUB</label>
+      <input type="text" formControlName="hub">
+    </div>
+
+    <!-- PERIODIC CHARGE CYCLE END DATE ADJUSTMENT -->
+    <div class="form-group">
+      <label>{{ labels.en.periodicChargeCycleEndDateAdjustmentinlisenceinputother }}</label>
+
+      <select formControlName="periodicChargeCycleEndDateAdjustment" >
+        <option value=""><---></option>
+      </select>
+    </div>
+
+    <!-- BILLING LEVEL -->
+    <div class="form-group">
+      <label>{{ labels.en.billingLevelinlisenceinputother }}</label>
+
+      <select formControlName="billingLevel" >
+        <option value=""><---></option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

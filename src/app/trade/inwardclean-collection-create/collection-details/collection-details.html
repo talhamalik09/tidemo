@@ -1,0 +1,151 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].collectionDetailsininwardcleancollection }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <!-- RECEIVED FROM REFERENCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].receivedFromReferenceininwardcleancollection }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="receivedFromReference">
+
+      </div>
+
+      <!-- COLLECTION AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].collectionAmountininwardcleancollection }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="collectionAmount">
+
+      </div>
+
+      <!-- RECEIVED ON -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].receivedOnininwardcleancollection }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="receivedOn">
+
+      </div>
+
+      <!-- DOCUMENT RELEASE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].documentReleaseininwardcleancollection }}
+        </label>
+
+        <select formControlName="documentRelease">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleancollection }}
+          </option>
+
+          <option value="DA">
+            D/A
+          </option>
+
+          <option value="DP">
+            D/P
+          </option>
+
+          <option value="pourAval">
+            Pour Aval
+          </option>
+
+          <option value="other">
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].productTypeininwardcleancollection }}
+        </label>
+
+        <select formControlName="productType">
+
+          <option value="">
+            &lt;---&gt;
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="sharedLiability">
+
+          {{ labels[lang].sharedLiabilityininwardcleancollection }}
+
+        </label>
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="direct">
+
+          {{ labels[lang].directininwardcleancollection }}
+
+        </label>
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="multiplePayments">
+
+          {{ labels[lang].multiplePaymentsininwardcleancollection }}
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

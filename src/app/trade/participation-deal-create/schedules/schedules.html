@@ -1,0 +1,53 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].schedules }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- TYPE -->
+      <div class="form-group">
+        <label>{{ labels[lang].typeinparticipationdealschedules }}</label>
+        <input type="text" formControlName="type">
+      </div>
+
+      <!-- PARTY -->
+      <div class="form-group">
+        <label>{{ labels[lang].partyinparticipationdealschedules }}</label>
+        <input type="text" formControlName="party">
+      </div>
+
+      <!-- SCHEDULE TYPE -->
+      <div class="form-group">
+        <label>{{ labels[lang].scheduleType }}</label>
+        <input type="text" formControlName="scheduleType">
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="button-row">
+
+        <button type="button" (click)="add()">
+          {{ labels[lang].addinparticipationdealschedules }}
+        </button>
+
+        <button type="button" (click)="update()">
+          {{ labels[lang].updateinparticipationdealschedules }}
+        </button>
+
+        <button type="button" (click)="delete()">
+          {{ labels[lang].deleteinparticipationdealschedules }}
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,77 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].instructionsinfreelynegotiableinstructions }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- NOTES TO ISSUER -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].notesToIssuerPrincipal }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="notesToIssuer">
+        </textarea>
+
+      </div>
+
+      <!-- DOCUMENT DISCREPANCIES -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].documentDiscrepancies }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="documentDiscrepancies">
+        </textarea>
+
+      </div>
+
+      <!-- ADDITIONAL INFO NEXT PARTY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].additionalInformationNextParty }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="additionalInfoNextParty">
+        </textarea>
+
+      </div>
+
+      <!-- NOTES TO PRESENTER -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].notesToPresenter }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="notesToPresenter">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

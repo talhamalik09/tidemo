@@ -1,0 +1,82 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].chargeDetailsininwardcashlettercahrge }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <!-- DEFER -->
+      <div class="checkbox-group">
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="defer">
+
+          {{ labels[lang].deferininwardcashlettercahrge }}
+
+        </label>
+
+      </div>
+
+      <!-- PREFERRED CURRENCY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].preferredCurrencyininwardcashlettercahrge }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="preferredCurrency">
+
+      </div>
+
+      <!-- BILLING LEVEL -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].billingLevelininwardcashlettercahrge }}
+        </label>
+
+        <select formControlName="billingLevel">
+
+          <option value="">
+            {{ labels[lang].selectininwardcashlettercahrge }}
+          </option>
+
+          <option
+            *ngFor="let item of billingLevelOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

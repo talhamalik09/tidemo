@@ -1,0 +1,61 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].paymentTermsinreimbusrementpayment }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- AVAILABLE BY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].availableByinreimbusrementpayment }}
+          </label>
+
+          <select formControlName="availableBy">
+
+            <option value="">
+              {{ labels[lang].selectinreimbusrementpayment }}
+            </option>
+
+            <option *ngFor="let item of availableByOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- DRAFT REQUIRED -->
+        <div class="checkbox-group">
+
+          <label>
+
+            <input type="checkbox" formControlName="draftRequired">
+
+            {{ labels[lang].draftRequiredinreimbusrementpayment }}
+
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

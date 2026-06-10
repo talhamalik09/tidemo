@@ -1,0 +1,100 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].otherDetailsinexportotherdetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].inputBranchinexportotherdetails }}</label>
+      <input type="text" formControlName="inputBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].behalfOfBranchinexportotherdetails }}</label>
+      <input type="text" formControlName="behalfOfBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].sundryReferenceCodeinexportotherdetails }}</label>
+      <input type="text" formControlName="sundryReferenceCode">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode1inexportotherdetails }}</label>
+      <input type="text" formControlName="userCode1">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode2inexportotherdetails }}</label>
+      <input type="text" formControlName="userCode2">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].mailToBranchinexportotherdetails }}</label>
+      <input type="text" formControlName="mailToBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleUser }}</label>
+      <input type="text" formControlName="responsibleUser">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].relatedReferenceinexportotherdetails }}</label>
+      <input type="text" formControlName="relatedReference">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].hub }}</label>
+      <input type="text" formControlName="hub">
+    </div>
+
+    <!-- PERIODIC CHARGE -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].periodicChargeCycleinexportotherdetails }}</label>
+      <select formControlName="periodicChargeCycle">
+        <option value="">Select</option>
+        <option>Both dates on actual day</option>
+        <option>Both dates on next working day</option>
+        <option>Both dates on next working day (same month)</option>
+        <option>Both dates on previous working day</option>
+        <option>Both dates on previous working day (same month)</option>
+        <option>Due date only on next working day</option>
+        <option>Due date only on next working day (same month)</option>
+        <option>Due date only on previous working day</option>
+        <option>Due date only on previous working day (same month)</option>
+      </select>
+    </div>
+
+    <!-- LC CATEGORY -->
+    <div class="form-group">
+      <label>{{ labels[lang].lcCategoryinexportotherdetails }}</label>
+      <select formControlName="lcCategory">
+        <option value="">Select</option>
+        <option>LC Category 1</option>
+        <option>LC Category 2</option>
+      </select>
+    </div>
+
+    <!-- ANALYSIS CODE -->
+    <div class="form-group">
+      <label>{{ labels[lang].analysisCodeinexportotherdetails }}</label>
+      <select formControlName="analysisCode">
+        <option value="">Select</option>
+        <option>Analysis Code 1</option>
+        <option>Analysis Code 2</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

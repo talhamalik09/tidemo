@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].specialPaymentConditions }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- SPECIAL PAYMENT CONDITIONS FOR BENEFICIARY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].specialPaymentConditionsBeneficiary }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="specialPaymentConditionsBeneficiary">
+        </textarea>
+
+      </div>
+
+      <!-- SPECIAL PAYMENT CONDITIONS FOR BANK ONLY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].specialPaymentConditionsBankOnly }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="specialPaymentConditionsBankOnly">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

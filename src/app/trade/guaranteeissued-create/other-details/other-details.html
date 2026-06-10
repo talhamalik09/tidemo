@@ -1,0 +1,76 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].otherDetailsinguaranteeissuedotherdetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- SIMPLE INPUTS -->
+    <div class="form-group">
+      <label>{{ labels[lang].sundryReferenceCodeinguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="sundryReferenceCode">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode1inguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="userCode1">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode2inguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="userCode2">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].mailToBranchinguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="mailToBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleUseringuaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="responsibleUser">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].relatedReferenceinguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="relatedReference">
+    </div>
+
+    <!-- SPECIAL BRANCH FIELDS -->
+    <div class="form-group">
+      <label>{{ labels[lang].inputBranchinguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="inputBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].behalfOfBranchinguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="behalfOfBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleTeaminguaranteeissuedotherdetails }}</label>
+      <input type="text" formControlName="responsibleTeam">
+    </div>
+
+    <!-- DROPDOWN -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].periodicChargeCycleEndDateAdjustment }}</label>
+      <select formControlName="periodicChargeCycleEndDateAdjustment">
+        <option value="">Select</option>
+        <option *ngFor="let opt of cycleOptions">
+          {{ opt }}
+        </option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

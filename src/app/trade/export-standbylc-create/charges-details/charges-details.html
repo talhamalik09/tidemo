@@ -1,0 +1,276 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].chargesDetailsinexportstandbylccharges }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- PERIODIC CHARGE FIRST DATE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].periodicChargeFirstDateinexportstandbylccharges }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="periodicChargeFirstDate">
+
+        </div>
+
+        <!-- DAY IN MONTH -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].dayInMonthinexportstandbylccharges }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="dayInMonth">
+
+        </div>
+</div>
+
+         <div class="form-grid">
+        <!-- PREFERRED CURRENCY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].preferredCurrencyinexportstandbylccharges }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="preferredCurrency">
+
+        </div>
+
+        <!-- CHARGE ACCOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].chargeAccountinexportstandbylccharges }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="chargeAccount">
+
+        </div>
+</div>
+
+        <div class="form-grid">
+        <!-- OUR CHARGES -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].ourChargesinexportstandbylccharges }}
+          </label>
+
+          <select formControlName="ourCharges">
+
+            <option value="">
+              {{ labels[lang].selectinexportstandbylccharges }}
+            </option>
+
+            <option
+              *ngFor="let item of ourChargesOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- OVERSEAS -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].overseasinexportstandbylccharges }}
+          </label>
+
+          <select formControlName="overseas">
+
+            <option value="">
+              {{ labels[lang].selectinexportstandbylccharges }}
+            </option>
+
+            <option
+              *ngFor="let item of overseasOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+</div>
+
+        <div class="form-grid">
+        <!-- TAX PAID BY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].taxPaidByinexportstandbylccharges }}
+          </label>
+
+          <select formControlName="taxPaidBy">
+
+            <option value="">
+              {{ labels[lang].selectinexportstandbylccharges }}
+            </option>
+
+            <option
+              *ngFor="let item of taxPaidByOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- BILLING LEVEL -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].billingLevelinexportstandbylccharges }}
+          </label>
+
+          <select formControlName="billingLevel">
+
+            <option value="">
+              {{ labels[lang].selectinexportstandbylccharges }}
+            </option>
+
+            <option
+              *ngFor="let item of billingLevelOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        </div>
+
+        <div class="form-grid">
+        <!-- CUSTOMER ADDRESS DEBIT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].customerAddressDebitinexportstandbylccharges }}
+          </label>
+
+          <select formControlName="customerAddressDebit">
+
+            <option
+              *ngFor="let item of customerAddressOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- VIEW BUTTON -->
+        <div class="button-row">
+
+          <label>&nbsp;</label>
+
+          <button
+            type="button"
+            (click)="view()">
+
+            {{ labels[lang].viewinexportstandbylccharges }}
+
+          </button>
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group">
+
+          <label>
+
+            <input
+              type="checkbox"
+              formControlName="defer">
+
+            {{ labels[lang].deferinexportstandbylccharges }}
+
+          </label>
+
+          <label>
+
+            <input
+              type="checkbox"
+              formControlName="billingInvoicesAutomated">
+
+            {{ labels[lang].billingInvoicesAutomatedinexportstandbylccharges }}
+
+          </label>
+
+          <label>
+
+            <input
+              type="checkbox"
+              formControlName="reimburseCharges">
+
+            {{ labels[lang].reimburseChargesinexportstandbylccharges }}
+
+          </label>
+
+        </div>
+
+        <!-- USER CHARGES TEXT -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].userChargesTextinexportstandbylccharges }}
+          </label>
+
+          <textarea
+            rows="5"
+            formControlName="userChargesText">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

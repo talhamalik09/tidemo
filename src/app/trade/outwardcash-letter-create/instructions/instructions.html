@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].instructions }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- INSTRUCTIONS RECEIVED -->
+      <div class="form-group">
+        <label>{{ labels[lang].instructionsReceived }}</label>
+
+        <textarea
+          rows="6"
+          formControlName="instructionsReceived"
+          placeholder="{{ labels[lang].details }}">
+        </textarea>
+      </div>
+
+      <!-- INSTRUCTIONS TO SEND -->
+      <div class="form-group">
+        <label>{{ labels[lang].instructionsToSend }}</label>
+
+        <textarea
+          rows="6"
+          formControlName="instructionsToSend"
+          placeholder="{{ labels[lang].details }}">
+        </textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

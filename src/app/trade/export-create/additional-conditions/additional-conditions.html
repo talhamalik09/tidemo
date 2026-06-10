@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].additionalConditionsinexportadditionalconditions }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- BIG RESIZABLE INPUT -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].additionalCondition }}</label>
+      <textarea formControlName="additionalCondition"></textarea>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,64 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].marginDepositinexportmargindeposit }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-grid">
+
+      <!-- MARGIN DEFINED AS -->
+      <div class="form-group">
+        <label>{{ labels[lang].marginDefinedAsinexportmargindeposit }}</label>
+        <select formControlName="marginDefinedAs">
+          <option value="">Select</option>
+          <option *ngFor="let m of marginTypeOptions">{{ m }}</option>
+        </select>
+      </div>
+
+      <!-- PERCENTAGE -->
+      <div class="form-group">
+        <label>{{ labels[lang].percentage }}</label>
+        <input type="text" formControlName="percentage">
+      </div>
+
+      <!-- COLLATERAL TYPE -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].marginDepositCollateralType }}</label>
+        <select formControlName="collateralType">
+          <option value="">Select</option>
+          <option *ngFor="let c of collateralOptions">{{ c }}</option>
+        </select>
+      </div>
+
+      <!-- ACCOUNT -->
+      <div class="form-group">
+        <label>{{ labels[lang].accountinexportmargindeposit }}</label>
+        <input type="text" formControlName="account">
+      </div>
+
+      <!-- CURRENCY -->
+      <div class="form-group">
+        <label>{{ labels[lang].inCurrency }}</label>
+        <input type="text" formControlName="currency">
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].descriptioninexportmargindeposit }}</label>
+        <input type="text" formControlName="description">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

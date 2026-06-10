@@ -1,0 +1,105 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].paymentDetails }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- DRAFT IDENTIFIER -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].draftIdentifier }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="draftIdentifier">
+
+      </div>
+
+      <!-- AMOUNT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].amountinfreelynegotiablepayment }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="amount">
+
+      </div>
+
+      <!-- TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].typeinfreelynegotiablepayment }}
+        </label>
+
+        <select formControlName="type">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let t of typeOptions"
+            [value]="t">
+
+            {{ t }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- VALUE DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].valueDate }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="valueDate">
+
+      </div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="adviseChargesWithPayment">
+          {{ labels[lang].adviseChargesWithPayment }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="hold">
+          {{ labels[lang].hold }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="eligible">
+          {{ labels[lang].eligible }}
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

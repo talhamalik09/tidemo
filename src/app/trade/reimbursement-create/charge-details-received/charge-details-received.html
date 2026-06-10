@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].chargeDetailsReceived }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- CHARGE DETAILS RECEIVED -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].chargeDetailsReceived }}
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="chargeDetailsReceived">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

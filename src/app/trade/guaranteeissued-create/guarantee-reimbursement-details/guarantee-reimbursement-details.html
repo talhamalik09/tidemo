@@ -1,0 +1,70 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].reimbursementDetailsinguaranteeissuedreimbursement }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- REIMBURSING BANK -->
+    <div class="form-group">
+      <label>{{ labels[lang].reimbursingBankinguaranteeissuedreimbursement }}</label>
+      <input type="text" formControlName="reimbursingBank">
+    </div>
+
+    <!-- INSTRUCTIONS -->
+    <div class="form-group">
+      <label>{{ labels[lang].instructionsToReimbursingBankinguaranteeissuedreimbursement }}</label>
+      <input type="text" formControlName="instructionsToReimbursingBank">
+    </div>
+
+    <!-- ACCOUNT -->
+    <div class="form-group">
+      <label>{{ labels[lang].accountinguaranteeissuedreimbursement }}</label>
+      <input type="text" formControlName="account">
+    </div>
+
+    <!-- ACCOUNT NUMBER -->
+    <div class="form-group">
+      <label>{{ labels[lang].accountNumberAtReimbursingBankinguaranteeissuedreimbursement }}</label>
+      <input type="text" formControlName="accountNumberAtReimbursingBank">
+    </div>
+
+    <!-- TRANSFER METHOD -->
+    <div class="form-group">
+      <label>{{ labels[lang].transferredMethod }}</label>
+      <input type="text" formControlName="transferredMethod">
+    </div>
+
+    <!-- CHARGES FOR -->
+    <div class="form-group">
+      <label>{{ labels[lang].chargesForinguaranteeissuedreimbursement }}</label>
+      <select formControlName="chargesFor">
+        <option value="">Select</option>
+        <option *ngFor="let opt of chargesOptions">
+          {{ opt }}
+        </option>
+      </select>
+    </div>
+
+    <!-- APPLICABLE RULES -->
+    <div class="form-group">
+      <label>{{ labels[lang].applicableRulesinguaranteeissuedreimbursement }}</label>
+      <select formControlName="applicableRules">
+        <option value="">Select</option>
+        <option *ngFor="let opt of rulesOptions">
+          {{ opt }}
+        </option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

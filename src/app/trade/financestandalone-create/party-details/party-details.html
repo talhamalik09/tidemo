@@ -1,0 +1,122 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+    <h3>
+      {{ labels.en.financePartyDetails }}
+    </h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- FINANCING DETAILS -->
+    <div class="form-group full-width">
+      <label>
+        {{ labels.en.financingDetails }}
+      </label>
+
+      <textarea
+        formControlName="financingDetails">
+      </textarea>
+    </div>
+
+    <!-- INSTRUCTION TO FINANCE PARTY -->
+    <div class="form-group full-width">
+      <label>
+        {{ labels.en.instructionToFinanceParty }}
+      </label>
+
+      <textarea
+        formControlName="instructionToFinanceParty">
+      </textarea>
+    </div>
+
+    <!-- INSTRUCTIONS TO DEBIT PARTY -->
+    <div class="form-group full-width">
+      <label>
+        {{ labels.en.instructionsToDebitParty }}
+      </label>
+
+      <textarea
+        formControlName="instructionsToDebitParty">
+      </textarea>
+    </div>
+
+    <!-- FINANCE TO ROLE -->
+    <div class="form-group">
+      <label>
+        {{ labels.en.financeTo }}
+      </label>
+
+      <select formControlName="financeToRole">
+
+        <option value="">
+          Select
+        </option>
+
+        <option *ngFor="let r of roleOptions">
+          {{ r }}
+        </option>
+
+      </select>
+    </div>
+
+    <!-- FINANCE TO PARTY -->
+    <div class="form-group">
+  <label>
+    {{ labels.en.financeToParty }}
+  </label>
+
+  <input
+    type="text"
+    formControlName="financeToRole">
+
+  <textarea
+    formControlName="financeToParty">
+  </textarea>
+</div>
+
+    <!-- DEBIT PARTY ROLE -->
+    <div class="form-group">
+      <label>
+        {{ labels.en.debitParty }}
+      </label>
+
+      <select formControlName="debitPartyRole">
+
+        <option value="">
+          Select
+        </option>
+
+        <option *ngFor="let r of roleOptions">
+          {{ r }}
+        </option>
+
+      </select>
+    </div>
+
+    <!-- DEBIT PARTY -->
+    <div class="form-group">
+  <label>
+    {{ labels.en.debitPartyName }}
+  </label>
+
+  <input
+    type="text"
+    formControlName="debitPartyRole">
+
+  <textarea
+    formControlName="debitParty">
+  </textarea>
+</div>
+
+  </div>
+
+</div>
+
+</form>

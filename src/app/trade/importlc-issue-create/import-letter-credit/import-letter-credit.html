@@ -1,0 +1,117 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].importLetterOfCreditinimportlcissueimport }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- APPLICANT REFERENCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].applicantReferenceinimportlcissueimport }}
+          </label>
+
+          <input type="text" formControlName="applicantReference">
+
+        </div>
+
+        <!-- EXPIRY DATE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].expiryDateinimportlcissueimport }}
+          </label>
+
+          <input type="date" formControlName="expiryDate">
+
+        </div>
+
+        <!-- EXPIRY PLACE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].expiryPlaceinimportlcissueimport }}
+          </label>
+
+          <input type="text" formControlName="expiryPlace">
+
+        </div>
+
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="transferable">
+            {{ labels[lang].transferableinimportlcissueimport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="revolving">
+            {{ labels[lang].revolvinginimportlcissueimport}}
+          </label>
+
+        </div>
+
+        <!-- CONFIRMATION -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].confirmationinimportlcissueimport }}
+          </label>
+
+          <select formControlName="confirmation">
+
+            <option value="">
+              {{ labels[lang].selectinimportlcissueimport }}
+            </option>
+
+            <option *ngFor="let item of confirmationOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- PRODUCT TYPE -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].productTypeinimportlcissueimport }}
+          </label>
+
+          <select formControlName="productType">
+
+            <option value="">
+              {{ labels[lang].selectinimportlcissueimport }}
+            </option>
+
+            <option *ngFor="let item of productTypeOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

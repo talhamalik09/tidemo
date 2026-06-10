@@ -1,0 +1,109 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].shipmentDetails }}</h3>
+  </div>
+
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- TYPE -->
+    <div class="form-group">
+      <label>{{ labels[lang].typeinshipmentguaranteeshipmentdetails }}</label>
+      <select formControlName="type">
+        <option value="">Select</option>
+        <option *ngFor="let t of typeOptions">{{ t }}</option>
+      </select>
+    </div>
+
+    <!-- FLIGHT NUMBER -->
+    <div class="form-group with-btn">
+      <label>{{ labels[lang].flightNumber }}</label>
+      <div class="input-btn">
+        <input type="text" formControlName="flightNumber">
+        <div class="button-row">
+        <button type="button">More...</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPARTURE -->
+    <div class="form-group with-btn">
+      <label>{{ labels[lang].departureAirport }}</label>
+      <div class="input-btn">
+        <input type="text" formControlName="departureAirport">
+        <div class="button-row">
+        <button type="button">More...</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARRIVAL -->
+    <div class="form-group with-btn">
+      <label>{{ labels[lang].arrivalAirport }}</label>
+      <div class="input-btn">
+        <input type="text" formControlName="arrivalAirport">
+        <div class="button-row">
+        <button type="button">More...</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group with-btn">
+      <label>{{ labels[lang].descriptionOfGoods }}</label>
+      <div class="input-btn">
+        <input type="text" formControlName="descriptionOfGoods">
+        <div class="button-row">
+        <button type="button">More...</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PACKING -->
+    <div class="form-group with-btn">
+      <label>{{ labels[lang].packingMarks }}</label>
+      <div class="input-btn">
+        <input type="text" formControlName="packingMarks">
+        <div class="button-row">
+        <button type="button">More...</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUNTER GUARANTEE -->
+    <div class="form-group with-btn full-width">
+      <label>{{ labels[lang].counterGuaranteeReference }}</label>
+      <div class="input-btn">
+        <input type="text" formControlName="counterGuaranteeReference">
+        <div class="button-row">
+        <button type="button">More...</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHIPMENT AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels[lang].shipmentAmount }}</label>
+      <input type="text" formControlName="shipmentAmount">
+    </div>
+
+    <!-- REFERENCE -->
+    <div class="form-group">
+      <label>{{ labels[lang].referenceinshipmentguaranteeshipmentdetails }}</label>
+      <input type="text" formControlName="reference">
+    </div>
+
+    <!-- FLIGHT DATE -->
+    <div class="form-group">
+      <label>{{ labels[lang].flightDate }}</label>
+      <input type="date" formControlName="flightDate">
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,118 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div
+    class="section-header"
+    (click)="toggleSection()">
+
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+    <h3>
+      {{ labels.en.shipmentDetailsinlicenseinputshipment }}
+    </h3>
+
+  </div>
+
+  <!-- BODY -->
+  <div
+    class="section-body"
+    *ngIf="isOpen">
+
+    <!-- INCOTERMS -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.incotermsinlicenseinputshipment }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="incoterms">
+
+    </div>
+
+    <!-- COUNTRY OF ORIGIN -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.countryOfOrigin }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="countryOfOrigin">
+
+    </div>
+
+    <!-- GOODS CODE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.goodsCodeinlicenseinputshipment }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="goodsCode">
+
+    </div>
+
+    <!-- COUNTRY OF SUPPLY -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.countryOfSupply }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="countryOfSupply">
+
+    </div>
+
+    <!-- GOODS DESCRIPTIONS -->
+    <div class="form-group full-width">
+
+      <label>
+        {{ labels.en.goodsDescriptions }}
+      </label>
+
+      <textarea
+        formControlName="goodsDescriptions">
+      </textarea>
+
+    </div>
+
+    <!-- ADDITIONAL INFORMATION -->
+    <div class="form-group full-width">
+
+      <label>
+        {{ labels.en.additionalInformation }}
+      </label>
+
+      <textarea
+        formControlName="additionalInformation">
+      </textarea>
+
+    </div>
+
+    <!-- NARRATIVE -->
+    <div class="form-group full-width">
+
+      <label>
+        {{ labels.en.narrativeinlicenseinputshipment }}
+      </label>
+
+      <textarea
+        formControlName="narrative">
+      </textarea>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

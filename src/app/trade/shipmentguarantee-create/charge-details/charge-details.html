@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].chargeDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-grid">
+
+      <!-- PREFERRED CURRENCY -->
+      <div class="form-group full-width">
+        <label>{{ labels[lang].preferredCurrencyinshipmentguaranteechargeddetails }}</label>
+        <input type="text" formControlName="preferredCurrency">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

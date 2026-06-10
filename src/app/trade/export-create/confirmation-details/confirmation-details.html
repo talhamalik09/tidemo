@@ -1,0 +1,38 @@
+  <form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].confirmationDetails }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" [class.closed]="!isOpen">
+
+      <!-- DROPDOWN -->
+      <div class="form-group">
+        <label>{{ labels[lang].confirmationRequested }}</label>
+
+        <select formControlName="confirmationRequested">
+          <option value="">Select</option>
+          <option *ngFor="let c of confirmationOptions">{{ c }}</option>
+        </select>
+      </div>
+
+      <!-- CHECKBOX -->
+       <div class="checkbox-group">
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="selectConfirmation">
+          {{ labels[lang].selectConfirmation }}
+        </label>
+      </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </form>

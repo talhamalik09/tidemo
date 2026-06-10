@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].documentinexportdocuments }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- DOCUMENT REQUIRED -->
+    <div class="form-group ">
+      <label>{{ labels[lang].documentRequired }}</label>
+      <textarea formControlName="documentRequired"></textarea>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,236 @@
+.section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+
+  overflow: hidden;
+  position: relative;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06),
+    0 18px 50px rgba(59, 130, 246, 0.08);
+
+  transition: all 0.3s ease;
+
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% {
+    box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.06),
+      0 18px 50px rgba(59, 130, 246, 0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.08),
+      0 25px 70px rgba(59, 130, 246, 0.18);
+  }
+}
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.08) 30%,
+    transparent 60%
+  );
+
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+
+  pointer-events: none;
+}
+
+.section:hover::before {
+  transform: translateX(100%);
+}
+.section:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.08),
+    0 25px 70px rgba(59, 130, 246, 0.18);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #e0edff, #f4f8ff);
+}
+
+.section-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.section-body {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+/* LABEL */
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+
+  transition: all 0.25s ease;
+}
+
+/* glow label when input focused */
+.form-group:has(input:focus) label,
+.form-group:has(select:focus) label,
+.form-group:has(textarea:focus) label {
+  color: #3b82f6;
+
+  text-shadow:
+    0 0 10px rgba(59,130,246,0.45);
+
+  transform: translateX(2px);
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  font-size: 12px;
+  border: 1px solid #dbe3ec;
+  border-radius: 8px;
+  background: #f9fbff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  background: #fff;
+
+  box-shadow:
+    0 0 0 3px rgba(59,130,246,0.12),
+    0 0 20px rgba(59,130,246,0.15),
+    0 8px 20px rgba(59,130,246,0.10);
+
+  animation: pulseGlow 1.6s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 0 3px rgba(59,130,246,0.12),
+      0 8px 20px rgba(59,130,246,0.10);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 5px rgba(59,130,246,0.18),
+      0 12px 30px rgba(59,130,246,0.15);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 3px rgba(59,130,246,0.12),
+      0 8px 20px rgba(59,130,246,0.10);
+  }
+}
+
+.checkbox {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.button-row {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-row button {
+  padding: 8px 14px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .section-body {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox,
+  .button-row {
+    grid-column: span 1;
+  }
+}
+
+
+.checkbox-group {
+  grid-column: span 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px; /* row + column spacing */
+
+  align-items: center;
+}
+
+/* each checkbox item */
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* checkbox itself */
+.checkbox-group input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+
+  margin: 0;
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+

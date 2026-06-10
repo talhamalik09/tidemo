@@ -1,0 +1,115 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+    <h3>
+      {{ labels.en.amountDetails }}
+    </h3>
+
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- LICENSE AMOUNT -->
+    <div class="form-group full-width">
+
+      <label>
+        {{ labels.en.licenseAmount }}
+      </label>
+
+      <div class="party-group">
+
+        <!-- INPUT -->
+        <input
+          type="text"
+          formControlName="licenseAmountCode">
+
+        <!-- RESIZABLE -->
+        <textarea
+          formControlName="licenseAmountDescription">
+        </textarea>
+
+      </div>
+
+    </div>
+
+    <!-- ADDITIONAL AMOUNTS -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.additionalAmountsinlicenseipnutamount }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="additionalAmounts">
+
+    </div>
+
+    <!-- PLUS % -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.plusPercentinlicenseipnutamount }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="plusPercent">
+
+    </div>
+
+    <!-- MINUS % -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.minusPercentinlicenseipnutamount }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="minusPercent">
+
+    </div>
+
+    <!-- ADDITIONAL AMOUNT DETAILS -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.additionalAmountDetails }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="additionalAmountDetails">
+
+    </div>
+
+    <!-- TOLERANCE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.toleranceinlicenseipnutamount }}
+      </label>
+
+      <select formControlName="tolerance">
+
+        <option value="">
+          {{ labels.en.other }}
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

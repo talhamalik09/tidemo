@@ -1,0 +1,166 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].exportStandbyLcDetailsinexportStandbyLcexport }}</h3>
+
+    </div>
+
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <div class="form-group">
+          <label>{{ labels[lang].sendersReferenceinexportStandbyLcexport }}</label>
+          <input type="text" formControlName="sendersReference">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].adviseDateinexportStandbyLcexport }}</label>
+          <input type="date" formControlName="adviseDate">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].issueDateinexportStandbyLcexport }}</label>
+          <input type="date" formControlName="issueDate">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].expiryDateinexportStandbyLcexport }}</label>
+          <input type="date" formControlName="expiryDate">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].governingLawCountryinexportStandbyLcexport }}</label>
+          <input type="text" formControlName="governingLawCountry">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].governingLawCountrySubdivisioninexportStandbyLcexport }}</label>
+          <input type="text" formControlName="governingLawCountrySubdivision">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].expiryPlaceinexportStandbyLcexport }}</label>
+          <input type="text" formControlName="expiryPlace">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].placeOfJurisdictioninexportStandbyLcexport }}</label>
+          <input type="text" formControlName="placeOfJurisdiction">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].notPayableBeforeinexportStandbyLcexport }}</label>
+          <input type="text" formControlName="notPayableBefore">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].adviseByinexportStandbyLcexport }}</label>
+
+          <select formControlName="adviseBy">
+            <option value="">{{ labels[lang].selectinexportStandbyLcexport }}</option>
+
+            <option *ngFor="let item of adviseByOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].expiryTypeinexportStandbyLcexport }}</label>
+
+          <select formControlName="expiryType">
+            <option value="">{{ labels[lang].selectinexportStandbyLcexport }}</option>
+
+            <option *ngFor="let item of expiryTypeOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].productType }}</label>
+
+          <select formControlName="productType">
+            <option value="">{{ labels[lang].selectinexportStandbyLcexport }}</option>
+
+            <option *ngFor="let item of productTypeOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].financialTradeinexportStandbyLcexport }}</label>
+
+          <select formControlName="financialTrade">
+            <option value="">{{ labels[lang].selectinexportStandbyLcexport }}</option>
+
+            <option *ngFor="let item of financialTradeOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].applicableRulesinexportStandbyLcexport }}</label>
+
+          <select formControlName="applicableRules">
+            <option value="">{{ labels[lang].selectinexportStandbyLcexport }}</option>
+
+            <option *ngFor="let item of applicableRulesOptions" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="transferable">
+            {{ labels[lang].transferableinexportStandbyLcexport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="irrevocable">
+            {{ labels[lang].irrevocableinexportStandbyLcexport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="adviseDirect">
+            {{ labels[lang].adviseDirectinexportStandbyLcexport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="domesticExpiry">
+            {{ labels[lang].domesticExpiryinexportStandbyLcexport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="operative">
+            {{ labels[lang].operativeinexportStandbyLcexport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="partialDrawings">
+            {{ labels[lang].partialDrawingsinexportStandbyLcexport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="multipleDrawings">
+            {{ labels[lang].multipleDrawingsinexportStandbyLcexport }}
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+</form>

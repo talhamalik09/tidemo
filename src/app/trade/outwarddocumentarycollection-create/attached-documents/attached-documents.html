@@ -1,0 +1,61 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].attachedDocuments }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].codeinoutwarddocumentaryattached }}</label>
+      <input type="text" formControlName="code">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].typeinoutwarddocumentaryattached }}</label>
+      <input type="text" formControlName="type">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].firstMail }}</label>
+      <input type="text" formControlName="firstMail">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].secondMail }}</label>
+      <input type="text" formControlName="secondMail">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].total }}</label>
+      <input type="text" formControlName="total">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].attached }}</label>
+      <input type="text" formControlName="attached">
+    </div>
+
+    <!-- CHECKBOX -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="showAllDocuments">
+        {{ labels[lang].showAllDocuments }}
+      </label>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-row">
+      <button type="button">ADD...</button>
+      <button type="button">UPDATE...</button>
+      <button type="button">DELETE...</button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

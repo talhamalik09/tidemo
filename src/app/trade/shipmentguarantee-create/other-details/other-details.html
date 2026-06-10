@@ -1,0 +1,74 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].otherDetailsinshipmentguaranteeotherdetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- SIMPLE INPUTS -->
+    <div class="form-group">
+      <label>{{ labels[lang].sundryReferenceCodeinshipmentguaranteeotherdetails }}</label>
+      <input formControlName="sundryReferenceCode">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode1inshipmentguaranteeotherdetails }}</label>
+      <input formControlName="userCode1">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode2inshipmentguaranteeotherdetails }}</label>
+      <input formControlName="userCode2">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].mailToBranchinshipmentguaranteeotherdetails }}</label>
+      <input formControlName="mailToBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleUserinshipmentguaranteeotherdetails }}</label>
+      <input formControlName="responsibleUser">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].relatedReferenceinshipmentguaranteeotherdetails }}</label>
+      <input formControlName="relatedReference">
+    </div>
+
+    <!-- SPECIAL INPUTS -->
+    <div class="form-group">
+      <label>{{ labels[lang].inputBranchinshipmentguaranteeotherdetails }}</label>
+      <input formControlName="inputBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].behalfOfBranchinshipmentguaranteeotherdetails }}</label>
+      <input formControlName="behalfOfBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleTeaminshipmentguaranteeotherdetails }}</label>
+      <input formControlName="responsibleTeam">
+    </div>
+
+    <!-- DROPDOWN -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].periodicChargeCycleinshipmentguaranteeotherdetails }}</label>
+      <select formControlName="periodicChargeCycle">
+        <option value="">Select</option>
+        <option *ngFor="let c of cycleOptions">{{ c }}</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

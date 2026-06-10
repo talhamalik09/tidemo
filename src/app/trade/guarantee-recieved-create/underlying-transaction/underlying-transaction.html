@@ -1,0 +1,42 @@
+
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].underlyingTransactionDetailsinguaranteereceivedunderlying }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- BIG RESIZABLE INPUT -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].underlyingTransactionDetailsinguaranteereceivedunderlying }}
+          </label>
+
+          <textarea
+            rows="6"
+            formControlName="underlyingTransactionDetails">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

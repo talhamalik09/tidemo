@@ -1,0 +1,110 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].partyDetailsinexportStandbyLcparty }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- APPLICANT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].applicantinexportStandbyLcparty }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="applicant">
+
+          <textarea
+            rows="3"
+            formControlName="applicantDetails"
+            placeholder="{{ labels[lang].details }}">
+          </textarea>
+
+        </div>
+
+        <!-- BENEFICIARY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].beneficiaryinexportStandbyLcparty }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="beneficiary">
+
+          <textarea
+            rows="3"
+            formControlName="beneficiaryDetails"
+            placeholder="{{ labels[lang].details }}">
+          </textarea>
+
+        </div>
+
+        <!-- RECEIVED FROM -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].receivedFrominexportStandbyLcparty }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="receivedFrom">
+
+          <textarea
+            rows="3"
+            formControlName="receivedFromDetails"
+            placeholder="{{ labels[lang].details }}">
+          </textarea>
+
+        </div>
+
+        <!-- APPLICANT COUNTRY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].applicantCountryinexportStandbyLcparty }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="applicantCountry">
+
+        </div>
+
+        <!-- BENEFICIARY COUNTRY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].beneficiaryCountryinexportStandbyLcparty }}
+          </label>
+
+          <input
+            type="text"
+            formControlName="beneficiaryCountry">
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

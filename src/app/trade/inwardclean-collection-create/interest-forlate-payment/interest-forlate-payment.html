@@ -1,0 +1,222 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div
+      class="section-header"
+      (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].interestForLatePayment}}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="section-body"
+      *ngIf="isOpen">
+
+      <!-- RATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].rateininwardcleaninterestforlate }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="rate">
+
+      </div>
+
+      <!-- START DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].startDateininwardcleaninterestforlate }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="startDate">
+
+      </div>
+
+      <!-- END PERIOD -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].endPeriodininwardcleaninterestforlate }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="endPeriod">
+
+      </div>
+
+      <!-- OR END DATES -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].orEndDatesininwardcleaninterestforlate }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="orEndDates">
+
+      </div>
+
+      <!-- GRACE DAYS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].graceDaysininwardcleaninterestforlate }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="graceDays">
+
+      </div>
+
+      <!-- START INTEREST -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].startInterestininwardcleaninterestforlate }}
+        </label>
+
+        <select formControlName="startInterest">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleaninterestforlate }}
+          </option>
+
+          <option value="before">
+            Before
+          </option>
+
+          <option value="after">
+            After
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- DAY BASIS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].dayBasisininwardcleaninterestforlate }}
+        </label>
+
+        <select formControlName="dayBasis">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleaninterestforlate }}
+          </option>
+
+          <option value="365days">
+            365 Days
+          </option>
+
+          <option value="360days">
+            360 Days
+          </option>
+
+          <option value="365-6days">
+            365-6 Days
+          </option>
+
+          <option value="360-30daymonth">
+            360/30 Day Month
+          </option>
+
+          <option value="365-30daymonth">
+            365/30 Day Month
+          </option>
+
+          <option value="365-6-30daymonth">
+            365-6/30 Day Month
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- START FROM -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].startFromininwardcleaninterestforlate }}
+        </label>
+
+        <select formControlName="startFrom">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleaninterestforlate }}
+          </option>
+
+          <option value="billOfExchangeDate">
+            Bill Of Exchange Date
+          </option>
+
+          <option value="sight">
+            Sight
+          </option>
+
+          <option value="billOfLadingDate">
+            Bill Of Lading Date
+          </option>
+
+          <option value="airWaybillDate">
+            Air Waybill Date
+          </option>
+
+          <option value="invoiceDate">
+            Invoice Date
+          </option>
+
+          <option value="arrivalOfGoodsDate">
+            Arrival Of Goods Date
+          </option>
+
+          <option value="acceptanceDate">
+            Acceptance Date
+          </option>
+
+          <option value="maturityDate">
+            Maturity Date
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- WAIVE IF REFUSED -->
+      <div class="checkbox-group">
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="waiveIfRefused">
+
+          {{ labels[lang].waiveIfRefusedininwardcleaninterestforlate}}
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

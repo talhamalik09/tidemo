@@ -1,0 +1,79 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div
+    class="section-header"
+    (click)="toggleSection()">
+
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+    <h3>
+      {{ labels.en.validityDetails }}
+    </h3>
+
+  </div>
+
+  <!-- BODY -->
+  <div
+    class="section-body"
+    *ngIf="isOpen">
+
+    <!-- VALID FROM -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.validFrom }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="validFrom">
+
+    </div>
+
+    <!-- PERIOD -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.periodinlicenseinputvalidity }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="period">
+
+    </div>
+
+    <!-- VALID TO -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.validTo }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="validTo">
+
+    </div>
+
+    <!-- LATEST PAYMENT DATE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.latestPaymentDateinlicenseinputvalidity }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="latestPaymentDate">
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

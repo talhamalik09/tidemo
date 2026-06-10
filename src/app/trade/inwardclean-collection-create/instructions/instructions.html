@@ -1,0 +1,129 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].instructionsDetails }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- COLLECTION DELIVERY MEANS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].collectionDeliveryMeans }}
+        </label>
+
+        <select formControlName="collectionDeliveryMeans">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleaninstructions }}
+          </option>
+
+          <option *ngFor="let item of deliveryOptions" [value]="item">
+            {{ item }}
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- RETURNED BILL DELIVERY MEANS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].returnedBillDeliveryMeans }}
+        </label>
+
+        <select formControlName="returnedBillDeliveryMeans">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleaninstructions }}
+          </option>
+
+          <option *ngFor="let item of deliveryOptions" [value]="item">
+            {{ item }}
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- NO OF PACKAGES -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].noOfPackagesininwardcleaninstructions }}
+        </label>
+
+        <input type="text" formControlName="noOfPackages">
+
+      </div>
+
+      <!-- CHECKBOX GROUP -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="traceAcknowledgement">
+          {{ labels[lang].traceAcknowledgement }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="traceAcceptance">
+          {{ labels[lang].traceAcceptance }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="tracePayment">
+          {{ labels[lang].tracePaymentininwardcleaninstructions }}
+        </label>
+
+      </div>
+
+      <!-- INSTRUCTIONS TEXT -->
+      <div class="form-group full-width">
+
+        <label>
+          {{ labels[lang].instructionsText }}
+        </label>
+
+        <textarea rows="4" formControlName="instructionsText"></textarea>
+
+      </div>
+
+      <!-- RESPONSE TO SENDER -->
+      <div class="form-group full-width">
+
+        <label>
+          {{ labels[lang].responseToSenderininwardcleaninstructions }}
+        </label>
+
+        <textarea rows="4" formControlName="responseToSender"></textarea>
+
+      </div>
+
+      <!-- SPECIAL INSTRUCTIONS -->
+      <div class="form-group full-width">
+
+        <label>
+          {{ labels[lang].specialInstructionsininwardcleaninstructions }}
+        </label>
+
+        <textarea rows="4" formControlName="specialInstructions"></textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

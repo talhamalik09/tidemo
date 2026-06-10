@@ -1,0 +1,79 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.availableByWith }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="app-advise">
+
+      <!-- AVAILABLE BY -->
+      <div class="form-group">
+        <label>{{ labels.en.availableBy }}</label>
+
+        <select formControlName="availableBy">
+          <option value="">Select Option</option>
+          <option *ngFor="let option of availableByOptions">
+            {{ option }}
+          </option>
+        </select>
+
+        <div *ngIf="form.get('availableBy')?.touched && form.get('availableBy')?.invalid">
+          Required field
+        </div>
+      </div>
+
+      <!-- AVAILABLE WITH -->
+      <div class="form-group">
+        <label>{{ labels.en.availableWith }}</label>
+
+        <select formControlName="availableWith">
+          <option value="">Select Option</option>
+          <option *ngFor="let option of availableWithOptions">
+            {{ option }}
+          </option>
+        </select>
+
+        <div *ngIf="form.get('availableWith')?.touched && form.get('availableWith')?.invalid">
+          Required field
+        </div>
+      </div>
+
+      <!-- EXPECTED PAYMENT DATE -->
+      <div class="form-group">
+        <label>{{ labels.en.latestPaymentDate }}</label>
+        <input type="date" formControlName="latestPaymentDate" />
+
+        <div *ngIf="form.get('latestPaymentDate')?.touched && form.get('latestPaymentDate')?.invalid">
+          Required field
+        </div>
+      </div>
+
+      <!-- INVOICE PERCENTAGE -->
+      <div class="form-group">
+        <label>{{ labels.en.invoicePercentage }}</label>
+        <input type="number" formControlName="invoicePercentage" placeholder="%" />
+
+        <div *ngIf="form.get('invoicePercentage')?.touched && form.get('invoicePercentage')?.invalid">
+          Must be between 0 and 100
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SAVE BUTTON -->
+    <div class="save-section">
+      
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,75 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].participationDealDetails }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="manualParticipation">
+          {{ labels[lang].manualParticipation }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="restrictToNamedCustomer">
+          {{ labels[lang].restrictToNamedCustomer }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="amountAvailableIsRevolving">
+          {{ labels[lang].amountAvailableIsRevolvinginparticipationdealparticipationDeal }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="amendmentsUpdateExistingAndNewTransactions">
+          {{ labels[lang].amendmentsUpdateExistingAndNewTransactions }}
+        </label>
+
+      </div>
+
+      <!-- AGREEMENT DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].agreementDateinparticipationdealparticipationDeal }}</label>
+        <input type="date" formControlName="agreementDate">
+      </div>
+
+      <!-- EFFECTIVE DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].effectiveDateinparticipationdealparticipationDeal }}</label>
+        <input type="date" formControlName="effectiveDate">
+      </div>
+
+      <!-- EXPIRY DATE -->
+      <div class="form-group">
+        <label>{{ labels[lang].expiryDateinparticipationdealparticipationDeal }}</label>
+        <input type="date" formControlName="expiryDate">
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+        <label>{{ labels[lang].productTypeinparticipationdealparticipationDeal }}</label>
+        <select formControlName="productType">
+          <option value="" disabled selected>
+            {{ labels[lang].select }}
+          </option>
+
+          <option *ngFor="let p of productTypeOptions" [value]="p">
+            {{ p }}
+          </option>
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

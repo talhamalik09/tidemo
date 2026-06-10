@@ -1,0 +1,48 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].customerDetailsinparticipationdealcustomer }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CUSTOMER NAME -->
+      <div class="form-group">
+        <label>{{ labels[lang].customerinparticipationdealcustomer }}</label>
+        <input type="text" formControlName="customerName">
+      </div>
+
+      <!-- CUSTOMER ADDRESS (RESIZABLE BOX) -->
+      <div class="form-group">
+        <label>{{ labels[lang].customerAddressinparticipationdealcustomer }}</label>
+        <textarea
+          rows="4"
+          formControlName="customerAddress">
+        </textarea>
+      </div>
+
+      <!-- REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels[lang].referenceinparticipationdealcustomer }}</label>
+        <input type="text" formControlName="reference">
+      </div>
+
+      <!-- NOTES TO CUSTOMER -->
+      <div class="form-group">
+        <label>{{ labels[lang].notesToCustomerinparticipationdealcustomer }}</label>
+        <textarea
+          rows="5"
+          formControlName="notesToCustomer">
+        </textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

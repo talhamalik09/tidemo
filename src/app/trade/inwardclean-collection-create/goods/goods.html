@@ -1,0 +1,102 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].goodsDetailsininwardcleangoods }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- GOODS CODE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].goodsCodeininwardcleangoods }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="goodsCode">
+
+      </div>
+
+      <!-- SHIPMENT FROM -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].shipmentFromininwardcleangoods }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="shipmentFrom">
+
+      </div>
+
+      <!-- SHIPMENT TO -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].shipmentToininwardcleangoods }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="shipmentTo">
+
+      </div>
+
+      <!-- EXPECTED DATE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].expectedDateininwardcleangoods }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="expectedDate">
+
+      </div>
+
+      <!-- VESSEL / AIRCRAFT -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].vesselAircraftininwardcleangoods }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="vesselAircraft">
+
+      </div>
+
+      <!-- GOODS DESCRIPTION -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].goodsDescriptionininwardcleangoods }}
+        </label>
+
+        <textarea
+          rows="4"
+          formControlName="goodsDescription">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

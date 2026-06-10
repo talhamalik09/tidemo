@@ -1,0 +1,102 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].partyDetailsininwardcleanparty }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- RECEIVED FROM TYPE -->
+        <div class="form-group">
+          <label>{{ labels[lang].receivedFromininwardcleanparty }}</label>
+
+          <select formControlName="receivedFromType">
+            <option value="">{{ labels[lang].select }}</option>
+
+            <option value="collectingBank">{{ labels[lang].collectingBank }}</option>
+            <option value="newRole">{{ labels[lang].newRole }}</option>
+            <option value="presentingBank">{{ labels[lang].presentingBank }}</option>
+            <option value="remittingBank">{{ labels[lang].remittingBank }}</option>
+            <option value="drawer">{{ labels[lang].drawer }}</option>
+            <option value="payee">{{ labels[lang].payee }}</option>
+            <option value="thirdPayee">{{ labels[lang].thirdPayee }}</option>
+          </select>
+        </div>
+
+        <!-- SEND TO (RESIZABLE + SINGLE INPUT) -->
+        <div class="form-group full-width">
+          <label>{{ labels[lang].sendToininwardcleanparty }}</label>
+
+          <input type="text" formControlName="sendTo">
+
+          <textarea rows="3" formControlName="sendToDetails"></textarea>
+        </div>
+
+        <!-- DRAWER (RESIZABLE + SINGLE INPUT) -->
+        <div class="form-group full-width">
+          <label>{{ labels[lang].drawer }}</label>
+
+          <input type="text" formControlName="drawer">
+
+          <textarea rows="3" formControlName="drawerDetails"></textarea>
+        </div>
+
+        <!-- RECEIVED FROM (RESIZABLE + SINGLE INPUT) -->
+        <div class="form-group full-width">
+          <label>{{ labels[lang].receivedFromLabel }}</label>
+
+          <input type="text" formControlName="receivedFrom">
+
+          <textarea rows="3" formControlName="receivedFromDetails"></textarea>
+        </div>
+
+        <!-- COUNTRIES -->
+        <div class="form-group">
+          <label>{{ labels[lang].sendToCountry }}</label>
+          <input type="text" formControlName="sendToCountry">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].drawerCountry }}</label>
+          <input type="text" formControlName="drawerCountry">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].receivedFromCountry }}</label>
+          <input type="text" formControlName="receivedFromCountry">
+        </div>
+
+        <!-- SEND TO TYPE -->
+        <div class="form-group">
+          <label>{{ labels[lang].sendToType }}</label>
+
+          <select formControlName="sendToType">
+            <option value="">{{ labels[lang].selectininwardcleanparty }}</option>
+
+            <option value="collectingBank">{{ labels[lang].collectingBank }}</option>
+            <option value="newRole">{{ labels[lang].newRole }}</option>
+            <option value="presentingBank">{{ labels[lang].presentingBank }}</option>
+            <option value="remittingBank">{{ labels[lang].remittingBank }}</option>
+            <option value="drawer">{{ labels[lang].drawer }}</option>
+            <option value="payee">{{ labels[lang].payee }}</option>
+            <option value="thirdPayee">{{ labels[lang].thirdPayee }}</option>
+          </select>
+        </div>
+
+      </div>
+
+   
+
+  </div>
+
+</form>

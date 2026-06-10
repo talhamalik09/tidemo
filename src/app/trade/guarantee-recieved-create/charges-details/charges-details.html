@@ -1,0 +1,237 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].chargesDetailsinguaranteereceivedchargesDetails }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- PERIODIC CHARGE FIRST DATE -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].periodicChargeFirstDateinguaranteereceivedchargesDetails }}</label>
+
+          <input
+            type="text"
+            formControlName="periodicChargeFirstDate">
+
+        </div>
+
+        <!-- CHARGE ACCOUNT -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].chargeAccountinguaranteereceivedchargesDetails }}</label>
+
+          <input
+            type="text"
+            formControlName="chargeAccount">
+
+        </div>
+
+        <!-- DAY IN MONTH -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].dayInMonthinguaranteereceivedchargesDetails }}</label>
+
+          <input
+            type="text"
+            formControlName="dayInMonth">
+
+        </div>
+
+        <!-- PREFERRED CURRENCY -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].preferredCurrencyinguaranteereceivedchargesDetails }}</label>
+
+          <input
+            type="text"
+            formControlName="preferredCurrency">
+
+        </div>
+
+        <!-- OUR CHARGES -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].ourChargesinguaranteereceivedchargesDetails }}</label>
+
+          <select formControlName="ourCharges">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedchargesDetails }}
+            </option>
+
+            <option
+              *ngFor="let item of ourChargesOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- OVERSEAS -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].overseasinguaranteereceivedchargesDetails }}</label>
+
+          <select formControlName="overseas">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedchargesDetails }}
+            </option>
+
+            <option
+              *ngFor="let item of overseasOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- TAX PAID BY -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].taxPaidByinguaranteereceivedchargesDetails }}</label>
+
+          <select formControlName="taxPaidBy">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedchargesDetails }}
+            </option>
+
+            <option
+              *ngFor="let item of taxPaidByOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- BILL LEVEL -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].billLevelinguaranteereceivedchargesDetails }}</label>
+
+          <select formControlName="billLevel">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedchargesDetails }}
+            </option>
+
+            <option
+              *ngFor="let item of billLevelOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- CUSTOMER ADDRESS (DEBIT) -->
+        <div class="form-group full-width">
+
+          <label>{{ labels[lang].customerAddress }}</label>
+
+          <div style="display:flex; gap:10px; align-items:center;">
+
+            <select
+              formControlName="customerAddressDebit"
+              style="flex:1;">
+
+              <option value="">
+                {{ labels[lang].selectinguaranteereceivedchargesDetails }}
+              </option>
+
+              <option
+                *ngFor="let item of customerAddressOptions"
+                [value]="item">
+
+                {{ item }}
+
+              </option>
+
+            </select>
+
+            <button
+              type="button"
+              (click)="viewCustomerAddress()">
+
+              View
+
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group full-width">
+
+          <label>
+
+            <input
+              type="checkbox"
+              formControlName="defer">
+
+            {{ labels[lang].deferinguaranteereceivedchargesDetails }}
+
+          </label>
+
+          <label>
+
+            <input
+              type="checkbox"
+              formControlName="billingInvoicesAutomated">
+
+            {{ labels[lang].billingInvoicesAutomatedinguaranteereceivedchargesDetails }}
+
+          </label>
+
+        </div>
+
+        <!-- USER CHARGES TEXT -->
+        <div class="form-group full-width">
+
+          <label>{{ labels[lang].userChargesTextinguaranteereceivedchargesDetails }}</label>
+
+          <textarea
+            rows="5"
+            formControlName="userChargesText">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

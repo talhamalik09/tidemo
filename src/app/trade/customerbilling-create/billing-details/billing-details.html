@@ -1,0 +1,97 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels.en.billingDetails }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CUSTOMER -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.customer }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="customer"
+          [placeholder]="labels.en.customer">
+
+      </div>
+
+      <!-- FREQUENCY -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.frequency }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="frequency"
+          [placeholder]="labels.en.frequency">
+
+      </div>
+
+      <!-- BILLING LEVEL -->
+      <div class="form-group">
+
+        <label>
+          {{ labels.en.billingLevel }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="billingLevel"
+          [placeholder]="labels.en.billingLevel">
+
+      </div>
+
+      <!-- ADVISE -->
+      <div class="form-group">
+
+        <label class="checkbox-group">
+
+          <input
+            type="checkbox"
+            formControlName="advise">
+
+          {{ labels.en.advise }}
+
+        </label>
+
+      </div>
+
+      <!-- INVOICE -->
+      <div class="form-group">
+
+        <label class="checkbox-group">
+
+          <input
+            type="checkbox"
+            formControlName="invoice">
+
+          {{ labels.en.invoice }}
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

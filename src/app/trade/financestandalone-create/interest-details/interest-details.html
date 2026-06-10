@@ -1,0 +1,192 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.interestDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- EFFECTIVE DATE -->
+    <div class="form-group">
+      <label>{{ labels.en.effectiveDate }}</label>
+      <input type="date" formControlName="effectiveDate">
+    </div>
+
+    <!-- START DATE -->
+    <div class="form-group">
+      <label>{{ labels.en.startDateinfinancestandaloneinterest }}</label>
+      <input type="date" formControlName="startDate">
+    </div>
+
+    <!-- PERIOD -->
+    <div class="form-group">
+      <label>{{ labels.en.period }}</label>
+      <input type="text" formControlName="period">
+    </div>
+
+    <!-- DUE DATE -->
+    <div class="form-group">
+      <label>{{ labels.en.dueDate }}</label>
+      <input type="text" formControlName="dueDate">
+    </div>
+
+    <!-- FREQUENCY -->
+    <div class="form-group">
+      <label>{{ labels.en.frequency }}</label>
+      <input type="text" formControlName="frequency">
+    </div>
+
+    <!-- DAY IN MONTH -->
+    <div class="form-group">
+      <label>{{ labels.en.dayInMonthinfinancestandaloneinterest }}</label>
+      <input type="text" formControlName="dayInMonth">
+    </div>
+
+    <!-- PROJECTED NEXT INTEREST DISCOUNT -->
+    <div class="form-group full-width">
+      <label>{{ labels.en.projectedNextInterestDiscount }}</label>
+      <input type="text" formControlName="projectedNextInterestDiscount">
+    </div>
+
+    <!-- NOTICE DAYS -->
+    <div class="form-group">
+      <label>{{ labels.en.noticeDays }}</label>
+      <input type="text" formControlName="noticeDays">
+    </div>
+
+    <!-- TRANSIT DAYS -->
+    <div class="form-group">
+      <label>{{ labels.en.noOfDaysTransitInterest }}</label>
+      <input type="text" formControlName="transitDays">
+    </div>
+
+    <!-- INTEREST RATE -->
+    <div class="form-group">
+      <label>{{ labels.en.interestRate }}</label>
+      <input type="text" formControlName="interestRate">
+    </div>
+
+    <!-- PENALTY RATE CODE -->
+    <div class="form-group">
+      <label>{{ labels.en.penaltyRateCode }}</label>
+      <input type="text" formControlName="penaltyRateCode">
+    </div>
+
+    <!-- FIRST INTEREST DATE -->
+    <div class="form-group">
+      <label>{{ labels.en.firstInterestDate }}</label>
+      <input type="date" formControlName="firstInterestDate">
+    </div>
+
+    <!-- PENALTY RATE -->
+    <div class="form-group">
+      <label>{{ labels.en.penaltyRate }}</label>
+      <input type="text" formControlName="penaltyRate">
+    </div>
+
+    <!-- FROM / AFTER -->
+    <div class="form-group">
+      <label>{{ labels.en.fromAfter }}</label>
+      <select formControlName="fromAfter">
+        <option value="">Select</option>
+        <option *ngFor="let o of fromAfterOptions" [value]="o">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- INTEREST TYPE -->
+    <div class="form-group">
+      <label>{{ labels.en.interestType }}</label>
+      <select formControlName="interestType">
+        <option value="">Select</option>
+        <option *ngFor="let o of interestTypeOptions" [value]="o">{{ o }}</option>
+      </select>
+    </div>
+
+    <!-- RATE TYPE (button + dropdown) -->
+    <div class="form-group">
+      <label>{{ labels.en.rateType }}</label>
+
+      <div class="input-button-group">
+        <select formControlName="rateType">
+          <option value="">Select</option>
+          <option *ngFor="let o of rateTypeOptions" [value]="o">{{ o }}</option>
+        </select>
+
+        <button type="button" (click)="openInterestRate()">
+          {{ labels.en.interestRateBtn }}
+        </button>
+      </div>
+    </div>
+
+    <!-- INTEREST / DISCOUNT PAYER -->
+    <div class="form-group">
+      <label>{{ labels.en.interestDiscountPayer }}</label>
+
+      <div class="input-button-group">
+        <select formControlName="interestDiscountPayer">
+          <option value="">Select</option>
+          <option *ngFor="let o of payerOptions" [value]="o">{{ o }}</option>
+        </select>
+
+        <button type="button" (click)="calculate()">
+          {{ labels.en.calculateinfinancestandaloneinterest }}
+        </button>
+      </div>
+    </div>
+
+    <!-- CHECKBOXES -->
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="transitInterestRequired">
+        {{ labels.en.transitInterestRequired }}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="interestExtraDay">
+        {{ labels.en.interestExtraDay }}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="capitaliseCustomerMarkup">
+        {{ labels.en.capitaliseCustomerMarkup }}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="capitalisePastDueInterest">
+        {{ labels.en.capitalisePastDueInterest }}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="adviseInterest">
+        {{ labels.en.adviseInterest }}
+      </label>
+    </div>
+
+    <!-- OPTION -->
+    <div class="form-group">
+      <label>{{ labels.en.option }}</label>
+
+      <select formControlName="option">
+        <option value="">Select</option>
+        <option *ngFor="let o of optionList" [value]="o">{{ o }}</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

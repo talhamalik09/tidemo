@@ -1,0 +1,281 @@
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="menu-title">Trade Panel</div>
+
+    <!-- TRADE -->
+    <button (click)="toggleTrade()">📦 Trade</button>
+
+    <div *ngIf="showTrade" class="sub-menu">
+
+      <!-- IMPORT -->
+     <button (click)="toggleImport()" routerLink="import">
+  📥 Import
+</button>
+
+      <div *ngIf="showImport" class="sub-menu">
+        <button routerLink="import/create">Create</button>
+        <button [routerLink]="['/trade/import/append', 101]">Append</button>
+        <button routerLink="import/bulk">Bulk</button>
+        <button routerLink="import/history">History</button>
+      </div>
+
+      <!-- EXPORT -->
+      <button (click)="toggleExport()" routerLink="export">
+  📤 Export
+</button>
+
+      <div *ngIf="showExport" class="sub-menu">
+        <button routerLink="export/create">Create</button>
+        <button routerLink="export/append">Append</button>
+        <button routerLink="export/bulk">Bulk</button>
+        <button routerLink="export/history">History</button>
+      </div>
+
+      <button (click)="toggleShipmentguarantee()" routerLink="shipment-guarantee">
+  📤 Shipment Guarantee
+</button>
+
+<div *ngIf="showShipmentguarantee" class="sub-menu">
+        <button routerLink="shipment-guarantee/create">Create</button>
+      </div>
+
+
+
+
+      <button (click)="toggleGuaranteeissued()" routerLink="guarantee-issued">
+  📤 Guarantee issued
+</button>
+
+      <div *ngIf="showGuaranteeissued" class="sub-menu">
+        <button routerLink="guarantee-issued/create">Create</button>
+      </div>
+
+        <button (click)="toggleOutwardDocumentaryCollection()" routerLink="outward-documentary-collection">
+  📤 Outward Documentary Collection
+</button>
+
+      <div *ngIf="showOutwardDocumentaryCollection" class="sub-menu">
+        <button routerLink="outward-documentary-collection/create">Create</button>
+      </div>
+
+
+
+       <button (click)="toggleFinanceStandalone()" routerLink="finance-standalone">
+  📤 Finance Standalone
+</button>
+
+      <div *ngIf="showFinanceStandalone" class="sub-menu">
+        <button routerLink="finance-standalone/create">Create</button>
+      </div>
+
+      
+       <button (click)="toggleLicenseInput()" routerLink="license-input">
+  📤 License Input
+</button>
+
+      <div *ngIf="showLicenseInput" class="sub-menu">
+        <button routerLink="license-input/create">Create</button>
+      </div>
+
+    
+
+    
+       <button (click)="toggleCleanBankersAcceptance()" routerLink="clean-bankers-acceptance">
+  📤 clean bankers
+</button>
+
+      <div *ngIf="showCleanBankersAcceptance" class="sub-menu">
+        <button routerLink="clean-bankers-acceptance/create">Create</button>
+      </div>
+
+    
+
+    
+       <button (click)="toggleCustomerBilling()" routerLink="customer-billing">
+  📤 customer billing
+</button>
+
+      <div *ngIf="showCustomerBilling" class="sub-menu">
+        <button routerLink="customer-billing/create">Create</button>
+      </div>
+
+
+        <button (click)="toggleExportCreditAgencyFacility()" routerLink="exportcredit-agency-facility">
+  📤 export credit agency facility
+</button>
+
+      <div *ngIf="showExportCreditAgencyFacility" class="sub-menu">
+        <button routerLink="exportcredit-agency-facility/create">Create</button>
+      </div>
+
+
+      <button (click)="toggleExportLcPreadvise()" routerLink="exportlc-preadvise">
+  📤 exportlc preadvise
+</button>
+
+      <div *ngIf="showExportLcPreadvise" class="sub-menu">
+        <button routerLink="exportlc-preadvise/create">Create</button>
+      </div>
+
+
+      <button (click)="toggleFreeCorrespondence()" routerLink="free-correspondence">
+  📤 free correspondence
+</button>
+
+      <div *ngIf="showFreeCorrespondence" class="sub-menu">
+        <button routerLink="free-correspondence/create">Create</button>
+      </div>
+
+
+       <button (click)="toggleFreelyNegotiableLc()" routerLink="freely-negotiablelc">
+  📤 freely negotiable lc
+</button>
+
+      <div *ngIf="showFreelyNegotiableLc" class="sub-menu">
+        <button routerLink="freely-negotiablelc/create">Create</button>
+      </div>
+
+
+      <button (click)="toggleParticipationDeal()" routerLink="participation-deal">
+  📤 participation deal
+</button>
+
+      <div *ngIf="showParticipationDeal" class="sub-menu">
+        <button routerLink="participation-deal/create">Create</button>
+      </div>
+
+      
+      <button (click)="toggleOutwardCleanCollection()" routerLink="outward-clean-collection">
+  📤 outward clean collection
+</button>
+
+      <div *ngIf="showOutwardCleanCollection" class="sub-menu">
+        <button routerLink="outward-clean-collection/create">Create</button>
+      </div>
+
+      <button (click)="toggleOutwardCashLetter()" routerLink="outward-cash-letter">
+  📤 outward cash letter
+</button>
+
+      <div *ngIf="showOutwardCashLetter" class="sub-menu">
+        <button routerLink="outward-cash-letter/create">Create</button>
+      </div>
+
+
+      
+      <button (click)="toggleInwardDocumentaryCollection()" routerLink="inward-documentary-collection">
+  📤 inward documentary collection
+</button>
+
+      <div *ngIf="showInwardDocumentaryCollection" class="sub-menu">
+        <button routerLink="inward-documentary-collection/create">Create</button>
+      </div>
+
+    
+
+    
+      <button (click)="toggleInwardCleanCollection()" routerLink="inward-clean-collection">
+  📤 inward clean collection
+</button>
+
+      <div *ngIf="showInwardCleanCollection" class="sub-menu">
+        <button routerLink="inward-clean-collection/create">Create</button>
+      </div>
+
+
+
+      <button (click)="toggleInwardCashLetter()" routerLink="inward-cash-letter">
+  📤 inward cash letter
+</button>
+
+      <div *ngIf="showInwardCashLetter" class="sub-menu">
+        <button routerLink="inward-cash-letter/create">Create</button>
+      </div>
+
+
+
+       <button (click)="toggleImportStandbyLc()" routerLink="import-standby-lc">
+  📤 import standby LC
+</button>
+
+      <div *ngIf="showImportStandbyLc" class="sub-menu">
+        <button routerLink="import-standby-lc/create">Create</button>
+      </div>
+    
+
+<button (click)="toggleImportLcIssue()" routerLink="importlc-issue">
+  📤 import LC Issue
+</button>
+
+      <div *ngIf="showImportLcIssue" class="sub-menu">
+        <button routerLink="importlc-issue/create">Create</button>
+      </div>
+
+<button (click)="toggleGuaranteeReceived()" routerLink="guarantee-recieved">
+  📤 guarantee received
+</button>
+
+      <div *ngIf="showGuaranteeReceived" class="sub-menu">
+        <button routerLink="guarantee-recieved/create">Create</button>
+      </div>
+
+
+      <button (click)="toggleExportStandbyLc()" routerLink="export-standby-lc">
+  📤 export standby lc
+</button>
+
+      <div *ngIf="showExportStandbyLc" class="sub-menu">
+        <button routerLink="export-standby-lc/create">Create</button>
+      </div>
+
+
+      <button (click)="toggleReimbursement()" routerLink="reimbursement">
+  📤 reimbursement
+</button>
+
+      <div *ngIf="showReimbursement" class="sub-menu">
+        <button routerLink="reimbursement/create">Create</button>
+      </div>
+
+    </div>
+
+
+
+
+
+    <button (click)="toggleForm()">📦 Form</button>
+
+
+    <div *ngIf="showForm" class="sub-menu">
+
+
+      
+      <button (click)="toggleFundForm()" routerLink="fund-form">
+  📤 Fund Form
+</button>
+
+ <button (click)="toggleFundForm()" routerLink="fund-table">
+  📤 Fund Table
+</button>
+
+
+
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    
+
+  <!-- COMPONENTS -->
+  <router-outlet>
+  </router-outlet>
+
+
+  </div>
+
+</div>

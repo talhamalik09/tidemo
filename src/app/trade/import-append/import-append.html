@@ -1,0 +1,9 @@
+<p>import-append works!</p>
+<button *ngFor="let item of items"
+        [routerLink]="['/trade/import/append', item.id]">
+  Append {{ item.name }}
+</button>
+
+<h2>Append Page</h2>
+
+<p>Working on ID: {{ id }}</p>

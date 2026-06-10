@@ -1,0 +1,116 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].documentaryCollectionLogininwarddocumentarydocumentary }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- RECEIVED FROM REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels[lang].receivedFromReferenceininwarddocumentarydocumentary }}</label>
+        <input type="text" formControlName="receivedFromReference">
+      </div>
+
+      <!-- COLLECTION AMOUNT -->
+      <div class="form-group">
+        <label>{{ labels[lang].collectionAmountininwarddocumentarydocumentary }}</label>
+        <input type="text" formControlName="collectionAmount">
+      </div>
+
+      <!-- COUNTRY -->
+      <div class="form-group">
+        <label>{{ labels[lang].countryininwarddocumentarydocumentary }}</label>
+        <input type="text" formControlName="country">
+      </div>
+
+      <!-- SEND TO COUNTRY -->
+      <div class="form-group">
+        <label>{{ labels[lang].sendToCountryininwarddocumentarydocumentary }}</label>
+        <input type="text" formControlName="sendToCountry">
+      </div>
+
+      <!-- DRAWER COUNTRY -->
+      <div class="form-group">
+        <label>{{ labels[lang].drawerCountryininwarddocumentarydocumentary }}</label>
+        <input type="text" >
+      </div>
+
+      <!-- RECEIVED FROM (DETAILS) -->
+      <div class="form-group">
+        <label>{{ labels[lang].receivedFromininwarddocumentarydocumentary }}</label>
+
+        <input type="text" formControlName="receivedFrom">
+
+        <textarea rows="3" formControlName="receivedFromDetails"></textarea>
+      </div>
+
+      <!-- SEND TO -->
+      <div class="form-group">
+        <label>{{ labels[lang].sendToininwarddocumentarydocumentary }}</label>
+
+        <input type="text" formControlName="sendTo">
+
+        <textarea rows="3" formControlName="sendToDetails"></textarea>
+      </div>
+
+      <!-- DRAWER -->
+      <div class="form-group">
+        <label>{{ labels[lang].drawerininwarddocumentarydocumentary }}</label>
+
+        <input type="text" >
+
+        <textarea rows="3" formControlName="drawerDetails"></textarea>
+      </div>
+
+      <!-- DOCUMENT RELEASE -->
+      <div class="form-group">
+        <label>{{ labels[lang].documentReleaseininwarddocumentarydocumentary }}</label>
+
+        <select formControlName="documentRelease">
+          <option value="">{{ labels[lang].selectininwarddocumentarydocumentary }}</option>
+          <option value="DA">D/A</option>
+          <option value="DP">D/P</option>
+          <option value="pourovav">Pour Aval</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+        <label>{{ labels[lang].productTypeininwarddocumentarydocumentary }}</label>
+
+        <select formControlName="productType">
+          <option value="">&lt;---&gt;</option>
+        </select>
+      </div>
+
+      <!-- RECEIVED FROM TYPE -->
+      <div class="form-group">
+        <label>{{ labels[lang].receivedFromTypeininwarddocumentarydocumentary }}</label>
+
+        <select formControlName="receivedFrom">
+          <option value="">{{ labels[lang].selectininwarddocumentarydocumentary }}</option>
+
+          <option value="collectionBank">Collection Bank</option>
+          <option value="newRole">New Role</option>
+          <option value="presentingBank">Presenting Bank</option>
+          <option value="remittingBank">Remitting Bank</option>
+          <option value="drawee">Drawee</option>
+          <option value="payee">Payee</option>
+          <option value="thirdParty">Third Party</option>
+
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

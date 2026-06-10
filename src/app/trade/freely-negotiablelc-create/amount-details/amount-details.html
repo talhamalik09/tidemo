@@ -1,0 +1,125 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].amountdetails }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- ADDITIONAL AMOUNTS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].additionalAmountsinfreelynegotiablelcamount }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="additionalAmounts">
+
+      </div>
+
+      <!-- ADDITIONAL AMOUNT INFORMATION -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].additionalAmountInformationinfreelynegotiablelcamount }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="additionalAmountInformation">
+
+      </div>
+
+      <!-- PLUS % -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].plusPercentinfreelynegotiablelcamount }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="plusPercent">
+
+      </div>
+
+      <!-- MINUS % -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].minusPercentinfreelynegotiablelcamount }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="minusPercent">
+
+      </div>
+
+      <!-- TOLERANCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].tolerance }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="tolerance">
+
+      </div>
+
+      <!-- TOLERANCE DETAILS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].toleranceDetails }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="toleranceDetails">
+        </textarea>
+
+      </div>
+
+      <!-- TOLERANCE TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].toleranceType }}
+        </label>
+
+        <select formControlName="toleranceType">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let t of toleranceOptions"
+            [value]="t">
+
+            {{ t }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

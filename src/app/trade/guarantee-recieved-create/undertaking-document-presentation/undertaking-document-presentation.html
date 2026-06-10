@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].undertakingDocumentPresentation }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- DOCUMENT & PRESENTATION INSTRUCTIONS -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].documentAndPresentationInstructions }}
+          </label>
+
+          <textarea
+            rows="6"
+            formControlName="documentAndPresentationInstructions">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

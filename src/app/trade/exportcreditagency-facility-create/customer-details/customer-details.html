@@ -1,0 +1,96 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels.en.customerDetails }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels.en.reference }}</label>
+        <input type="text" formControlName="reference">
+      </div>
+
+      <!-- CUSTOMER IDENTIFIER -->
+      <div class="form-group">
+        <label>{{ labels.en.customerIdentifier }}</label>
+        <input type="text" formControlName="customerIdentifier">
+      </div>
+
+      <!-- OTHER REF 1 -->
+      <div class="form-group">
+        <label>{{ labels.en.customerOtherReference1 }}</label>
+        <input type="text" formControlName="customerOtherReference1">
+      </div>
+
+      <!-- OTHER REF 2 -->
+      <div class="form-group">
+        <label>{{ labels.en.customerOtherReference2 }}</label>
+        <input type="text" formControlName="customerOtherReference2">
+      </div>
+
+      <!-- CUSTOMER (2 INPUTS) -->
+      <div class="form-group" style="grid-column: span 2;">
+
+        <label>{{ labels.en.customerinexportcreditagencyfacilitycustomer }}</label>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+
+          <input type="text" formControlName="customerName">
+
+          <input
+            type="text"
+            formControlName="customerAddress"
+            placeholder="Address / Details"
+            style="resize: vertical;">
+
+        </div>
+
+      </div>
+
+      <!-- NOTES TO CUSTOMER -->
+      <div class="form-group" style="grid-column: span 2;">
+        <label>{{ labels.en.notesToCustomer }}</label>
+
+        <textarea
+         
+          formControlName="notesToCustomer"
+         style="
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      resize: vertical;
+    ">
+        </textarea>
+      </div>
+
+      <!-- SPECIAL INSTRUCTIONS -->
+      <div class="form-group" style="grid-column: span 2;">
+        <label>{{ labels.en.specialInstructions }}</label>
+
+        <textarea
+         
+          formControlName="specialInstructions"
+          style="
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      resize: vertical;
+    ">
+        </textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,110 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].partyDetailsIssuingBankinguaranteereceivedparty }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      
+
+        <!-- TWO INPUT RESIZABLE FIELDS -->
+
+        <div class="form-group full-width">
+          <label>{{ labels[lang].issuingBankinguaranteereceivedparty }}</label>
+          <textarea rows="3" formControlName="issuingBank"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>{{ labels[lang].applicantinguaranteereceivedparty }}</label>
+          <textarea rows="3" formControlName="applicant"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>{{ labels[lang].nextAdvisingBankinguaranteereceivedparty }}</label>
+          <textarea rows="3" formControlName="nextAdvisingBank"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>{{ labels[lang].adviseThroughBankinguaranteereceivedparty }}</label>
+          <textarea rows="3" formControlName="adviseThroughBank"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>{{ labels[lang].beneficiaryinguaranteereceivedparty }}</label>
+          <textarea rows="3" formControlName="beneficiary"></textarea>
+        </div>
+
+        <!-- SINGLE INPUT FIELDS -->
+
+        <div class="form-group">
+          <label>{{ labels[lang].referenceinguaranteereceivedparty }}</label>
+          <input type="text" formControlName="reference">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].countryinguaranteereceivedparty }}</label>
+          <input type="text" formControlName="country">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].reference2inguaranteereceivedparty }}</label>
+          <input type="text" formControlName="reference2">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].country2inguaranteereceivedparty }}</label>
+          <input type="text" formControlName="country2">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].country3inguaranteereceivedparty }}</label>
+          <input type="text" formControlName="country3">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].reference3inguaranteereceivedparty }}</label>
+          <input type="text" formControlName="reference3">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].accountIdentifieringuaranteereceivedparty }}</label>
+          <input type="text" formControlName="accountIdentifier">
+        </div>
+
+        <div class="form-group">
+          <label>{{ labels[lang].accountIdentifier2inguaranteereceivedparty }}</label>
+          <input type="text" formControlName="accountIdentifier2">
+        </div>
+
+        <!-- CHECKBOX -->
+
+        <div class="checkbox-group full-width">
+
+          <label>
+
+            <input type="checkbox" formControlName="adviseDirect">
+
+            {{ labels[lang].adviseDirectinguaranteereceivedparty }}
+
+          </label>
+
+       
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

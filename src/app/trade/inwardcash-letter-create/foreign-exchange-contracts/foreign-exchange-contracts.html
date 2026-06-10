@@ -1,0 +1,124 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].foreignExchangeContractsininwardcashletterforeign }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- REFERENCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].referenceininwardcashletterforeign }}
+          </label>
+
+          <input type="text" formControlName="reference">
+
+        </div>
+
+        <!-- BRANCH -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].branchininwardcashletterforeign }}
+          </label>
+
+          <input type="text" formControlName="branch">
+
+        </div>
+        </div>
+
+         <div class="form-grid">
+
+        <!-- TYPE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].typeininwardcashletterforeign }}
+          </label>
+
+          <input type="text" formControlName="type">
+
+        </div>
+
+        <!-- PURCHASE CURRENCY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].purchaseCurrencyininwardcashletterforeign }}
+          </label>
+
+          <input type="text" formControlName="purchaseCurrency">
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <!-- SALE CURRENCY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].saleCurrencyininwardcashletterforeign }}
+          </label>
+
+          <input type="text" formControlName="saleCurrency">
+
+        </div>
+
+        <div class="form-grid">
+        <!-- RATE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].rateininwardcashletterforeign }}
+          </label>
+
+          <input type="text" formControlName="rate">
+
+        </div>
+        </div>
+
+        
+        <!-- BUTTONS -->
+        <div class="button-row">
+
+          <button type="button" (click)="add()">
+            {{ labels[lang].addininwardcashletterforeign }}
+          </button>
+
+          <button type="button" (click)="update()">
+            {{ labels[lang].updateininwardcashletterforeign }}
+          </button>
+
+          <button type="button" (click)="delete()">
+            {{ labels[lang].deleteininwardcashletterforeign }}
+          </button>
+
+          <button type="button" (click)="view()">
+            {{ labels[lang].viewininwardcashletterforeign }}
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,50 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].chargeDetailsinoutwardcashlettercharge }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- PREFERRED CURRENCY -->
+      <div class="form-group">
+        <label>{{ labels[lang].preferredCurrencyinoutwardcashlettercharge }}</label>
+
+        <input type="text" formControlName="preferredCurrency">
+      </div>
+
+      <!-- BILLING LEVEL -->
+      <div class="form-group">
+        <label>{{ labels[lang].billingLevelinoutwardcashlettercharge }}</label>
+
+        <select formControlName="billingLevel">
+
+          <option value="">{{ labels[lang].selectinoutwardcashlettercharge }}</option>
+
+          <option value="customer">{{ labels[lang].customerinoutwardcashlettercharge }}</option>
+          <option value="product">{{ labels[lang].productinoutwardcashlettercharge }}</option>
+          <option value="transaction">{{ labels[lang].transactioninoutwardcashlettercharge }}</option>
+
+        </select>
+      </div>
+
+      <!-- DEFER -->
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" formControlName="defer" class="checkbox">
+
+          {{ labels[lang].deferinoutwardcashlettercharge }}
+        </label>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,221 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].standbyLcDetailsinimportstandbylcimport }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- Applicant Reference -->
+        <div class="form-group">
+          <label>{{ labels[lang].applicantReferenceinimportstandbylcimport }}</label>
+          <input type="text" formControlName="applicantReference">
+        </div>
+
+        <!-- Governing Law Country -->
+        <div class="form-group">
+          <label>{{ labels[lang].governingLawCountryinimportstandbylcimport }}</label>
+          <input type="text" formControlName="governingLawCountry">
+        </div>
+</div>
+
+        <div class="form-grid">
+        <!-- Sub Division -->
+        <div class="form-group">
+          <label>{{ labels[lang].governingLawSubDivisioninimportstandbylcimport }}</label>
+          <input type="text" formControlName="governingLawSubDivision">
+        </div>
+
+        <!-- Expiry Place -->
+        <div class="form-group">
+          <label>{{ labels[lang].expiryPlaceinimportstandbylcimport }}</label>
+          <input type="text" formControlName="expiryPlace">
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <!-- Jurisdiction -->
+        <div class="form-group">
+          <label>{{ labels[lang].placeOfJurisdictioninimportstandbylcimport }}</label>
+          <input type="text" formControlName="placeOfJurisdiction">
+        </div>
+
+        <!-- Not Payable Before -->
+        <div class="form-group">
+          <label>{{ labels[lang].notPayableBeforeinimportstandbylcimport }}</label>
+          <input type="text" formControlName="notPayableBefore">
+        </div>
+
+        </div>
+        <div class="form-grid">
+        <!-- Application Date -->
+        <div class="form-group">
+          <label>{{ labels[lang].applicationDateinimportstandbylcimport }}</label>
+          <input type="date" formControlName="applicationDate">
+        </div>
+
+        <!-- Issue Date -->
+        <div class="form-group">
+          <label>{{ labels[lang].issueDateinimportstandbylcimport }}</label>
+          <input type="date" formControlName="issueDate">
+        </div>
+
+        </div>
+
+        <div class="form-grid">
+        <!-- ISSUE BY -->
+        <div class="form-group">
+          <label>{{ labels[lang].issueByinimportstandbylcimport }}</label>
+          <select formControlName="issueBy">
+
+            <option value="">
+              {{ labels[lang].selectinimportstandbylcimport }}
+            </option>
+
+            <option value="internal">Internal</option>
+            <option value="mail">Mail</option>
+            <option value="telex">Telex</option>
+            <option value="swift">Swift</option>
+            <option value="telexViaSwift">Telex Via Swift</option>
+            <option value="email">Email</option>
+            <option value="fax">Fax</option>
+            <option value="gateway">Gateway</option>
+
+          </select>
+        </div>
+
+        <!-- EXPIRY TYPE -->
+        <div class="form-group">
+          <label>{{ labels[lang].expiryTypeinimportstandbylcimport }}</label>
+          <select formControlName="expiryType">
+
+            <option value="">Select</option>
+            <option value="specific">Specific Date</option>
+            <option value="unlimited">Unlimited</option>
+            <option value="conditional">Conditional</option>
+
+          </select>
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- CONFIRMATION -->
+        <div class="form-group">
+          <label>{{ labels[lang].confirmationinimportstandbylcimport }}</label>
+          <select formControlName="confirmation">
+
+            <option value="">Select</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="mayadd">May Add</option>
+            <option value="unconfirmed">Unconfirmed</option>
+
+          </select>
+        </div>
+
+        <!-- FINANCIAL TRADE -->
+        <div class="form-group">
+          <label>{{ labels[lang].financialTradeinimportstandbylcimport }}</label>
+          <select formControlName="financialTrade">
+
+            <option value="">Select</option>
+            <option value="trade">Trade</option>
+            <option value="financial">Financial</option>
+
+          </select>
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- APPLICABLE RULES -->
+        <div class="form-group">
+          <label>{{ labels[lang].applicableRulesinimportstandbylcimport }}</label>
+          <select formControlName="applicableRules">
+
+            <option value="">Select</option>
+            <option value="ISPR">ISPR</option>
+            <option value="NONE">NONE</option>
+            <option value="OTHR">OTHR</option>
+            <option value="URDG">URDG</option>
+            <option value="USPR">USPR</option>
+
+          </select>
+        </div>
+
+        <!-- PRODUCT TYPE -->
+        <div class="form-group">
+          <label>{{ labels[lang].productTypeinimportstandbylcimport }}</label>
+          <select formControlName="productType">
+
+            <option value="">Select</option>
+            <option value="customs">Customs Standby LC</option>
+            <option value="maintenance">Maintenance Standby LC</option>
+
+          </select>
+        </div>
+
+        </div>
+
+         <div class="form-grid">
+        <!-- CHECKBOXES -->
+        <div class="checkbox-group">
+
+          <label>
+            <input type="checkbox" formControlName="transferable">
+            {{ labels[lang].transferableinimportstandbylcimport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="adviseDirect">
+            {{ labels[lang].adviseDirectinimportstandbylcimport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="domesticExpiry">
+            {{ labels[lang].domesticExpiryinimportstandbylcimport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="irrevocable">
+            {{ labels[lang].irrevocableinimportstandbylcimport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="operative">
+            {{ labels[lang].operativeinimportstandbylcimport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="partialDrawings">
+            {{ labels[lang].partialDrawingsinimportstandbylcimport }}
+          </label>
+
+          <label>
+            <input type="checkbox" formControlName="multipleDrawings">
+            {{ labels[lang].multipleDrawingsinimportstandbylcimport }}
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

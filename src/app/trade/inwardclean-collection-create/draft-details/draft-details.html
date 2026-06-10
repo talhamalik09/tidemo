@@ -1,0 +1,131 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].draftDetailsininwardcleandraft  }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- DRAFT AGAINST -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].draftAgainstininwardcleandraft  }}</label>
+
+        <select formControlName="draftAgainst">
+
+          <option value="" disabled selected>
+            {{ labels[lang].selectininwardcleandraft  }}
+          </option>
+
+          <option
+            *ngFor="let item of draftAgainstOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- IDENTIFIER -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].identifierininwardcleandraft  }}</label>
+
+        <input
+          type="text"
+          formControlName="identifier">
+
+      </div>
+
+      <!-- DRAFT TEXT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].draftTextininwardcleandraft  }}</label>
+
+        <input
+          type="text"
+          formControlName="draftText">
+
+      </div>
+
+      <!-- DRAFT AMOUNT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].draftAmountininwardcleandraft  }}</label>
+
+        <input
+          type="text"
+          formControlName="draftAmount">
+
+      </div>
+
+      <!-- TENOR -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].tenorininwardcleandraft  }}</label>
+
+        <select formControlName="tenor">
+
+          <option value="">
+            {{ labels[lang].selectininwardcleandraft  }}
+          </option>
+
+          <option
+            *ngFor="let item of tenorOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- COLLECTION AMOUNT -->
+      <div class="form-group">
+
+        <label>{{ labels[lang].collectionAmountininwardcleandraft  }}</label>
+
+        <input
+          type="text"
+          formControlName="collectionAmount">
+
+        <textarea
+          rows="3"
+          formControlName="collectionAmountDetails">
+        </textarea>
+
+      </div>
+
+      <!-- PRE ACCEPTED -->
+      <div class="checkbox">
+
+        <label>
+
+          <input
+            type="checkbox"
+            formControlName="preAccepted">
+
+          {{ labels[lang].preAcceptedininwardcleandraft  }}
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,102 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <h3>{{ labels.en.draftDetailsincleanbankersacceptancedraft }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- Identifier -->
+      <div class="form-group">
+        <label>{{ labels.en.identifierincleanbankersacceptancedraft }}</label>
+        <input type="text" formControlName="identifier">
+      </div>
+
+      <!-- Acceptance Amount -->
+      <div class="form-group">
+        <label>{{ labels.en.acceptanceAmountincleanbankersacceptancedraft }}</label>
+        <input type="number" formControlName="acceptanceAmount">
+      </div>
+
+      <!-- Tenor Period -->
+      <div class="form-group">
+        <label>{{ labels.en.tenorPeriod }}</label>
+        <input type="text" formControlName="tenorPeriod">
+      </div>
+
+      <!-- Acceptance Date -->
+      <div class="form-group">
+        <label>{{ labels.en.acceptanceDate }}</label>
+        <input type="date" formControlName="acceptanceDate">
+      </div>
+
+      <!-- Effective Date -->
+      <div class="form-group">
+        <label>{{ labels.en.effectiveDateincleanbankersacceptancedraft }}</label>
+        <input type="date" formControlName="effectiveDate">
+      </div>
+
+      <!-- Maturity Date -->
+      <div class="form-group">
+        <label>{{ labels.en.maturityDate }}</label>
+        <input type="date" formControlName="maturityDate">
+      </div>
+
+      <!-- From / After -->
+      <div class="form-group">
+        <label>{{ labels.en.fromAfterincleanbankersacceptancedraft }}</label>
+        <select formControlName="fromAfter">
+          <option value="" disabled selected>{{ labels.en.select }}</option>
+          <option *ngFor="let f of fromAfterOptions" [value]="f">{{ f }}</option>
+        </select>
+      </div>
+
+      <!-- Tenor Start -->
+      <div class="form-group">
+        <label>{{ labels.en.tenorStart }}</label>
+        <select formControlName="tenorStart">
+          <option value="" disabled selected>{{ labels.en.selectincleanbankersacceptancedraft }}</option>
+          <option *ngFor="let t of tenorStartOptions" [value]="t">{{ t }}</option>
+        </select>
+      </div>
+
+      <!-- Notice Days (Disabled) -->
+      <div class="form-group">
+        <label>{{ labels.en.noticeDaysincleanbankersacceptancedraft }}</label>
+        <input type="number" formControlName="noticeDays" >
+      </div>
+
+      <!-- CHECKBOXES -->
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="centralBankEligible">
+          {{ labels.en.centralBankEligible }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="eligibleForDiscount">
+          {{ labels.en.eligibleForDiscount }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="holdingDraft">
+          {{ labels.en.holdingDraft }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="autoMature">
+          {{ labels.en.autoMature }}
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

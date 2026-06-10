@@ -1,0 +1,59 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].collateralinguaranteeissuedcollateral }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- CODE -->
+    <div class="form-group">
+      <label>{{ labels[lang].codeinguaranteeissuedcollateral }}</label>
+      <input type="text" formControlName="code">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+      <label>{{ labels[lang].descriptioninguaranteeissuedcollateral }}</label>
+      <input type="text" formControlName="description">
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="form-group">
+      <label>{{ labels[lang].amountinguaranteeissuedcollateral }}</label>
+      <input type="text" formControlName="amount">
+    </div>
+
+    <!-- CCY -->
+    <div class="form-group">
+      <label>{{ labels[lang].ccyinguaranteeissuedcollateral }}</label>
+      <input type="text" formControlName="ccy">
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-row">
+
+      <button type="button" (click)="add()">
+        {{ labels[lang].addinguaranteeissuedcollateral }}...
+      </button>
+
+      <button type="button" (click)="update()">
+        {{ labels[lang].updateinguaranteeissuedcollateral }}...
+      </button>
+
+      <button type="button" (click)="delete()">
+        {{ labels[lang].deleteinguaranteeissuedcollateral }}...
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

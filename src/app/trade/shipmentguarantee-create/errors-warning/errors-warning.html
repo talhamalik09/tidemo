@@ -1,0 +1,30 @@
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].errorsAndWarnings }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- TYPE -->
+    <div class="form-group">
+      <label>{{ labels[lang].type }}</label>
+      <div class="info-box">
+        {{ labels[lang].info }}
+      </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="form-group full-width">
+      <label>{{ labels[lang].details }}</label>
+      <div class="info-box details-box">
+        {{ labels[lang].shippingGuaranteePath }}
+      </div>
+    </div>
+
+  </div>
+
+</div>

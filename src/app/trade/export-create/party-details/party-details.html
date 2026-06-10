@@ -1,0 +1,75 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+      <h3>{{ labels[lang].partyDetails }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" [class.closed]="!isOpen">
+
+      <!-- ROW AUTO FLOW (3 COLUMNS) -->
+
+      <div class="form-group">
+        <label>{{ labels[lang].countryinexportpartydetails }}</label>
+        <input type="text" formControlName="country">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].beneficiaryAccountinexportpartydetails }}</label>
+        <input type="text" formControlName="beneficiaryAccount">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].receivedFrom }}</label>
+        <input type="text" formControlName="receivedFromShort">
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].applicant }}</label>
+        <input type="text" formControlName="applicantShort">
+      </div>
+
+      <!-- BIG TEXT FIELDS -->
+      <div class="form-group ">
+        <label>{{ labels[lang].instructionReceived }}</label>
+        <textarea formControlName="instructionReceived"></textarea>
+      </div>
+
+      <div class="form-group ">
+        <label>{{ labels[lang].responseToSender }}</label>
+        <textarea formControlName="responseToSender"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].infoFromInstructingParty }}</label>
+        <textarea formControlName="infoFromInstructingParty"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>{{ labels[lang].acknowledgementNarrative }}</label>
+        <textarea formControlName="acknowledgementNarrative"></textarea>
+      </div>
+
+      <!-- DOUBLE FIELD: RECEIVED FROM -->
+      <div class="form-group ">
+        <label>{{ labels[lang].receivedFrom }}</label>
+        <input type="text" formControlName="receivedFromShort">
+        <textarea formControlName="receivedFromLong"></textarea>
+      </div>
+
+      <!-- DOUBLE FIELD: APPLICANT -->
+      <div class="form-group ">
+        <label>{{ labels[lang].applicantinexportpartydetails }}</label>
+        <input type="text" formControlName="applicantShort">
+        <textarea formControlName="applicantLong"></textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

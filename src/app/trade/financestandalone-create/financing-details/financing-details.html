@@ -1,0 +1,116 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div
+    class="section-header"
+    (click)="toggleSection()">
+
+    <span>
+      {{ isOpen ? '▲' : '▼' }}
+    </span>
+
+    <h3>
+      {{ labels.en.financingDetailsinfinacnestandalonefinancing }}
+    </h3>
+
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- FINANCE CURRENCY -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.financeCurrency }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="financeCurrency">
+
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.amountinfinacnestandalonefinancing }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="amount">
+
+    </div>
+
+    <!-- AMOUNT / PERCENT -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.amountPercent }}
+      </label>
+
+      <select formControlName="amountPercent">
+
+        <option value="">
+          Select
+        </option>
+
+        <option
+          *ngFor="let a of amountPercentOptions"
+          [value]="a">
+
+          {{ a }}
+
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- PERCENT -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.percentinfinacnestandalonefinancing}}
+      </label>
+
+      <input
+        type="number"
+        formControlName="percent">
+
+    </div>
+
+    <!-- CALCULATE -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.calculateFinanceCurrency }}
+      </label>
+
+      <div class="input-button-group">
+
+  <input
+    type="text"
+    formControlName="calculateCurrency">
+
+  <button
+    type="button"
+    (click)="calculate()">
+
+    {{ labels.en.calculate }}
+
+  </button>
+
+</div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

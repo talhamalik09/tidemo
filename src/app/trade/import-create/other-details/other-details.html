@@ -1,0 +1,95 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].otherDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].inputBranch }}</label>
+      <input type="text" formControlName="inputBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].behalfOfBranch }}</label>
+      <input type="text" formControlName="behalfOfBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].responsibleTeam }}</label>
+      <input type="text" formControlName="responsibleTeam">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].mailToBranch }}</label>
+      <input type="email" formControlName="mailToBranch">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].relatedReference }}</label>
+      <input type="text" formControlName="relatedReference">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].periodicChargeCycle }}</label>
+      <select formControlName="periodicChargeCycle">
+         <option value="">Select</option>
+    <option>{{ labels[lang].cycleOption1 }}</option>
+    <option>{{ labels[lang].cycleOption2 }}</option>
+    <option>{{ labels[lang].cycleOption3 }}</option>
+    <option>{{ labels[lang].cycleOption4 }}</option>
+    <option>{{ labels[lang].cycleOption5 }}</option>
+    <option>{{ labels[lang].cycleOption6 }}</option>
+    <option>{{ labels[lang].cycleOption7 }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].sundryReferenceCode }}</label>
+      <input type="text" formControlName="sundryReferenceCode">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode1 }}</label>
+      <input type="text" formControlName="userCode1">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].userCode2 }}</label>
+      <input type="text" formControlName="userCode2">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].analysisCode }}</label>
+      <select formControlName="analysisCode">
+        <option value="">Select</option>
+        <option *ngFor="let a of analysisOptions">{{ a }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].lcCategory }}</label>
+      <select formControlName="lcCategory">
+        <option value="">Select</option>
+        <option *ngFor="let l of lcOptions">{{ l }}</option>
+      </select>
+    </div>
+
+    <!-- SAVE -->
+    <div class="button-row">
+      <button type="button" (click)="save()" [disabled]="form.invalid">
+        {{ labels[lang].add }}
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

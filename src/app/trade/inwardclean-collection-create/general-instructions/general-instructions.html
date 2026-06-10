@@ -1,0 +1,92 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].generalInstructions }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="checkbox-group">
+
+        <label>
+          <input type="checkbox" formControlName="urcApply">
+          {{ labels[lang].urcApply }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="acknowledgeReceipt">
+          {{ labels[lang].acknowledgeReceipt }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="adviseNonAcceptance">
+          {{ labels[lang].adviseNonAcceptance }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="adviseAcceptance">
+          {{ labels[lang].adviseAcceptance }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="advisePayment">
+          {{ labels[lang].advisePayment }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="adviseNonPayment">
+          {{ labels[lang].adviseNonPayment }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="holdDocumentsUntilArrival">
+          {{ labels[lang].holdDocumentsUntilArrival }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="insureGoods">
+          {{ labels[lang].insureGoods }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="warehouseGoods">
+          {{ labels[lang].warehouseGoods }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="protestNonPayment">
+          {{ labels[lang].protestNonPayment }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="insureAgainstFireOnly">
+          {{ labels[lang].insureAgainstFireOnly }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="protestNonAcceptance">
+          {{ labels[lang].protestNonAcceptance }}
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="allowPartPayments">
+          {{ labels[lang].allowPartPayments }}
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

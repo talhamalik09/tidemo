@@ -1,0 +1,60 @@
+<main class="main-content1">
+  <div class="form-container1">
+
+    <h3>Submitted Fund Entries</h3>
+
+    <button (click)="exportToCSV()">
+  Download CSV
+</button>
+
+    <div class="table-wrapper" *ngIf="entries.length > 0">
+      <table>
+
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>CNIC</th>
+            <th>Address</th>
+            <th>Amount</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>Payment</th>
+            <th>Notes</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let entry of entries; let i = index">
+
+            <td>{{ entry.fullName }}</td>
+            <td>{{ entry.email }}</td>
+            <td>{{ entry.phone }}</td>
+            <td>{{ entry.cnic }}</td>
+            <td>{{ entry.address }}</td>
+            <td>{{ entry.fundAmount }}</td>
+            <td>{{ entry.startDate }}</td>
+            <td>{{ entry.endDate }}</td>
+            <td>{{ entry.paymentMethod }}</td>
+            <td>{{ entry.notes }}</td>
+            <td>{{ entry.password }}</td>
+
+            <td>
+              <button (click) ="edit(i)" >Edit</button>
+              <button >Delete</button>
+            </td>
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    <div *ngIf="entries.length === 0" class="empty-state">
+      No entries available
+    </div>
+
+  </div>
+</main>

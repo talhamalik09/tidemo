@@ -1,0 +1,77 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].deliveryOfUndertakingTitleinexportstandbylcdelivery }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- DELIVERY OF UNDERTAKING -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].deliveryOfUndertakinginexportstandbylcdelivery }}
+          </label>
+
+          <select formControlName="deliveryOfUndertaking">
+
+            <option value="">
+              {{ labels[lang].selectinexportstandbylcdelivery }}
+            </option>
+
+            <option
+              *ngFor="let item of deliveryOfUndertakingOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- DELIVERY TO / COLLECTION BY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].deliveryToCollectionByinexportstandbylcdelivery }}
+          </label>
+
+          <select formControlName="deliveryToCollectionBy">
+
+            <option value="">
+              {{ labels[lang].select }}
+            </option>
+
+            <option
+              *ngFor="let item of deliveryToOptions"
+              [value]="item">
+
+              {{ item }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

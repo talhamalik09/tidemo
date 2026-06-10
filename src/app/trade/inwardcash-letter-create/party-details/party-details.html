@@ -1,0 +1,62 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].partyDetailsininwardcashletterparty }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- REMITTING BANK -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].remittingBankininwardcashletterparty }}</label>
+
+          <input
+            type="text"
+            formControlName="remittingBank">
+
+          <textarea
+            rows="3"
+            formControlName="remittingBankDetails"
+            placeholder="{{ labels[lang].details }}">
+          </textarea>
+
+        </div>
+        </div>
+
+        <div class="form-grid">
+
+        <!-- CLEARING BANK -->
+        <div class="form-group">
+
+          <label>{{ labels[lang].clearingBank }}</label>
+
+          <input
+            type="text"
+            formControlName="clearingBank">
+
+          <textarea
+            rows="3"
+            formControlName="clearingBankDetails"
+            placeholder="{{ labels[lang].detailsininwardcashletterparty }}">
+          </textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

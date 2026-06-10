@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].ourUndertakingDetailsinguaranteereceivedourundertaking }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="checkbox-group">
+
+        <label>
+
+          <input type="checkbox" formControlName="operative">
+
+          {{ labels[lang].operativeinguaranteereceivedourundertaking }}
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

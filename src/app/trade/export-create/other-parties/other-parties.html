@@ -1,0 +1,60 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].otherParties }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-grid">
+
+      <!-- REIMBURSING BANK -->
+      <div class="form-group">
+        <label>{{ labels[lang].reimbursingBankinexportotherparties }}</label>
+        <input type="text" formControlName="reimbursingBankShort">
+        <textarea formControlName="reimbursingBankFull"></textarea>
+      </div>
+
+      <!-- ISSUING BANK -->
+      <div class="form-group">
+        <label>{{ labels[lang].issuingBank }}</label>
+        <input type="text" formControlName="issuingBankShort">
+        <textarea formControlName="issuingBankFull"></textarea>
+      </div>
+
+      <!-- LC REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels[lang].lcReference }}</label>
+        <input type="text" formControlName="lcReference">
+      </div>
+
+      <!-- ISSUER -->
+      <div class="form-group">
+        <label>{{ labels[lang].issuerinexportotherparties }}</label>
+        <select formControlName="issuer">
+          <option value="">Select</option>
+          <option *ngFor="let i of issuerOptions">{{ i }}</option>
+        </select>
+      </div>
+
+      <!-- RULES -->
+      <div class="form-group">
+        <label>{{ labels[lang].applicableRulesinexportotherparties }}</label>
+        <select formControlName="applicableRules">
+          <option value="">Select</option>
+          <option *ngFor="let r of rulesOptions">{{ r }}</option>
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

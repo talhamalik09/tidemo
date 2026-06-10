@@ -1,0 +1,64 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels.en.adviseDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="app-advise">
+
+
+      <!-- 1: Instruction from Applicant -->
+      <div class="form-group">
+        <label>{{ labels.en.instructionFromApplicant }}</label>
+        <textarea formControlName="instructionFromApplicant"></textarea>
+      </div>
+
+      <!-- 2: Principle -->
+      <div class="form-group">
+        <label>{{ labels.en.principle }}</label>
+        <input formControlName="principle" type="text" />
+      </div>
+
+      <!-- 3: Instruction to Bank -->
+      <div class="form-group">
+        <label>{{ labels.en.instructionToBank }}</label>
+        <textarea formControlName="instructionToBank"></textarea>
+      </div>
+
+      <!-- 4: Advise Through Bank -->
+      <div class="form-group">
+        <label>{{ labels.en.adviseThroughBank }}</label>
+        <input formControlName="adviseThroughBank" type="text" />
+      </div>
+
+      <!-- 5: Account -->
+      <div class="form-group">
+        <label>{{ labels.en.account }}</label>
+        <input formControlName="account" type="text" />
+      </div>
+
+      <!-- 6: Reference -->
+      <div class="form-group">
+        <label>{{ labels.en.reference }}</label>
+        <input formControlName="reference" type="text" />
+      </div>
+
+    </div>
+
+    <!-- SAVE BUTTON -->
+    <div class="save-section">
+      
+    </div>
+
+  </div>
+
+</div>
+
+</form>

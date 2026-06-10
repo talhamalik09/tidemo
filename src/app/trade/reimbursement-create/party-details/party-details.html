@@ -1,0 +1,98 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].partyDetailsinreimbursementparty }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+    
+
+        <!-- ISSUING BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].issuingBankinreimbursementparty }}
+          </label>
+
+          <input type="text" formControlName="issuingBank">
+
+          <textarea rows="3" formControlName="issuingBankDetails"></textarea>
+
+        </div>
+
+        <!-- AVAILABLE WITH BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].availableWithBankinreimbursementparty }}
+          </label>
+
+          <input type="text" formControlName="availableWithBank">
+
+          <textarea rows="3" formControlName="availableWithBankDetails"></textarea>
+
+        </div>
+
+        <!-- AVAILABLE WITH -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].availableWithinreimbursementparty }}
+          </label>
+
+          <select formControlName="availableWith">
+
+            <option value="">
+              {{ labels[lang].selectinreimbursementparty }}
+            </option>
+
+            <option *ngFor="let item of availableOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- PRE-DEBIT NOTIFICATION DAYS -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].preDebitNotificationDaysinreimbursementparty }}
+          </label>
+
+          <input type="text" formControlName="preDebitNotificationDays">
+
+        </div>
+
+        <!-- PRE-DEBIT NOTIFICATION -->
+        <div class="checkbox-group">
+
+          <label>
+
+            <input type="checkbox" formControlName="preDebitNotification">
+
+            {{ labels[lang].preDebitNotificationinreimbursementparty }}
+
+          </label>
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

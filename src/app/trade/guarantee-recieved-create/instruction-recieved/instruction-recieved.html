@@ -1,0 +1,112 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>
+        {{ labels[lang].instructionsReceivedinguaranteereceivedinstruction }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+    
+
+        <!-- RECEIVED FROM PARTY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].receivedFromPartyinguaranteereceivedinstruction }}
+          </label>
+
+          <select formControlName="receivedFromParty">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedinstruction }}
+            </option>
+
+            <option *ngFor="let item of receivedFromPartyOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- RECEIVED REQUEST -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].receivedRequestinguaranteereceivedinstruction }}
+          </label>
+
+          <select formControlName="receivedRequest">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedinstruction }}
+            </option>
+
+            <option *ngFor="let item of receivedRequestOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- ADVISE BY -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].adviseByinguaranteereceivedinstruction }}
+          </label>
+
+          <select formControlName="adviseBy">
+
+            <option value="">
+              {{ labels[lang].selectinguaranteereceivedinstruction }}
+            </option>
+
+            <option *ngFor="let item of adviseByOptions" [value]="item">
+              {{ item }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- RECEIVED FROM REFERENCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].receivedFromReferenceinguaranteereceivedinstruction }}
+          </label>
+
+          <input type="text" formControlName="receivedFromReference">
+
+        </div>
+
+        <!-- ADVISE DATE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].adviseDateinguaranteereceivedinstruction }}
+          </label>
+
+          <input type="date" formControlName="adviseDate">
+
+        </div>
+
+      </div>
+
+    
+
+  </div>
+
+</form>

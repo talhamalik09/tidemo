@@ -1,0 +1,76 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+    <h3>
+      {{ labels.en.partyDetailsinlicenseinputparty }}
+    </h3>
+
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" *ngIf="isOpen">
+
+    <!-- PRINCIPAL -->
+    <div class="form-group full-width">
+
+      <label>
+        {{ labels.en.principal }}
+      </label>
+
+      <div class="party-group">
+
+        <!-- FIRST INPUT -->
+        <input
+          type="text"
+          formControlName="principalCode">
+
+        <!-- RESIZABLE INPUT -->
+        <textarea
+          formControlName="principalDescription">
+        </textarea>
+
+      </div>
+
+    </div>
+
+    <!-- FURTHER IDENTIFICATION -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.furtherIdentification }}
+      </label>
+
+      <input
+        type="text"
+        formControlName="furtherIdentification">
+
+    </div>
+
+    <!-- NON PRINCIPAL -->
+    <div class="form-group">
+
+      <label>
+        {{ labels.en.nonPrincipal }}
+      </label>
+
+      <select formControlName="nonPrincipal" >
+
+        <option value="">
+          {{ labels.en.nonPrincipal }}
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

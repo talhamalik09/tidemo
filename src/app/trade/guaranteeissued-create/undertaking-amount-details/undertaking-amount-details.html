@@ -1,0 +1,56 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].undertakingAmountDetails }}</h3>
+  </div>
+
+  <div class="section-body" *ngIf="isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].amountinguaranteeissuedamount }}</label>
+      <input type="text" formControlName="amount">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].amountInWords }}</label>
+      <input type="text" formControlName="amountInWords">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].additionalAmount }}</label>
+      <input type="text" formControlName="additionalAmount">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].additionalSupplementaryAmountInformation }}</label>
+      <input type="text" formControlName="additionalSupplementaryAmountInformation">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].plusPercent }}</label>
+      <input type="text" formControlName="plusPercent">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].minusPercent }}</label>
+      <input type="text" formControlName="minusPercent">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].toleranceinguaranteeissuedamount }}</label>
+      <select formControlName="tolerance">
+        <option value="">Select</option>
+        <option *ngFor="let option of toleranceOptions">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+</form>

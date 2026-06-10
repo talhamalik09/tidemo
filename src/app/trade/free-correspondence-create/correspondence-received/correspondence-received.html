@@ -1,0 +1,113 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels[lang].correspondenceReceivedinfreecorrespondencecorrespondence }}</h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- CORRESPONDENCE TYPE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].correspondenceTypeinfreecorrespondencecorrespondence }}
+        </label>
+
+        <select formControlName="correspondenceType">
+
+          <option value="">
+            Select
+          </option>
+
+          <option
+            *ngFor="let c of correspondenceTypeOptions"
+            [value]="c">
+
+            {{ c }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- RECEIVED FROM -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].receivedFrominfreecorrespondencecorrespondence }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="receivedFrom">
+
+      </div>
+
+      <!-- RECEIVED FROM DETAILS -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].receivedFromDetailsinfreecorrespondencecorrespondence }}
+        </label>
+
+        <textarea
+          rows="3"
+          formControlName="receivedFromDetails">
+        </textarea>
+
+      </div>
+
+      <!-- REFERENCE -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].referenceinfreecorrespondencecorrespondence }}
+        </label>
+
+        <input
+          type="text"
+          formControlName="reference">
+
+      </div>
+
+      <!-- DATE RECEIVED -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].dateReceivedinfreecorrespondencecorrespondence }}
+        </label>
+
+        <input
+          type="date"
+          formControlName="dateReceived">
+
+      </div>
+
+      <!-- INSTRUCTION RECEIVED -->
+      <div class="form-group">
+
+        <label>
+          {{ labels[lang].instructionReceivedinfreecorrespondencecorrespondence }}
+        </label>
+
+        <textarea
+          rows="5"
+          formControlName="instructionReceived">
+        </textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

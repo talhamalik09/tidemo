@@ -1,0 +1,66 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].reimbursementDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <div class="form-group">
+      <label>{{ labels[lang].reimbursingBank }}</label>
+      <input type="text" formControlName="reimbursingBank">
+    </div>
+
+    <div class="form-group full-width">
+      <label>{{ labels[lang].instructionsToReimbursingBank }}</label>
+      <input type="text" formControlName="instructions">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].accountinreimbursementdetails }}</label>
+      <input type="text" formControlName="account">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].accountNumberAtReimbursingBank }}</label>
+      <input type="text" formControlName="accountNumber">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].transferMethod }}</label>
+      <input type="text" formControlName="transferMethod">
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].chargesFor }}</label>
+      <select formControlName="chargesFor">
+        <option value="">Select</option>
+        <option>{{ labels[lang].claimant }}</option>
+        <option>{{ labels[lang].issuer }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{ labels[lang].applicableRules }}</label>
+      <select formControlName="applicableRules">
+        <option value="">Select</option>
+        <option>{{ labels[lang].urrLatest }}</option>
+        <option>{{ labels[lang].notUrr }}</option>
+      </select>
+    </div>
+
+    <!-- SAVE -->
+    <div class="save-section">
+      
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,108 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+
+      <span>
+        {{ isOpen ? '▲' : '▼' }}
+      </span>
+
+      <h3>
+        {{ labels[lang].adviseDetailsinimportstandbylcadvise }}
+      </h3>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <div class="form-grid">
+
+        <!-- Instructions from Applicant -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionsFromApplicantinimportstandbylcadvise }}
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="instructionsFromApplicant">
+          </textarea>
+
+        </div>
+
+        <!-- Instructions to Bank -->
+        <div class="form-group full-width">
+
+          <label>
+            {{ labels[lang].instructionsToBankinimportstandbylcadvise }}
+          </label>
+
+          <textarea
+            rows="4"
+            formControlName="instructionsToBank">
+          </textarea>
+
+        </div>
+</div>
+
+        <div class="form-grid">
+        <!-- PRINCIPAL -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].principalinimportstandbylcadvise }}
+          </label>
+
+          <input type="text" formControlName="principal">
+
+        </div>
+
+        <!-- ADVISE THROUGH BANK -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].adviseThroughBankinimportstandbylcadvise }}
+          </label>
+
+          <textarea
+            rows="3"
+            formControlName="adviseThroughBank">
+          </textarea>
+
+        </div>
+</div>
+
+        <div class="form-grid">
+        <!-- REFERENCE -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].referenceinimportstandbylcadvise }}
+          </label>
+
+          <input type="text" formControlName="reference">
+
+        </div>
+
+        <!-- ACCOUNT -->
+        <div class="form-group">
+
+          <label>
+            {{ labels[lang].accountinimportstandbylcadvise }}
+          </label>
+
+          <input type="text" formControlName="account">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

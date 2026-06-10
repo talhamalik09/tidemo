@@ -1,0 +1,69 @@
+<form [formGroup]="form">
+
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="section-header" (click)="toggleSection()">
+    <span>{{ isOpen ? '▲' : '▼' }}</span>
+    <h3>{{ labels[lang].shipmentGuaranteeDetails }}</h3>
+  </div>
+
+  <!-- BODY -->
+  <div class="section-body" [class.closed]="!isOpen">
+
+    <!-- APPLICATION DATE -->
+    <div class="form-group">
+      <label>{{ labels[lang].applicationDate }}</label>
+      <input type="date" formControlName="applicationDate">
+    </div>
+
+    <!-- ISSUE DATE -->
+    <div class="form-group">
+      <label>{{ labels[lang].issueDateinshipmentguaranteedetails }}</label>
+      <input type="date" formControlName="issueDate">
+    </div>
+
+    <!-- EXPIRY DATE -->
+    <div class="form-group">
+      <label>{{ labels[lang].expiryDateinshipmentguaranteedetails }}</label>
+      <input type="date" formControlName="expiryDate">
+    </div>
+
+    <!-- PRODUCT TYPE -->
+    <div class="form-group">
+      <label>{{ labels[lang].productTypeinshipmentguaranteedetails }}</label>
+      <select formControlName="productType">
+        <option value="">Select</option>
+        <option *ngFor="let p of productTypeOptions">{{ p }}</option>
+      </select>
+    </div>
+
+    <!-- ADVICE METHOD -->
+    <div class="form-group">
+      <label>{{ labels[lang].adviceMethod }}</label>
+      <select formControlName="adviceMethod">
+        <option value="">Select</option>
+        <option *ngFor="let a of adviceMethodOptions">{{ a }}</option>
+      </select>
+    </div>
+
+    <!-- CHECKBOXES -->
+    <div class="checkbox-group">
+
+      <label>
+        <input type="checkbox" formControlName="returnRequired">
+        {{ labels[lang].returnRequired }}
+      </label>
+
+      <label>
+        <input type="checkbox" formControlName="multipleDocument">
+        {{ labels[lang].multipleDocument }}
+      </label>
+
+    </div>
+
+  </div>
+
+</div>
+
+</form>

@@ -1,0 +1,151 @@
+<form [formGroup]="form">
+
+  <div class="section">
+
+    <!-- HEADER -->
+    <div class="section-header" (click)="toggleSection()">
+      <span>{{ isOpen ? '▲' : '▼' }}</span>
+
+      <h3>{{ labels.en.outwardClean }}</h3>
+    </div>
+
+    <!-- BODY -->
+    <div class="section-body" *ngIf="isOpen">
+
+      <!-- DOCUMENT RELEASE -->
+      <div class="form-group">
+        <label>{{ labels.en.documentReleaseinparticipationdealoutward  }}</label>
+
+        <select formControlName="documentRelease">
+          <option value="">
+            {{ labels.en.selectinparticipationdealoutward  }}
+          </option>
+
+          <option
+            *ngFor="let item of documentReleaseOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+        </select>
+      </div>
+
+      <!-- PRODUCT TYPE -->
+      <div class="form-group">
+        <label>{{ labels.en.productType }}</label>
+
+        <select formControlName="productType">
+          <option value="">
+            {{ labels.en.selectinparticipationdealoutward  }}
+          </option>
+
+          <option
+            *ngFor="let item of productTypeOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+        </select>
+      </div>
+
+      <!-- RECEIVED FROM REFERENCE -->
+      <div class="form-group">
+        <label>{{ labels.en.receivedFromReferenceinparticipationdealoutward  }}</label>
+
+        <input
+          type="text"
+          formControlName="receivedFromReference">
+      </div>
+
+      <!-- COLLECTION AMOUNT -->
+      <div class="form-group">
+        <label>{{ labels.en.collectionAmountinparticipationdealoutward  }}</label>
+
+        <input
+          type="text"
+          formControlName="collectionAmount">
+      </div>
+
+      <!-- COUNTRY -->
+      <div class="form-group">
+        <label>{{ labels.en.country }}</label>
+
+        <input
+          type="text"
+          formControlName="country">
+      </div>
+
+      <!-- SECOND COUNTRY -->
+      <div class="form-group">
+        <label>{{ labels.en.secondCountry }}</label>
+
+        <input
+          type="text"
+          formControlName="secondCountry">
+      </div>
+
+      <!-- RECEIVED ON -->
+      <div class="form-group">
+        <label>{{ labels.en.receivedOninparticipationdealoutward  }}</label>
+
+        <input
+          type="date"
+          formControlName="receivedOn">
+      </div>
+
+      <!-- RECEIVED FROM TYPE -->
+      <div class="form-group">
+        <label>{{ labels.en.receivedFromType }}</label>
+
+        <select formControlName="receivedFromType">
+          <option value="">
+            {{ labels.en.selectinparticipationdealoutward  }}
+          </option>
+
+          <option
+            *ngFor="let item of receivedFromOptions"
+            [value]="item">
+
+            {{ item }}
+
+          </option>
+        </select>
+      </div>
+
+      <!-- RECEIVED FROM -->
+      <div class="form-group">
+        <label>{{ labels.en.receivedFrominparticipationdealoutward  }}</label>
+
+        <input
+          type="text"
+          formControlName="receivedFrom">
+
+        <textarea
+          rows="3"
+          formControlName="receivedFromDetails"
+          placeholder="{{ labels.en.details }}">
+        </textarea>
+      </div>
+
+      <!-- SEND TO -->
+      <div class="form-group">
+        <label>{{ labels.en.sendToinparticipationdealoutward  }}</label>
+
+        <input
+          type="text"
+          formControlName="sendTo">
+
+        <textarea
+          rows="3"
+          formControlName="sendToDetails"
+          placeholder="{{ labels.en.details }}">
+        </textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>
