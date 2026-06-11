@@ -1,37 +1,68 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormArray
+} from '@angular/forms';
+
+import { NgIf, NgFor } from '@angular/common';
 import { LABELS } from '../../../localization/labels/labels';
 
 @Component({
   selector: 'app-goods',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule,NgFor],
   templateUrl: './goods.html',
-  styleUrl: './goods.scss'
+  styleUrls: ['./goods.scss']
 })
 export class Goods {
 
   labels = LABELS;
   lang: 'en' = 'en';
-
   isOpen = true;
+
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
+
     this.form = this.fb.group({
-      goodsCode: ['', [Validators.required, Validators.maxLength(20)]],
-      goodsDescription: ['', [Validators.required, Validators.maxLength(200)]]
+
+      goodsList: this.fb.array([])
+
+    });
+
+    // start with 1 row
+    this.addGoods();
+
+  }
+
+  // ✅ GET FORM ARRAY
+  get goodsList(): FormArray {
+    return this.form.get('goodsList') as FormArray;
+  }
+
+  // ✅ CREATE SINGLE ROW
+  createGoodsGroup(): FormGroup {
+    return this.fb.group({
+      goodsCode: ['', Validators.required],
+      goodsDescription: ['', Validators.required]
     });
   }
 
-  toggleSection() {
-    this.isOpen = !this.isOpen;
+  // ✅ ADD GOODS
+  addGoods() {
+    this.goodsList.push(this.createGoodsGroup());
   }
 
-  save() {
-    if (this.form.valid) {
-      console.log('Goods Data:', this.form.value);
-    }
+  // ❌ REMOVE GOODS (optional)
+  removeGoods(index: number) {
+    this.goodsList.removeAt(index);
+  }
+
+  // toggle section
+  toggleSection() {
+    this.isOpen = !this.isOpen;
   }
 }

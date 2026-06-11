@@ -11,10 +11,55 @@
   <!-- BODY -->
   <div class="section-body" [class.closed]="!isOpen">
 
-    <!-- DOCUMENT REQUIRED -->
-    <div class="form-group ">
-      <label>{{ labels[lang].documentRequired }}</label>
-      <textarea formControlName="documentRequired"></textarea>
+    <!-- ADD BUTTON -->
+    <div class="button-row">
+      <button type="button" (click)="addDocument()">
+        Add Documents
+      </button>
+    </div>
+
+    <!-- FORM ARRAY -->
+    <div formArrayName="documentList">
+
+      <div
+        *ngFor="let group of documentList.controls; let i = index"
+        [formGroupName]="i"
+        class="doc-row"
+      >
+
+        <!-- DOCUMENT TEXT -->
+        <div class="form-group">
+          <label>{{ labels[lang].documentRequired }}</label>
+          <textarea formControlName="documentRequired"></textarea>
+        </div>
+
+        <!-- FILE UPLOAD -->
+        <div class="form-group">
+          <label>Attach File</label>
+
+          <input
+            type="file"
+            (change)="onFileSelect($event, i)"
+          >
+        </div>
+
+        <!-- SHOW FILE NAME -->
+        <div class="form-group" *ngIf="documentList.at(i).value?.attachment">
+          <small>
+            Selected:
+            {{ documentList.at(i).value.attachment?.name }}
+          </small>
+        </div>
+
+        <!-- REMOVE -->
+        <div class="button-row">
+          <button type="button" (click)="removeDocument(i)">
+            Remove
+          </button>
+        </div>
+
+      </div>
+
     </div>
 
   </div>

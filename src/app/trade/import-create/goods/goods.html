@@ -5,35 +5,47 @@
   <!-- HEADER -->
   <div class="section-header" (click)="toggleSection()">
     <span>{{ isOpen ? '▲' : '▼' }}</span>
-    <h3>{{ labels.en.goods }}</h3>
+    <h3>{{ labels[lang].goodsinexportgoods }}</h3>
   </div>
 
   <!-- BODY -->
   <div class="section-body" [class.closed]="!isOpen">
 
-    <!-- GOODS CODE -->
-    <div class="form-group">
-      <label>{{ labels.en.goodsCode }}</label>
-      <input type="text" formControlName="goodsCode">
+    <!-- ADD BUTTON -->
+     <div class="button-row">
+    <button type="button" (click)="addGoods()">
+      Add Goods
+    </button>
+</div>
+    <!-- FORM ARRAY -->
+    <div formArrayName="goodsList">
 
-      <div *ngIf="form.get('goodsCode')?.touched && form.get('goodsCode')?.invalid">
-        Goods Code is required (max 20 chars)
+      <div
+        *ngFor="let group of goodsList.controls; let i = index"
+        [formGroupName]="i"
+      >
+
+        <!-- GOODS CODE -->
+        <div class="form-group">
+          <label>{{ labels[lang].goodsCodeinexportgoods }}</label>
+          <input type="text" formControlName="goodsCode">
+        
+</div>
+        <!-- GOODS DESCRIPTION -->
+        <div class="form-group">
+          <label>{{ labels[lang].goodsDescriptioninexportgoods }}</label>
+          <input type="text" formControlName="goodsDescription">
+        </div>
+
+        <!-- REMOVE -->
+         <div class="button-row">
+        <button type="button" (click)="removeGoods(i)">
+          Remove
+        </button>
+
+        </div>
       </div>
-    </div>
 
-    <!-- GOODS DESCRIPTION -->
-    <div class="form-group full-width">
-      <label>{{ labels.en.goodsDescription }}</label>
-      <textarea formControlName="goodsDescription"></textarea>
-
-      <div *ngIf="form.get('goodsDescription')?.touched && form.get('goodsDescription')?.invalid">
-        Description is required (max 200 chars)
-      </div>
-    </div>
-
-    <!-- SAVE -->
-    <div class="save-section">
-    
     </div>
 
   </div>
