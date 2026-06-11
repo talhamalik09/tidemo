@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { LABELS } from '../../../localization/labels/labels';
 
 @Component({
   selector: 'app-undertaking-reduction-increase',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf,NgFor],
   templateUrl: './undertaking-reduction-increase.html',
   styleUrl: './undertaking-reduction-increase.scss'
 })

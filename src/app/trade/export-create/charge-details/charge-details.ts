@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-charge-details',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor],
+  imports: [ReactiveFormsModule, NgFor],
   templateUrl: './charge-details.html',
   styleUrl: './charge-details.scss'
 })

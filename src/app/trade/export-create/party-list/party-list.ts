@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-party-list',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule],
   templateUrl: './party-list.html',
   styleUrl: './party-list.scss'
 })

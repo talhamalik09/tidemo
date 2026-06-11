@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-undertaking-main-details',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './undertaking-main-details.html',
   styleUrl: './undertaking-main-details.scss'
 })

@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-collateral',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor,NgIf],
+  imports: [ReactiveFormsModule ,NgIf],
   templateUrl: './collateral.html',
   styleUrl: './collateral.scss'
 })

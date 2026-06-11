@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-confirmation-details',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor],
+  imports: [ReactiveFormsModule, NgFor],
   templateUrl: './confirmation-details.html',
   styleUrl: './confirmation-details.scss'
 })

@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-shipmentguarantee-details',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor],
+  imports: [ReactiveFormsModule, NgFor],
   templateUrl: './shipmentguarantee-details.html',
   styleUrl: './shipmentguarantee-details.scss'
 })

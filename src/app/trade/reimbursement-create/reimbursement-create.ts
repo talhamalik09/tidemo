@@ -8,13 +8,12 @@ import { Instructions } from './instructions/instructions';
 import { OtherDetails } from './other-details/other-details';
 import { PartyDetails } from './party-details/party-details';
 import { PaymentTerms } from './payment-terms/payment-terms';
-import { Reimbursement } from '../reimbursement/reimbursement';
 import { ReimbursementAuthority } from './reimbursement-authority/reimbursement-authority';
 
 
 @Component({
   selector: 'app-reimbursement-create',
-  imports: [ReimbursementAuthority,Reimbursement,PaymentTerms,PartyDetails,OtherDetails,Instructions,ForeignExchangeContracts,Confirmation,ChargeDetailsReceived,ChargeDetails,AuthorityAmount],
+  imports: [ReimbursementAuthority,PaymentTerms,PartyDetails,OtherDetails,Instructions,ForeignExchangeContracts,Confirmation,ChargeDetailsReceived,ChargeDetails,AuthorityAmount],
   templateUrl: './reimbursement-create.html',
   styleUrl: './reimbursement-create.scss',
 })

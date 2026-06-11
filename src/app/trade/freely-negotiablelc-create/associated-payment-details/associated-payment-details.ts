@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-associated-payment-details',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, NgIf],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './associated-payment-details.html',
   styleUrl: './associated-payment-details.scss'
 })

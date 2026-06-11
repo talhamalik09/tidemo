@@ -24,7 +24,7 @@ import { InstructionReceived } from './instruction-received/instruction-received
 import { ErrorsWarnings } from './errors-warnings/errors-warnings';
 @Component({
   selector: 'app-guaranteeissued-create',
-  imports: [PartyList,GuaranteeReimbursementDetails,OtherDetails,FxContract,Collateral,MarginDeposit,ChargesDetails,ContractDetails,UndertakingDeliveryOfUndertaking,UndertakingTransferableDetails,UndertakingReductionIncrease,UndertakingRenewalDetails,UndertakingUnderlyingTransaction,UndertakingTermsConditions,UndertakingDocumentInstructions,UndertakingAmountDetails,UndertakingMainDetails,PartyInstructions,PartyDetails,OurUndertakingRequest,OurUndertakingDetails,ErrorsWarnings,InstructionReceived],
+  imports: [PartyList,GuaranteeReimbursementDetails,OtherDetails,FxContract,Collateral,MarginDeposit,ContractDetails,UndertakingDeliveryOfUndertaking,UndertakingTransferableDetails,UndertakingReductionIncrease,UndertakingRenewalDetails,UndertakingUnderlyingTransaction,UndertakingTermsConditions,UndertakingDocumentInstructions,UndertakingAmountDetails,UndertakingMainDetails,PartyInstructions,PartyDetails,OurUndertakingRequest,OurUndertakingDetails,ErrorsWarnings,InstructionReceived],
   templateUrl: './guaranteeissued-create.html',
   styleUrl: './guaranteeissued-create.scss',
 })

@@ -21,7 +21,7 @@ import { PartyDetails } from './party-details/party-details';
 
 @Component({
   selector: 'app-export-create',
-  imports: [OtherDetails,ForeignExchangeContracts,Collateral,MarginDeposit,ChargeDetails,SpecialPaymentConditions,AdditionalConditions,Documents,Goods,Shipment,AvailableByWith,ConfirmationDetails,AmountDetails,AdviseDetails,PartyDetails,OtherParties,PartyList,ExportLetterOfCredit],
+  imports: [OtherDetails,ForeignExchangeContracts,MarginDeposit,ChargeDetails,SpecialPaymentConditions,AdditionalConditions,Documents,Goods,Shipment,AvailableByWith,ConfirmationDetails,AmountDetails,AdviseDetails,PartyDetails,OtherParties,PartyList,ExportLetterOfCredit],
   templateUrl: './export-create.html',
   styleUrl: './export-create.scss',
 })

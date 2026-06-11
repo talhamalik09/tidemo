@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-additional-conditions',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, ],
   templateUrl: './additional-conditions.html',
   styleUrl: './additional-conditions.scss'
 })

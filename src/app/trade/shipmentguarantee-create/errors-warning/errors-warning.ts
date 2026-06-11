@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { LABELS } from '../../../localization/labels/labels';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-errors-warning',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   templateUrl: './errors-warning.html',
   styleUrl: './errors-warning.scss'
 })

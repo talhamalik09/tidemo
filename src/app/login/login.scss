@@ -148,9 +148,10 @@
 
 /* ───────── INPUTS ───────── */
 .input {
-  width: 82%;
+  width: 100%;
+  max-width: 420px;
   padding: 11px 14px;
-  margin: 8px auto;
+  margin: 8px 0;
 
   display: block;
 
@@ -224,4 +225,10 @@
 
 .footer span {
   color: #ec4899;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

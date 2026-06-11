@@ -6,7 +6,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-foreign-exchange-contracts',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule],
   templateUrl: './foreign-exchange-contracts.html',
   styleUrl: './foreign-exchange-contracts.scss'
 })

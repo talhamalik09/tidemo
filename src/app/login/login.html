@@ -16,6 +16,7 @@
 
     <!-- Inputs -->
     <div class="form">
+      <div class="input-wrapper">
       <input
         type="text"
         placeholder="Username"
@@ -27,8 +28,9 @@
         type="password"
         placeholder="Password"
         [(ngModel)]="password"
-        class="input"
+        style="width: 430px; padding: 11px 14px; max-width: 420px"
       />
+    </div>
 
       <button class="btn" (click)="login()">Sign in</button>
     </div>

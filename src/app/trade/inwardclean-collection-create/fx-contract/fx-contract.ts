@@ -12,7 +12,7 @@ import { LABELS } from '../../../localization/labels/labels';
 @Component({
   selector: 'app-fx-contract',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, NgIf],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './fx-contract.html',
   styleUrl: './fx-contract.scss'
 })
